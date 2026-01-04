@@ -1,0 +1,128 @@
+{
+    "slide_number": 14,
+    "text_elements": [
+        {
+            "text": "V4-V6: Core Framework\u000b Instructions inner works",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1401094
+        },
+        {
+            "text": "These instructions introduce a structured decision-making system that determines whether a query requires external information (retrieval) or can be answered directly.\nIts aim is to improve consistency, reduce errors, and ensure that each query is handled using the most appropriate reasoning pathway.",
+            "left": 835025,
+            "top": 2132012,
+            "width": 7555230,
+            "height": 2142894
+        },
+        {
+            "text": "Core Objective: Maintain high-quality responses by enforcing a clear separation between retrieval-dependent tasks and knowledge-based reasoning.",
+            "left": 987116,
+            "top": 4516547,
+            "width": 6785283,
+            "height": 525144
+        },
+        {
+            "text": "     Query Assessment\nThe system analyses the user\u2019s query to detect whether it contains:\n\t1- Specific data requirements.\n\t2- Time-sensitive facts.\n\t3- Non-famous people, places, or organizations\n\t4- Request involving statistics, dates, or precise values\nIf any of these are present, the query is classified as retrieval-required.",
+            "left": 717551,
+            "top": 5640700,
+            "width": 8296275,
+            "height": 3335208
+        },
+        {
+            "text": "2",
+            "left": 9785548,
+            "top": 2445149,
+            "width": 107950,
+            "height": 266098
+        },
+        {
+            "text": "Profile Assignment",
+            "left": 10242748,
+            "top": 2401090,
+            "width": 3224530,
+            "height": 412115
+        },
+        {
+            "text": "Queries are assigned to one of two profiles:\nProfile 1 \u2013 Retrieval Required\nProfile 2 \u2013 Direct Answer Sufficient",
+            "left": 9864725,
+            "top": 2865515,
+            "width": 3430904,
+            "height": 1040028
+        },
+        {
+            "text": "3",
+            "left": 9766498,
+            "top": 4712099,
+            "width": 145415,
+            "height": 266098
+        },
+        {
+            "text": "Structured Output Format",
+            "left": 10271125,
+            "top": 4667250,
+            "width": 3908108,
+            "height": 397545
+        },
+        {
+            "text": "\u201c1-Yes\u201d : Retrieval is needed.",
+            "left": 9674225,
+            "top": 5304035,
+            "width": 4665345,
+            "height": 252633
+        },
+        {
+            "text": "\u26a0 \u201d2-No\u201d: Retrieval is not needed.",
+            "left": 9674225,
+            "top": 5837435,
+            "width": 5192395,
+            "height": 252633
+        },
+        {
+            "text": "4",
+            "left": 9765010,
+            "top": 6979049,
+            "width": 148590,
+            "height": 266098
+        },
+        {
+            "text": "Model specific",
+            "left": 10271125,
+            "top": 6933031,
+            "width": 2677795,
+            "height": 412115
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6081812,
+            "top": 9490348,
+            "width": 5864027,
+            "height": 217367
+        },
+        {
+            "text": "The expected model downfalls are used to understand which option would be more useful when retrieval is not required\nCoT is used when the model still pays attention to the instruction and follows the instructions.\nStraight answer is used when the model ignores the whole instruction provided.",
+            "left": 9740898,
+            "top": 7570985,
+            "width": 7829550,
+            "height": 1706878
+        },
+        {
+            "text": "1",
+            "left": 792322,
+            "top": 5946238,
+            "width": 145415,
+            "height": 266098
+        }
+    ],
+    "colors_found": [
+        "1D293B",
+        "15803C",
+        "C2400C",
+        "606C7E",
+        "0D9487",
+        "FFFFFF",
+        "9CA2AF",
+        "055E45",
+        "0E1729"
+    ]
+}

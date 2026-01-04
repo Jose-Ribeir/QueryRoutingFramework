@@ -1,0 +1,10 @@
+--- Text Before ---
+magnitude have on the model performance, this was done by pruning 1% of the values (accord-
+ing to their magnitude) in the weights into 0 and see the perplexity results.
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 5: PPL results after pruning 1% weight with different magnitude [22]
+Based on Table 5 [22] shows that the largest magnitude outliers imposed the same influence

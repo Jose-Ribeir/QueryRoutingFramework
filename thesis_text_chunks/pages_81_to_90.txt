@@ -1,0 +1,186 @@
+6.7.2
+Straight Model
+This approach will be evaluated in multiple parts. The first aspect is whether the answer is
+correct specifically, whether the model’s response matches the ground truth option. Next, the
+evaluation will check if the model correctly identified queries that should be answered without
+retrieval. This part is linked to the previous one: if the answer is correct without retrieval,
+the classification is also considered correct. Additionally, a comparison will be made between
+answers generated with and without forced Chain-of-Thought (CoT) prompting to determine
+whether the increased energy consumption associated with CoT leads to improved answers or
+if the same responses would have been provided without it. This will be done to understand
+if the model is guessing correctly wether it can answer the question directly or not. And will
+also provide consumption metrics that will be compared in order to understand its efficiency.
+CoT will tend to be more accurate but it also requires more energy due to the thinking phase of
+generation.
+6.7.3
+Chain-of-Thought Reasoning Performance Metrics
+The metrics for CoT are the same as those used for the straight model, as both will be
+directly compared.
+6.7.4
+Automated Evaluation Script
+To implement the evaluation metrics described, particularly for understanding the correct-
+ness of the model’s answers, an automated script was employed. This script is responsible for
+processing the model’s output for each query, which is stored in a JSONL file format. The pri-
+mary goal is to systematically determine if the model’s final answer matches the ground truth,
+especially for ARC queries which are multiple-choice questions.
+The core to this evaluation lies in a multi-step parsing strategy designed to intelligently
+extract the final answer from the model’s potentially complex and verbose output, similarly to
+how a human user would read the output and understand which character is the one that the
+model chose. The process is as follow:
+1. Definitive Answer Extraction:
+The script first searches the model’s prediction for the
+most explicit answer format, such as ”\\boxed{B}”. This format is often used by models
+to clearly delineate the final answer, so finding it is the most reliable sign. However, since
+this work is conducted using smaller models, they often do not follow patterns very well
+and may provide the answer surrounded by verbose context reflecting their reasoning.
+2. Pattern-Based Fallback: If the first pattern is not found, the script then looks for common
+natural language phrases that indicate a final answer, like ”The answer is B” or ”Answer:
+B”. It is designed to take the last match it finds, operating on the assumption that any
+reasoning or changes of mind would occur before the final declared answer.
+73
+3. Positional Fallback: As a final strategy, if neither of the above patterns yields a result,
+the script searches for all standalone capital letters (A, B, C, or D) within the response.
+Subsequently, the system selects the final occurrence as the intended answer, assuming it
+reflects the model’s ultimate decision. This servers as a robust fallback for cases where
+the model might provide the final answer without any formatting.
+Once one answer is extracted through this hierarchy of methods, it is compared directly with
+the ”ground truth” value from the JSONL. A new metric, ”correct answer arc”, is added to the
+data inside the metrics section, this then gets marked as ”true” if they match and ”false” if not.
+Furthermore, this script is also responsible for the automation of the retrieval performance
+metric. It checks if the ”references” inside the ”ground truth” section contains any references
+that indicate that retrieval was needed. It then cross-references this with the ”method used”
+value that represents the path the system chose. If the model used ”retrieval” for a question
+that required it, a ”retrieved correctly” metric is marked as ”true” on the same metrics section,
+aligning with the binary evaluation approach mentioned previously. This automated process
+ensures a consistent and scalable way to apply the defined evaluation criteria across the entire
+dataset.
+6.7.5
+Efficiency Metrics
+Efficiency is a metric that can be measure in various ways depending on the focus of the
+evaluation. This could be power consumption, cost-effectiveness, or scalability, each of which
+plays a central role in the direction of this thesis. Power consumption will be measured as watts
+per query . This metric is important due to the multiple processing steps involved in generating
+each output. However, it will not reflect the total system power consumption, as only CPU and
+GPU usage will be measured due to hardware limitations.
+The cost-effectiveness will be calculated by dividing the cost of the required hardware com-
+ponents by the system’s performance. This allows for a direct comparison between this ap-
+proach and more powerful alternatives. Such comparisons can be conducted through a series
+of tests, similar to the benchmarks referenced in model comparison section. Scalability will
+be assessed by analyzing the requirements needed when using a larger model or when more
+documents and keywords are added to the system. This will likely be the most difficult metric
+to evaluate directly, as I do not have access to more powerful hardware. However, I will attempt
+to estimate scalability based on data and findings from other researchers.
+6.8
+Optimizing Query Classification through Iterative Prompt Refinement
+The performance of a LLM is fundamentally linked to the clarity and quality of the instruc-
+tion provided. In this system, where the initial goal is to classify a user’s query into one of three
+paths retrieving external documents, reasoning step by step, or simply using the model’s first
+74
+response as the answer (both relying on the model’s internal knowledge) the construction of the
+instruction plays a crucial role. By carefully designing this part of the process, we can guide
+and control the model’s decision-making behavior. To determine the most effective approach
+for this classification task, a series of instructions were developed and tested, evolving from a
+simple open-ended prompt to a highly structured one that involves a fully rule based framework.
+This section will analyze the iterative refinement process of the instructions in detail, eval-
+uating the performance of each version. The evaluation on this section focuses on key metrics,
+such as: Routing Accuracy (the model’s ability to correctly chose ’retrieval’ or ’no-retrieval’),
+Answer Accuracy (the correctness of the final response), and Efficiency (measured in energy
+consumption) though this metric will be more thoroughly looked at at a later stage. By exam-
+ining the trade-offs between these factors at each stage, we can identify the best practices for
+guiding an LLM in a complex classification task.
+6.8.1
+Instruction V1: A Simple Baseline
+
+
+[INSERT IMAGE HERE: Figure 30: Instruction V1]
+
+The initial instruction, V1, was designed as a minimal baseline to assess the feasibility of the
+proposed approach. This instruction directly asks the model for a binary classification (”Would
+this Query benefit from the retrieval of documents?”) Figure 30, with a heavy emphasis on the
+output format rather than the decision-making logic. This lack of explicit criteria forced the
+model to rely almost totally on its internal, pre-existing biases to interpret the query’s needs.
+75
+
+
+[INSERT IMAGE HERE: Figure 31: Instruction V1 Results]
+
+76
+As the performance data from the evaluation reveals, this approach was highly inconsistent
+and ultimately unreliable. The model developed a strong bias against retrieving documents,
+leading to a significant imbalance in the classification. This likely occurred due to the smaller
+model lacking sufficient internal knowledge, as it is less capable than state-of-the-art models.
+While the system was adept at identifying general knowledge questions (those not requiring
+retrieval), it correctly avoided retrieval 98.17% of the time, refer to Figure 31. However, it
+almost completely failed at the inverse task, only correctly choosing retrieval 16.59% for the
+queries that required it. As a result, the overall routing accuracy was limited to just 52.3%.
+This bias is further evident in the routing decision matrix, which shows that out of 1688
+questions that ideally required retrieval to answer correctly, the model incorrectly routed 1408
+of them to be answer without retrieving. This fundamental failure to identify questions need-
+ing external knowledge confirmed that a simple, unguided prompt is insufficient for creating
+a reliable query-routing system. While this appears to be true for the chosen model size, fur-
+ther testing is necessary to determine whether this limitation persists in larger models or if they
+perform better on this task.
+6.8.2
+Instruction V2: An Aggressive, Safety-First Heuristic
+
+
+[INSERT IMAGE HERE: Figure 32: Instruction V2]
+
+77
+To counteract the significant bias against retrieval observed on the first approach Figure
+30, the second iteration introduced a strong, explicit bias towards retrieval. Instruction V2
+Figure 32, framed the model as an ”expert query analyzer” with the primary goal of eliminating
+incorrect answer by trying to force document retrieval for any non-trivial query. It established
+retrieval (’1-Yes’) as the default assumption, permitting a direct answer (’2-No’) only if the
+query met a very strict and narrow set of criteria: it had to involve exclusively ’globally famous
+entities’ and ask for a single, static, and universally known fact. This ”safety-first” heuristic
+was designed to try and minimize the risk of factual errors originating from the model’s internal
+knowledge.
+This agressive change dramatically inverted the model’s behavior. The Retrieval Task Rout-
+ing Accuracy skyrocketed from 16.59% to 98.22%, demonstrating that the model could now
+reliably identify questions that required external documents. Out of 1688 such questions, it
+correctly chose ”retrieval” for 1659 of them.
+However, this success came at significant cost to efficiency and accuracy on the opposite
+task, with results that were almost predictably inverse to those of the first instruction. The
+model’s ability to recognize simple, general knowledge questions plummeted. This can be seen
+on the General Knowledge Routing Accuracy that fell from 98.17% to a mere 26.07%. The
+system was now incorrectly choosing to retrieve documents for the vast majority of the queries
+that did not need it. This over-correction is properly showed on the decision matrix, where 970
+out of the 1312 No Retrieval queries, were wrongly sent down the retrieval path.
+Although the Overall Routing Accuracy improved to 66.7%, this aggressive heuristic proved
+to be an over-correction. While it successfully enforced the retrieval of necessary information,
+it failed to account for cases where retrieval was unnecessary. This led to inefficient and often
+redundant processing for a large number of relatively simple queries that the base model could
+have answered directly. This showed perfectly that while a strong default can steer the model’s
+behavior, a purely aggressive approach is too rigid and fails to balance accuracy with efficiency.
+All of this is evidenced by the results shown in Figure 33.
+78
+
+
+[INSERT IMAGE HERE: Figure 33: Instruction V2 Results]
+
+79
+6.8.3
+Instruction V3: Introducing Balanced Criteria
+
+
+[INSERT IMAGE HERE: Figure 34: Instruction V3]
+
+The third iteration, Instruction V3, tried to strike a balance between the aggressive retrieval
+strategy of V2 and the passive approach of V1. The goal was to try and improve efficiency by re-
+ducing unnecessary retrievals without sacrificing the accuracy gains made on complex queries.
+The key refinement was the introduction of explicit, positive categories for non-retrieval (”2-
+No”). For the first time , the model was given clear examples of queries that were meant to be
+answer directly, such as ”Universally Known Facts”, ”Creative Tasks”, and ”General Explana-
+tions”.
+This structured, two-step process first checks for a simple case, and only then defaulting to
+retrieval on more complex queries. This proved to be a significant step in the right direction.
+The model was no longer forced into an overly aggressive default and was instead required to
+80
+reason through its decision-making process to select the appropriate path.
+81
+
+
+[INSERT IMAGE HERE: Figure 35: Instruction V3 Results]
+
+82

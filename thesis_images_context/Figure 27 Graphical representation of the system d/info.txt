@@ -1,0 +1,10 @@
+--- Text Before ---
+instruction will prompt the LLM to evaluate which of the three approaches is the more suitable
+normal response, RAG, or Chain-of-Thought.
+
+--- Full Caption ---
+Figure 27: Graphical representation of the system diagram[68]
+
+--- Text After ---
+If the models concludes that it can answer directly then the model proceeds to generate the
+answer without the need of a new generation, meaning only one hop. As for Chain-of-Thought,

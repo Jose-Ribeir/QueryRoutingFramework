@@ -1,0 +1,10 @@
+--- Text Before ---
+this breakdown for each system version.
+100
+
+--- Full Caption ---
+Figure 48: Total Energy Consumption by File (CPU vs GPU)
+
+--- Text After ---
+A clear pattern emerges from the data, the baseline ”straight model”, which relies almost ex-
+clusively on model inference, shows the lowest relative CPU energy consumption. On the other

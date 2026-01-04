@@ -1,0 +1,10 @@
+--- Text Before ---
+showing the highest consumption at nearly 2.5 Wh. Thus reinforcing that the act of correcting
+the responses regardless of the domain is inherently more energy demanding.
+
+--- Full Caption ---
+Figure 51: Science: Avg. Energy when Straight Model is Incorrect & System is also Incorrect
+
+--- Text After ---
+On the other hand Figure 51 analyzes the scenario where both the baseline and the system
+failed to produce a correct answer. This represents the least efficient use of energy, showing that

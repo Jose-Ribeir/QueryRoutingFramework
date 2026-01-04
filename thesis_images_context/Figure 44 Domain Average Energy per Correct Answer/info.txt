@@ -1,0 +1,10 @@
+--- Text Before ---
+which in turn require more energy than the simpler, shorter incorrect ones.
+96
+
+--- Full Caption ---
+Figure 44: Domain Average Energy per Correct Answer
+
+--- Text After ---
+Further analysis of the results, now split by the query’s original dataset (domain), reveals
+another clear efficiency trend: queries related to ’General Knowledge’ consistently require more

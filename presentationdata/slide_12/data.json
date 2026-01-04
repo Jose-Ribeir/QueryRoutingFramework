@@ -1,0 +1,128 @@
+{
+    "slide_number": 12,
+    "text_elements": [
+        {
+            "text": "Dataset Preparation\n   A Three-Stage Systematic Framework",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1437002
+        },
+        {
+            "text": "Framework Overview\nA hybrid approach integrating automated analysis with human-in-the- loop validation to ensure query quality.",
+            "left": 835025,
+            "top": 2132012,
+            "width": 7555230,
+            "height": 1372235
+        },
+        {
+            "text": "Key Purpose: Ensures dataset integrity through multi-stage verification",
+            "left": 949325,
+            "top": 3748484,
+            "width": 6396990,
+            "height": 278923
+        },
+        {
+            "text": "Dataset Overview\nProduces clear, answerable queries using ARC-Easy and HotPotQA.\nCombines retrieval-based and step-by-step reasoning queries.\nTailored for systems that select optimal approaches.\nCaptures a broad spectrum of question types, encouraging flexible and adaptive problem-solving.",
+            "left": 914400,
+            "top": 4762500,
+            "width": 7848600,
+            "height": 3078728
+        },
+        {
+            "text": "Note: Generated dataset is suitable for models around 32B tokens or lower due to ARC-easy complexity.",
+            "left": 835024,
+            "top": 8818622,
+            "width": 7546976,
+            "height": 217367
+        },
+        {
+            "text": "1",
+            "left": 9785548,
+            "top": 2445149,
+            "width": 107950,
+            "height": 276860
+        },
+        {
+            "text": "Automated Preparation",
+            "left": 10664825,
+            "top": 2370499,
+            "width": 3224530,
+            "height": 412115
+        },
+        {
+            "text": "Data ingestion and categorization\nSplit queries: retrieval vs. non-retrieval Prepare batches for clipboard instructions",
+            "left": 9864725,
+            "top": 2865515,
+            "width": 3430904,
+            "height": 1043305
+        },
+        {
+            "text": "2",
+            "left": 9766498,
+            "top": 4712099,
+            "width": 145415,
+            "height": 276860
+        },
+        {
+            "text": "AI-Powered Triage",
+            "left": 10664825,
+            "top": 4628951,
+            "width": 2602865,
+            "height": 422275
+        },
+        {
+            "text": "Green Flag: Clear query, correct ground truth. Passed.",
+            "left": 9674225,
+            "top": 5304035,
+            "width": 4665345,
+            "height": 263525
+        },
+        {
+            "text": "\u26a0 Red Flag: Ambiguous or inconsistent. Sent for human review.",
+            "left": 9674225,
+            "top": 5837435,
+            "width": 5192395,
+            "height": 263525
+        },
+        {
+            "text": "3",
+            "left": 9765010,
+            "top": 6979049,
+            "width": 148590,
+            "height": 276860
+        },
+        {
+            "text": "Human Verification",
+            "left": 10664825,
+            "top": 6904399,
+            "width": 2677795,
+            "height": 412115
+        },
+        {
+            "text": "Validators review only Red Flag queries for maximum efficiency.\nVerify LLM's Red Flag justification Remove or replace failed queries",
+            "left": 9674225,
+            "top": 7570985,
+            "width": 5195570,
+            "height": 1100455
+        },
+        {
+            "text": "Systematic Quality Assurance for Dataset Integrity",
+            "left": 7318573,
+            "top": 9437747,
+            "width": 3651250,
+            "height": 229235
+        }
+    ],
+    "colors_found": [
+        "1D293B",
+        "15803C",
+        "C2400C",
+        "606C7E",
+        "0D9487",
+        "FFFFFF",
+        "9CA2AF",
+        "055E45",
+        "0E1729"
+    ]
+}

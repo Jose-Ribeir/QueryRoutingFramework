@@ -1,0 +1,10 @@
+--- Text Before ---
+document is fed into the model which also receives the input query, it then generates the output
+for the query based on the retrieved document.
+
+--- Full Caption ---
+Figure 9: An illustration of the HyDE model.[40]
+
+--- Text After ---
+The main issue addressed by [40] is the dependence on a separate query encoder required
+36

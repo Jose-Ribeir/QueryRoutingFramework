@@ -1,0 +1,10 @@
+--- Text Before ---
+outliers if clipped during quantization can cause significant degradation in performance and
+require special attention if model accuracy is to be preserved [16].
+
+--- Full Caption ---
+Figure 5: Comparison of activations and weights in LLAMA2-7B and OPT-13B models.
+
+--- Text After ---
+(a) The distributions of activations at the input to the
+FFN block in LLAMA2-7B model[28]

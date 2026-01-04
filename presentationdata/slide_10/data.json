@@ -1,0 +1,117 @@
+{
+    "slide_number": 10,
+    "text_elements": [
+        {
+            "text": "Methodology Overview\nAdaptive Query-Routing Architecture",
+            "left": 749300,
+            "top": 204384,
+            "width": 6543040,
+            "height": 1332230
+        },
+        {
+            "text": "Core Innovation\nA compact LLM and lightweight controller select the best processing strategy per query.\nRight strategy for each query type",
+            "left": 977900,
+            "top": 1845282,
+            "width": 7971790,
+            "height": 1177925
+        },
+        {
+            "text": "Path 1",
+            "left": 1549400,
+            "top": 3839529,
+            "width": 460375,
+            "height": 226695
+        },
+        {
+            "text": "Direct Answer (DA)",
+            "left": 2250826,
+            "top": 3761581,
+            "width": 2139950,
+            "height": 342900
+        },
+        {
+            "text": "Quick responses for simple, known queries.",
+            "left": 1435100,
+            "top": 4158059,
+            "width": 3963035,
+            "height": 290195
+        },
+        {
+            "text": "Path 2",
+            "left": 1549400,
+            "top": 5173029,
+            "width": 490855,
+            "height": 226695
+        },
+        {
+            "text": "Chain-of-Thought (CoT)",
+            "left": 2281336,
+            "top": 5095081,
+            "width": 2686050,
+            "height": 342900
+        },
+        {
+            "text": "Step-by-step reasoning for complex problems.",
+            "left": 1435100,
+            "top": 5491559,
+            "width": 4227830,
+            "height": 290195
+        },
+        {
+            "text": "Path 3",
+            "left": 1549400,
+            "top": 6506529,
+            "width": 492759,
+            "height": 226695
+        },
+        {
+            "text": "Retrieval-Augmented Generation (RAG)",
+            "left": 2283420,
+            "top": 6428581,
+            "width": 4363720,
+            "height": 342900
+        },
+        {
+            "text": "Fetches external knowledge for informed answers.",
+            "left": 1435100,
+            "top": 6825059,
+            "width": 4584065,
+            "height": 290195
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        },
+        {
+            "text": "Select the correct path with the amount of nonsense the model outputs\n ",
+            "left": 4191000,
+            "top": 8039100,
+            "width": 8089900,
+            "height": 644407
+        },
+        {
+            "text": "Format-Driven Heuristics\nInitial rule-based routing",
+            "left": 4241779,
+            "top": 8579090,
+            "width": 2112010,
+            "height": 549910
+        },
+        {
+            "text": "Profile-Based Classification\nLearned query patterns",
+            "left": 10155089,
+            "top": 8545562,
+            "width": 2330450,
+            "height": 549910
+        }
+    ],
+    "colors_found": [
+        "334054",
+        "0E756E",
+        "FFFFFF",
+        "465469",
+        "0E1729"
+    ]
+}

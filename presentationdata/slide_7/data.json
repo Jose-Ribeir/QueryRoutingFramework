@@ -1,0 +1,45 @@
+{
+    "slide_number": 7,
+    "text_elements": [
+        {
+            "text": "Information Retrieval\nIntegrating External Knowledge with Language Models",
+            "left": 2133600,
+            "top": 273050,
+            "width": 12389911,
+            "height": 1490152
+        },
+        {
+            "text": "RAG Framework\nDefinition: Combines retrieval and generation to ground responses in external knowledge.\nCore Process: Query \u2192 Retrieve \u2192 Generate\nBenefits:\nReduces hallucinations with factual data Enables dynamic knowledge updates\nEffective for domain-specific tasks",
+            "left": 9525000,
+            "top": 2019300,
+            "width": 7979409,
+            "height": 2990850
+        },
+        {
+            "text": "Hypothetical Document Embeddings (HyDE)\nConcept: Generates a hypothetical document to improve retrieval accuracy.\nProcess:\nLLM generates a hypothetical document.\nEmbed this hypothetical document.\nRetrieve similar real documents.",
+            "left": 762000,
+            "top": 2171700,
+            "width": 7720965,
+            "height": 2305050
+        },
+        {
+            "text": "7",
+            "left": 13167361,
+            "top": 9566910,
+            "width": 4206240,
+            "height": 514350
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "1D40AF",
+        "374050",
+        "3B81F5"
+    ]
+}

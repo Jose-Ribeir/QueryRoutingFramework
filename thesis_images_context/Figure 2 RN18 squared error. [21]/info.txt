@@ -1,0 +1,10 @@
+--- Text Before ---
+Columns within blocks are quantized recursively and at each step, unquantized weights are
+updated based on the quantized weights.
+
+--- Full Caption ---
+Figure 2: RN18 squared error. [21]
+
+--- Text After ---
+With that it also achieved efficiency gains compared to OBQ which achieved O(drow · d3
+col)

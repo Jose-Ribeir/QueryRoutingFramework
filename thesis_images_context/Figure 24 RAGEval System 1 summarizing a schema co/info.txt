@@ -1,0 +1,14 @@
+--- Text Before ---
+61
+same is done with other topics but with categories that better align with them.
+
+--- Full Caption ---
+Figure 24: RAGEval System: 1 summarizing a schema containing specific knowledge from
+seed documents. 2 filling in factual information based on this schema to generate diverse con-
+figurations. 3 generating documents according to the configurations. 4 creating evaluation
+data composed of questions, answers, and references derived from the configurations and doc-
+uments.[65]
+
+--- Text After ---
+Question-Reference-Answer (QRA) to generate these RAGEval uses the documents D and
+configurations C these are used to establish a robust evaluation framework ready to be used

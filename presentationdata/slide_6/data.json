@@ -1,0 +1,46 @@
+{
+    "slide_number": 6,
+    "text_elements": [
+        {
+            "text": "Transformers\t& Language\tModels\nFoundational Architecture for Modern NLP",
+            "left": 3124200,
+            "top": 120650,
+            "width": 10637648,
+            "height": 1490152
+        },
+        {
+            "text": "Self-Attention Mechanism\nEnables global context understanding\nO(1) parallel processing vs. O(n) for RNNs\n\n\nMulti-Head Attention\nAttends to information from different subspaces\nCaptures diverse linguistic features\n\n\nPositional Encoding\nInjects token position information via sinusoids:\nPE(pos, 2i) = sin(pos / 10000^(2i/d_model))",
+            "left": 444500,
+            "top": 2011362,
+            "width": 4942840,
+            "height": 4680585
+        },
+        {
+            "text": "Evolution to GPT & BERT\n\nGPT: Decoder-only, auto-regressive.\n\nBERT: Encoder-only, bidirectional.",
+            "left": 444500,
+            "top": 7435850,
+            "width": 3880485,
+            "height": 1680845
+        },
+        {
+            "text": "6",
+            "left": 13167361,
+            "top": 9566910,
+            "width": 4206240,
+            "height": 514350
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6477000,
+            "top": 9639300,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "1D40AF",
+        "374050",
+        "F2F4F5",
+        "3B81F5"
+    ]
+}

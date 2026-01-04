@@ -1,0 +1,10 @@
+--- Text Before ---
+at require deeper reasoning may benefit from a higher k. Therefore, the optimal value of k is dependent on both the nature of the task and the level of performance required.
+
+--- Full Caption ---
+Figure 13: Trade-off curves between (a) model performance and (b) token percentage as a
+function of k.[45]
+
+--- Text After ---
+The other hybrid approach RAGCache works by caching the key-value tensors of retrieved
+documents across multiple requests, this is done to try and minimize redundant computation for

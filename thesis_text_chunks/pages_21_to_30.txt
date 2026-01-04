@@ -1,0 +1,401 @@
+HBM
+High Bandwidth Memory
+HotPotQA
+A dataset for question answering
+HyDE
+Hypothetical Document Embedding
+ICT
+Inverse Cloze Task
+IFEval
+Instruction-Following Evaluation
+INST
+Instruction
+INT4
+4-bit Integer
+INT8
+8-bit Integer
+IR
+Information Retrieval
+kNN
+k-Nearest-Neighbor
+KV
+Key-Value
+LC
+Long-Context
+LLM.int8
+A specific quantization method
+LLM-QAT
+Language Model - Quantization-Aware Training
+LLMs
+Large Language Models
+LoRC
+Low-Rank Compensation
+LSTM
+Long Short-Term Memory
+LUT-GEMM
+Look-Up Table based General Matrix-matrix Multiplication
+MIPS
+Maximum Inner Product Search
+MLM
+Masked Language Modeling
+MMLU
+Massive Multitask Language Understanding
+MoCo
+Momentum Contrast
+MUSR
+Multi-Step Reasoning
+NLI
+Natural Language Inference
+NLP
+Natural Language Processing
+NSP
+Next Sentence Prediction
+13
+OBQ
+Optimal Brain Quantization
+OPTQ
+Optimal Quantization
+PCIe
+Peripheral Component Interconnect Express
+PGDSF
+Prefix-aware Greedy-Dual-Size-Frequency
+PIQA
+Physical Interaction: Question Answering
+PMI
+Pointwise Mutual Information
+PPL
+Perplexity
+PTQ
+Post-Training Quantization
+QAT
+Quantization-Aware Training
+QRA
+Question-Reference-Answer
+RAG
+Retrieval-Augmented Generation
+RNN
+Recurrent Neural Network
+RPTQ
+Reorder-based Post-training Quantization
+RTN
+Rounding to Nearest-Number
+RTRL
+Real-Time Recurrent Learning
+SKR
+Self-Knowledge Guided Retrieval
+SLMs
+Small Language Models
+SMEs
+Small to Medium Enterprises
+SMLs
+Small Language Models
+SpQR
+Sparse-Quantized Representation
+T-PTLMs
+Transformer-based Pre-trained Language Models
+ThrutfulQA
+TruthfulQA
+vLLM
+A high-throughput LLM serving engine
+WinoGrande
+Winograd Schema Challenge
+14
+4
+Introduction
+Artificial Intelligence (AI) has revolutionized natural language processing (NLP) through
+the advent of Large Language Models (LLMs), which demonstrate exceptional capabilities
+in understanding and generating human-like language, with widespread applications across
+diverse industries. However, deploying these models in real-world, regulated environments
+presents substantial challenges.
+Organizations like banks, hospitals, and government offices are likely to handle sensitive
+information that should not exit their premise under strict data privacy laws like GDPR and
+CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external
+servers, where there is limited transparency in data processing operations. Furthermore, the
+computational demands of LLMs make them prohibitively expensive for small and medium-
+sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure.
+Despite advancements such as model quantization and the development of lightweight LLMs,
+a major gap still remains in effectively adapting these models to specialized, domain-specific
+tasks under limited computational resources. Methods like Retrieval-Augmented Generation
+(RAG) and Hypothetical Document Embedding (HyDE) have emerged as strong contenders
+in the sense that they can integrate external knowledge into the models with ease. However,
+success in such applications largely relies on the quality of query rewriting and retrieval.
+This thesis focuses on retrieval-based question answering in such contrained domains, lever-
+aging query rewriting to improve relevance and reduce computational overhead. This is achieved
+by at first optimizing Small Language Models (SLMs) through advanced quantization tech-
+niques, which significantly reduce their computational and memory footprint. However, this ap-
+proach introduces a critical challenge, that is the degradation in model performance and knowl-
+edge retention. To counter this effect, the system integrates a powerful Retrieval-Augmented-
+Generation (RAG) framework. This framework is not merely just add-on for external knowl-
+edge but it serves as a targeted mechanism to recover most of the performance lost during the
+quantization stage. By leveraging instructions optimization, and Chain-of-Thought reasoning,
+the RAG component ensures that the quantized SLM can access and effectively utilize precise,
+relevant information from external document.
+4.1
+Motivation
+Artificial Intelligence (AI) has made remarkable advancements in natural language process-
+ing (NLP) through the development of large language models (LLMs). Despite their capabili-
+ties, significant challenges remain in deploying these models in highly regulated and resource-
+constrained environments. Organizations such as banks and public institutions face significant
+barriers in adopting AI models due to strict data protection laws (eg., GDPR, CCPA) and high
+computational requirements. These constraint limit their ability to utilize externally hosted
+LLMs or fine-tune large models for domain-specific tasks. Additionally, the computational
+15
+demands of LLMs make them expensive to deploy, requiring powerful hardware infrastruc-
+ture that is often unaffordable for small to medium enterprises (SMEs). While advancements
+in quantization techniques and lightweight models have made LLMs more accessible, there is
+still a gap in optimizing these models for domain-specific tasks without extensive computa-
+tional resources. Retrieval-Augmented Generation (RAG) and HyDE methods have emerged
+as promising solutions, enabling models to integrate external knowledge efficiently. However,
+their effectiveness depends on the quality of query rewriting and retrieval mechanisms. This
+thesis seeks to address these challenges by evaluating lightweight, domain-aware strategies for
+query rewriting within a RAG framework. By leveraging techniques such as query augmen-
+tation, voting system, Retrieval Augmented Generation and Chain-of-Thought reasoning, the
+goal is to improve retrieval relevance and performance in regulated and resource-constrained
+settings. This work will also explore the trade-offs between large quantized models and small
+non-quantized models, providing practical insights for deploying AI systems in real-world ap-
+plications.
+4.2
+Aims and Research Questions
+This thesis aims to optimize small language models (SLMs), explore the trade-offs between
+quantized and non-quantized models, investigate retrieval methods to enhance SLM perfor-
+mance, and outline directions for future research. SLM optimization will be approached by ex-
+ploring recent techniques identified throughout the course of this work, with the goal of making
+these models more practical and resource-efficient. Analyzing the trade-offs between quantized
+and non-quantized models is an important step, as it will help determine whether future research
+should focus on quantizing larger models or on further refining smaller ones.
+Retrieval methods are a good way to achieve better performance on SMLs on tasks that
+normally would require training with more specific data-sets. Selecting an effective retrieval
+strategy is key to developing a lightweight, high-performing system.
+Model optimization may also include simple strategies such as query injection. These ap-
+proaches will be evaluated to determine their usefulness and relevance to the overall objectives
+of the thesis.
+This research aims to answer the following key questions:
+RQ1: How can a system using smaller models still compete with larger ones in terms of
+performance and efficiency?
+RQ2:Can HyDE be applied to a system designed for efficiency?
+RQ3: What are the trade-offs among answer quality, inference latency, and energy con-
+sumption for each rewriting strategy?
+RQ4: Can an efficient approach still achieve high accuracy while remaining useful?
+16
+4.3
+Document Outline
+1. Introduction
+• Sets the stage by explaining the motivation, challenges, and research questions.
+2. Background and State-of-the-Art
+• Reviews existing techniques and it’s limitations.
+3. Methodology
+• Details the approaches used to optimize SLMs and enhance retrieval.
+4. Evaluation Framework
+• Explains how the methods are assessed using different metrics.
+5. Results and Discussion
+• Analyzes the outcomes and trade-offs of the proposed methods.
+6. Conclusion and Future Work
+• Summarizes the contributions and suggests future work.
+5
+State-of-the-Art
+5.1
+Transformers and Language Models
+Natural language processing (NLP) has been improving significantly over the last decades
+due in part to the resurgence of deep neural networks (DNNs) [1]. The first sequential archi-
+tecture, RNN [2], had limitations regarding it’s ability to capture temporal dependencies. This
+limitation is related to the vanishing or exploding gradient, which results in the impossibility for
+RNN to retain information over longer sequences. The longer the sequence, the more the gradi-
+ents would diminish to near zero or infinity, resulting in less relevant weight updates. LSTM [3]
+and GRU [4] are two sequential models developed to overcome this limitation. LSTM was the
+first to use an algorithm to consider gradient-based learning, which could bridge time intervals
+in excess of 1000 steps. This was achieved using memory cells and gating mechanisms (input,
+forget and output). This allowed the networks to retain, update, or forget information in the
+memory cell, avoiding the vanishing/exploding gradient. On the other hand GRU, doesn’t have
+a separate memory cell; instead, it directly updates the hidden state using two gates: an update
+gate that combines the forget and input gates of the LSTM model and a reset gate that gives the
+network the ability to control how much information it forgets.
+17
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 2: Maximum path lengths, per-layer complexity and minimum number of sequential
+operations for different layer types. [5]
+
+
+[INSERT IMAGE HERE: Figure 1: Transformer model architecture [5]]
+
+Transformer models introduced many changes to try to solve all of the problems in the
+previous models. Starting with the Self-attention Mechanism which lowers the complexity
+for short sequences. This is due to the fact that the computational complexity is O(n2 ∗d)
+which is more efficient than Recurrent layers O(n ∗d2) when the sequence n is smaller than
+the dimensionality d. When parallelization is used it requires only O(1) sequential operations
+but on the recurrent layers they need O(n) sequential operations due to their sequential nature.
+Due to the short path length between any two positions in the input and output sequences the
+signals can travel between all pairs of positions, this proved to be a big improvement for leaning
+long-range dependencies. Moreover which can be useful to improve the global context since it
+can attend to all positions in the sequence at once. Transformers self-attention can dynamically
+18
+adjust based on the input sequence, this can also be modified to make the model focus on just
+the local context.
+The ability to interpret attention mechanisms is a significant advantage for understanding
+how the model works. Papers such as [6] investigate what the model focuses on, which in turn
+provides insights into its decision-making process.
+Multi-Head Attention this mechanism instead of performing a single attention function with
+dmodel-dimensional keys, values and queries they linearly project the queries, keys and values
+h times with different learned linear projections to dk(Queries), dk(Keys) and dv(V alues) di-
+mensions. The queries represent the search The way Multi-Head Attention computes attention
+independently for each head allows the model to focus on different types of relationships and
+features in parallel capturing more information, this also makes it possible to capture informa-
+tion that with a single head would normally be lost like complex relationships [7].
+Multi-Head Attention extends the standard attention mechanism by applying multiple atten-
+tion functions in parallel. Instead of performing a single attention operation with dmodel dimen-
+sional keys, values, and queries, the mechanism linearly projects the queries, keys, and values
+h times using different learned linear transformations into dimensions dk(Queries), dk(Keys)
+and dv(V alues). These projections allow each head to compute attention independently, en-
+abling the model to focus on different types of relationships and features simultaneously. This
+parallelization captures a richer set of dependencies and patterns, including complex relation-
+ships that might otherwise be lost with a single attention head [7].
+Because each head has smaller subspaces instead of one high-dimensional space this reduces
+the computational complexity and improves the optimization process by scaling the dot products
+to prevent their values from becoming too large.
+In natural languages, word order plays a crucial role in conveying meaning and context.
+Therefore, it is essential for models to incorporate positional information. Unlike recurrent or
+convolutional models, the Transformer does not have an inherent mechanism to capture token
+order. To address this, positional encoding is introduced to inject information about the relative
+or absolute position of tokens within the input sequence. To make sure the the weight adapts to
+the size of the query it uses the wave length of sin and cos that increases exponentially with the
+dimension of the index i, this grants that the positional encoding adjusts to compensate for any
+dimension length:
+PE(pos, 2i) = sin
+
+pos
+
+[5]
+2i
+dmodel
+10000
+PE(pos, 2i + 1) = cos
+
+pos
+
+[5]
+2i
+dmodel
+10000
+As a benefit to how the model treats the positional encoding, it is able to adapt to sequences
+longer than the ones found in training.
+Feed-Forward network consists of two linear transformations with a ReLU activation be-
+19
+tween them:
+FFN(x) = max(0, xW1 + b1)W2 + b2
+[5]
+ReLU or rectified linear unit is used to add non-linearity to the network allowing it to learn more
+complex functions. The non linearity comes from the activation function max(0, x), which
+when the input x is positive it passes through without any change, on the other hand when
+the input is negative it outputs 0. With linear transformations being the same across different
+positions, they use different parameters from layer to layer, for example if the input and output
+dimensionality is set to 512 and the inner-layer for 2048 this means that w1 will transform from
+512 to 2048 and then w2 will transform the 2048 into 512. ”Another way of describing this is
+as two convolutions with kernel size 1.”[5].
+The evolution of the Transformer models came with GPT and BERT [8]. GPT and BERT
+were the first T-PTLMs developed based on transformer decoder and encoder layers respec-
+tively, these models where the basis for the discovery that performance of T-PTLMs could be
+increased just by increasing the size of the model which triggered the development of mod-
+els like GPT-3 (175B)[9], PANGU- (200B)[10] and even a model with 1.6 trillions of tokens
+named Switch-Transformers [11]. Although performance is not strictly linear and depends on
+many factors, the number of tokens plays a significant role. This was only made possible in part
+due to the parallelization ability of the Transformer model. Bert[12] differs from the original
+Transformer model due to its bidirectional architecture contrary to the original model which
+was unidirectional. Bert uses its bidirectional architecture (left-to-right, right-to-left) to access
+context from both directions simultaneously.
+Another important feature introduced during pretraining is Masked Language Modeling
+(MLM), in which 15% of the tokens in the input are randomly masked and the model learns to
+predict them using bidirectional context. Additionally, Next Sentence Prediction (NSP) is used
+to train the model to determine whether two sentences logically follow each other.
+Another improvement to the model was the input representation, BERT adds special to-
+kens [CLS] and [SEP], these are used by the model in conjunction with segment embeddings
+to handle sentence pairs, this allowed BERT to handle both single sentence and sentence pair
+tasks. GPT differs significantly in its training approach by combining both supervised and un-
+supervised learning. In the unsupervised phase, the model is trained on a large text corpus (e.g.,
+BooksCorpus) using standard language modeling. This is followed by a fine-tuning phase using
+supervised learning on specific downstream tasks. This two-stage process allows the model to
+first learn general language patterns and then adapt to more specialized tasks. GPT also uses
+only a Transformer decoder architecture, consisting of 12 layers of masked self-attention. Be-
+cause it relies solely on a decoder, the model can only attend to previous tokens in the sequence,
+making it well-suited for auto-regressive language modeling. This model construction makes it
+suitable to need minimal architecture changes when adapting to different tasks.
+20
+5.2
+Quantization
+Quantization is one of the most important techniques used to improve the performance and
+efficiency of large language models (LLMs), which are increasingly applied across a wide range
+of domains from customer service to scientific research. However, as models grow in size and
+computational demands increase, a major challenge arises: the hardware required to run these
+models becomes a limiting factor. High-performance hardware can be extremely expensive and
+energy-intensive. While recent advancements in hardware have enabled the development of
+more powerful AI models, the cost and accessibility of such infrastructure remain significant
+barriers to widespread adoption. To give an example, Microsoft’s Phi-3-mini-4k-instruct model
+[13] requires 512 H100-80G GPUs to be run consecutively for 10 days with each costing around
+C30,000. Although such needs refer to training, which is done only once, running this kind of
+model still proves to be a computationally heavy task.
+The most frequently used method to improve on this challenge is quantization, which re-
+duces the computational and memory requirements of the machine learning model. It achieves
+this by converting the model weights and, in some cases, the activations from high-precision
+32FP to a lower precision representation such as INT8. This reduces the memory consumption
+of the model on the GPU and can accelerate computation because integer operations consume
+fewer resources compared to floating-point operations.
+The two major methods of quantization will be discussed in more detail in subsequent sec-
+tions: Post-Training and Quantization-Aware Training.
+5.2.1
+Post-Training Quantization (PTQ)
+TThis is the most commonly used quantization method because it does not require access
+to the model’s training process. The quantization is applied after the model has already been
+trained, making it especially useful when training resources or data are unavailable. This type
+of quantization has been proven not to be as accurate at lower bit levels and there is a tendency
+of degradation if quantized to lower than 8-bits.[14] However since this method is less resource
+intensive, it has attracted more attention with a remarkable surge in post-training quantization
+methods in the recent years.
+The simplest approach is also the least efficient, as it directly quantizes 16-bit values to
+8-bit using row-wise symmetric quantization. While this method is straightforward, it typi-
+cally results in only negligible degradation in perplexity. However, this breaks down with 4-bit
+quantization as it witnesses a significant drop in perplexity [15]. To improve the quantization
+performance for low-bit applications, ZeroQuant-V2 [15] proposed Low-Rank Compensation
+(LoRC) method. This method approximates the error E between the original weight matrix W
+and the quantized weight matrix ˆW using storage-efficient low-rank matrix ˜E so that ˆW + ˜E
+would be a better approximation of the original weight W[16].
+Later research by LUT-GEMM[17] and SqueezeLLM[18] showed that non-uniform weight
+21
+distributions could achieve even lower bit-width quantization. This is due to the weight distri-
+bution after training being nonuniform so it makes sense for the weight distribution not being
+quantized uniformly. This is done by allowing the quantization process to allocate more pre-
+cision to the ranges of weights that are more densely populated while leaving larger intervals
+for less frequent weight ranges. Building upon these methodologies OPTQ[19] emerged as an
+advancement in quantization for big LLM’s. Making it possible to run OPT-175B on just a
+single Nvidia A100 GPU or only two of the more cost-effective A6000. OPTQ also provided
+greater results in the extreme quantization regime where models were quantized all the way
+down to 2 bits, or even ternary values. The OPTQ [20] algorithm improved on Arbitrary Order
+Insight, prior to this method the norm was to quantize the weights in a greedy order [21] this
+means that the weight picked for the next quantization was picked based on minimum quan-
+tization error, this performs well but compared to arbitrary order quantization only offered a
+negligible improvement in large, heavily-parameterized layers. The likely reasons for the lack
+of improvement were that large individual quantization errors were balanced out overall, and
+that these errors occurred later in the quantization process when fewer weights remained to
+be quantized, leaving less opportunity for adjustment. But with the OPTQ approach instead
+of quantizing the weights row-by-row, this method aimed to quantize the weights in all rows
+simultaneously and in the same order. This can be shown by how the unquantized weights F
+and the inverse layer hessian (H−1
+F ) depend only on the input activations (XF) and not on the
+weights themselves, this proves that the quantization of a column affected all rows uniformly.
+Columns within blocks are quantized recursively and at each step, unquantized weights are
+updated based on the quantized weights.
+
+
+[INSERT IMAGE HERE: Figure 2: RN18 squared error. [21]]
+
+With that it also achieved efficiency gains compared to OBQ which achieved O(drow · d3
+col)
+comparing it to OPTQ which achieves O(max{drow · d2
+col, d3
+col}), reducing it by a factor of
+{drow, dcol}. For larger models this can be proven to be more efficient into several orders of
+magnitude. See Table 3 for details on runtime analysis.
+The second step involves the use of lazy batch updates, which were introduced to improve
+upon the original Optimal Brain Quantization (OBQ) method. In the original approach, weights
+were iteratively quantized, requiring updates to all elements of a potentially large matrix while
+22

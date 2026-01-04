@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* PowerPoint Theme 2 Colors */
+  --background: #0E1729;
+  --foreground: #FFFFFF;
+  --dark-bg: #0E1729;
+  --light-bg: #E8E8E8;
+  --primary: #156082;
+  --primary-hover: #0F9ED5;
+  --secondary: #E97132;
+  --accent3: #196B24;
+  --accent4: #0F9ED5;
+  --accent5: #A02B93;
+  --accent6: #4EA72E;
+  --hyperlink: #467886;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Neon glow effects */
+  .neon-glow-green {
+    box-shadow: 0 0 10px rgba(78, 167, 46, 0.5),
+                0 0 20px rgba(78, 167, 46, 0.3),
+                0 0 30px rgba(78, 167, 46, 0.2);
+  }
+
+  .neon-glow-blue {
+    box-shadow: 0 0 10px rgba(15, 158, 213, 0.5),
+                0 0 20px rgba(15, 158, 213, 0.3),
+                0 0 30px rgba(15, 158, 213, 0.2);
+  }
+
+  .neon-text-green {
+    text-shadow: 0 0 10px rgba(78, 167, 46, 0.8),
+                 0 0 20px rgba(78, 167, 46, 0.6),
+                 0 0 30px rgba(78, 167, 46, 0.4);
+  }
+
+  .neon-text-blue {
+    text-shadow: 0 0 10px rgba(15, 158, 213, 0.8),
+                 0 0 20px rgba(15, 158, 213, 0.6),
+                 0 0 30px rgba(15, 158, 213, 0.4);
+  }
+
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  }
+}
+

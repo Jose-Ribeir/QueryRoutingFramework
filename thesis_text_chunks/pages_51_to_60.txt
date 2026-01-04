@@ -1,0 +1,372 @@
+
+
+[INSERT IMAGE HERE: Figure 14: RAGCache Overview[44]]
+
+Cache Structure and Replacement Policy operate differently from traditional cache systems
+that cache individual objects. Instead, this method caches the key-value tensor of the retrieved
+documents, which are sensitive to the order in which they are referenced. For instance consider
+two document sequences [D1, D3] with key-value tensors KV and [D2, D3] with KV ′ respec-
+tively. Although KV [1] and KV ′[1] both contain D3, their value differs. This occurs because
+the key-value tensor of a given token being generated based on the preceding tokens, thus un-
+derscoring the order-dependence of key-value tensors. To aid retrieval speed while maintaining
+document order, RAGCache structures the document’s key-value tensors with a knowledge tree
+15. The knowledge tree assigns each document to a node that refers to the memory addresses
+of the document’s key-value tensors. Similarly to vLLM [47], RAGCache also stores key-value
+tensors in non-contiguous memory blocks, allowing the KV cache to be reused. The root of
+the tree, S, corresponds to the shared system prompt. A path from the root to any node rep-
+resents a unique sequence of documents, thus allowing RAGCache to handle multiple requests
+simultaneously by leveraging overlapping paths.
+RAGCache retrieves tensors by performing prefix matching along these paths. If a subse-
+quent document in a sequence cannot be found among the child nodes, the traversal is termi-
+nated, and the longest identified document sequence is returned. This method ensures efficiency
+with a time complexity of O(h), where h is the height of the tree.
+
+
+[INSERT IMAGE HERE: Figure 15: Knowledge Tree[44]]
+
+Prefix-aware Greedy-Dual-Size-Frequency (PGDSF) replacement policy is the name for the
+43
+node placement optimizer. The knowledge tree decides each node’s placement within a hier-
+archical cache. For example, nodes that are constantly accessed are ideally stored in GPU
+memory, while those that are accessed less often are stored in slower host memory or are freed
+completely. The node placement optimization occurs when RAGCache uses a PGDSF replace-
+ment policy that evaluates each node based on the access frequency, size, and access cost, due
+to its limited storing capacity the priority is defined by:
+Priority = Clock + Frequency × Cost
+Size
+[44]
+(6)
+Nodes that have a lower priority get freed first while the opposite is also true. The Clock
+tracks node access frequency, but to adapt to the cache hierarchy, there are two separate logical
+clocks: one for the GPU and another for the host memory. The Clock starts at zero and updates
+every eviction, when a document is retrieved its clock is set and its priority gets adjusted this
+imposes that nodes with older clocks meaning less recent use, receive lower priorities.
+Clock = max
+n∈E Priority(n)
+[44]
+Frequency in Equation 6 represents the total retrieval count for a document within a time
+frame, this count is reset upon system start or cache clearance. Priority is directly linked to
+the frequency so the more frequently a document is accessed the higher the priority. Size is the
+number of tokens in the given document post-tokenization, thus directly linked to the memory
+required for its key-value tensors. The Cost is defined as the time taken to compute a docu-
+ment’s key-value tensors, this can vary depending on GPU performance as well as document
+size and the sequence of preceding documents.
+
+
+[INSERT IMAGE HERE: Figure 16: Cost estimation PGDSF[44]]
+
+Prefix awareness for RAG is achieved by the PGDSF method through two primary com-
+ponents, cost estimation and node placement. Accurately determining the computational cost
+for RAG operations is challenging due to the complex dynamics of LLM generation. Figure
+16 illustrates this challenge by showing the cost differences for an identical request, denoted as
+[S, D1, D2, Q], under different caching conditions.
+Estimating the cost contribution of D2 is imprecise because the marginal cost depends heav-
+44
+ily on the cache prefix. For instance, if the prefix [S, D1] is already cached, the subsequent
+computational cost includes the generation of key-value tensors for both D1 and Q. Making
+it extremely difficult to isolate the cost attributed solely to D2. To address this issue, PGDSF
+replaces the Cost/Size term in Formula 6 with the following Equation:
+m
+X
+Cost Size = 1
+Costi
+NewSizei
+[44]
+(7)
+m
+i=1
+In Equation 7, m represents the number of requests that access a document not currently
+in cache. The term Costi/NewSizei denotes the compute time per non-cached token for the
+i-th request. This approach effectively amortizes the computational cost across all non-cached
+tokens, thereby incorporating the document’s size into the priority calculation. The cost, Costi
+, is determined through an offline profiling process where RAGCache measures the LLM prefill
+time for multiple combinations of cached and non cached token lengths. Subsequently, it em-
+ploys bilinear interpolation to estimate the cost for any given request at runtime. Each document
+retrieval event triggers an update to the corresponding node’s frequency, its cost estimation, and
+the clock mechanism within the knowledge tree. Furthermore, if a retrieved document is not
+already in the cache, a new node is created for it in the tree.
+The management of the node placement on the GPU, host, or free is performed by the
+PGDSF as seen on Figure 15. The nodes in GPU serve as parent nodes to those in host memory,
+establishing a hierarchical structure. RAGCache also manages node eviction across these two
+segments for efficiency, which is especially true when GPU memory is full. When this occurs,
+RAGCache swaps the lowest-priority node in the leaf nodes to the host memory; this process
+also occurs on the host memory when it is full, though in that case, it is an eviction. This
+strategy takes into account the Knowledge tree hierarchical partitioning, which is one key point
+to align with memory sensitivity and prefix sensitivity in LLM generation. Due to the node
+needing its parent node for key-value tensor calculation, the required placement of the parent
+node is prioritized this is so rapid retrieval can be achieved.
+Because of PCIe limitations when connecting the GPU with the host memory in comparison
+with GPU HBM, RAGCache adopts a swap-only-once strategy depicted in Figure 15, where
+you can see that the key-value tensors of a node are swapped out to the host memory only for
+the first eviction. The host memory is responsible for keeping the key-value tensors until the
+node is fully evicted from the entire cache. For any subsequent evictions in GPU memory,
+RAGCache directly frees the node node without copying any data Due to the size of the host
+memory being two orders of magnitude larger than the GPU memory, keeping one copy of the
+key-value tensors in the host memory is acceptable.
+45
+
+
+[INSERT IMAGE HERE: Figure 17: Cache aware Reordering[44]]
+
+Cache hit rate is vital for RAG Cache’s cache efficiency, but when paired with the unpre-
+dictability of the arrival pattern in user requests, this results in substantial cache trashing.
+Requests that refer to the same document may not be issued on the same time frame thus af-
+fecting the cache efficiency. For example given the requests {Qi, i%2 == 0} and {Qi, i%2 ==
+1} that target the documents D1 and D2 respectively. When the cache capacity is only one
+document, the sequence {Q1, Q2, Q3} causes frequent swapping of the key-value cache of D1
+and D2, making it a zero cache hit rate. But if a bit of attention is paid to rearrange requests
+to {Q1, Q3, Q5, Q2, Q4, Q6, Q6, ...} this achieves a cache hit rate of 66% thus optimizing cache
+utilization. This shows how strategic request ordering can mitigate cache volatility and improve
+cache efficiency. To introduce the cache-aware reordering algorithm, two scenarios were con-
+sidered to show the key insights, the recomputation cost was assumed to be proportional to the
+recomputation length. The first scenario is shown on Figure 17, (a) where it considers requests
+with identical recomputation demands but varying cached context lengths with a limit of four
+cached documents. With the initial order of Q1, Q2 the system must clear Q2’s cache space to
+fit Q1’s computation, then reallocate memory for Q1’s processing effectively uses Q1’s cache
+while discarding Q2’s, resulting in a computational cost of 2 + 1 + 2 = 5. On the other hand,
+if the order was given as Q2, Q1 this would result in a usage of Q2’s cache but discarding Q1’s,
+which would increase computation to six due to 2+2+2 = 6. This is why cache-aware reorder-
+ing advocates to prioritize requests with larger cached context thus improving cache efficiency
+as this brings larger benefits. In the second scenario (b), the aim was to examine requests with
+similar cached context lengths but varying recomputation demands, with a cache capacity of
+five documents. On a sequence {Q1, Q2}, the system must clear Q′
+2s cache to allocate space for
+Q′
+1s computation, given only one available memory slot. This makes it necessary to recompute
+Q2 entirely, which results in a cost of 2 + 2 + 1 = 5. On the other hand the sequence {Q2, Q1}
+allows for direct computation of Q2, due to adequate cache availability. It also reduces the total
+computation cost to 2 + 1 = 3, thus the reason why cache-aware reordering is beneficial when
+it prioritizes requests with shorter recomputation segments, this way results in a minimization
+of the adverse side effects on cache efficiency. RAGCache uses a priority queue for manag-
+ing incoming requests, this prioritizes the incoming requests based on their impact on cache
+performance, the priority metric is defined by:
+OrderPriority =
+Cached Length
+Computation Length
+[44]
+(8)
+46
+Equation 8, directly prioritizes the requests that will probably lead to enhanced cache ef-
+ficiency. This is directly linked to the increase in the cache hit rate and the decreased total
+computation time of RAGCache. Model performance and resource usage are also improved
+thanks to this implementation. To avoid possible starvation when requests don’t align with the
+cached documents RAGCache sets a window for each request to ensure that all requests are
+processed in a timely manner.
+On an LLM enhanced with RAG, the key performance bottleneck is usually the LLM gen-
+eration, however, if the vector database grows to a larger scale or a higher accuracy is needed in
+the retrieval, this may cause the retrieval step to incur a substantial latency.
+To control the impact of retrieval latency, RAGCache employs dynamic speculative pipelin-
+ing to overlap knowledge retrieval and LLM inference, and one thing that can occur is that the
+vector search may produce results earlier in the retrieval step, which can be used by the LLM
+for speculative generation ahead of time. This works by a vector search maintaining a queue
+of top-k candidate documents, which are ranked based on their similarity to the request. Dur-
+ing the retrieval process the top-k documents are being constantly updated this is done so that
+documents that still being discovered, might come with greater similarity and so they get in-
+serted into the top-k. What could also occur is that the final documents may emerge early in the
+retrieval step [48]. Based on that RAGCache introduced a speculative pipelining strategy that
+splits a request’s retrieval process into several stages. In each stage RAGCache ticks the vector
+database to send the possible document to the LLM for a speculative generation, if the received
+document is changed then the LLM will start a new speculative generation and terminate the
+previous one, if that doesn’t happen then the LLM engine just continues with the generation.
+When the top-k documents are finalized and there are no more changes to the top-k these are
+sent by RAGCache to the LLM engine and if they match with the ones previously received the
+engine simply returns the latest speculative generation. Otherwise, the LLM performs a new
+generation with the new top-k documents.
+
+
+[INSERT IMAGE HERE: Figure 18: Speculative Pipelining[44]]
+
+Figure 18 shows how RAGCache splits the retrieval process into four stages. The top-2
+documents in candidate queue are [D1, D3], [D1, D2], [D1, D2] and [D1, D2] in the four stages.
+After the first stage is concluded, RAGCache sends [D1, D3] to the the LLM engine for specu-
+lative generation. When stage two is concluded, RAGCache sends [D1, D2] to the LLM engine,
+the LLM engine is responsible for checking if the [D1, D3] and [D1, D2] are different if that’s
+47
+the case it terminates the previous speculative generation and starts a new one with the correct
+documents. In stage three, the LLM engine receives the exact same documents as for stage two,
+so it continues with the previously started speculative generation. In the last stage, RAGCache
+sends the final top-2 documents to the engine which are still the exact same as the ones in stage
+two so there is no change to the speculative generation which is directly returned by the LLM
+engine as the result.
+The speculative pipelining allows RAGCache to overlap the retrieval and generation steps,
+and this greatly improves the end-to-end latency of RAG systems. But this can introduce a
+lot of extra steps in the computation of the engine response. This can be seen above Figure
+18, some speculative generations are incorrect and need to be recalculated. This can lead to
+performance degradation under high system loads, but to solve this RAGCache dynamically
+enables speculative pipelining based on the system load. As an example, they assumed that the
+vector search and the LLM both serve only one request at a time. This vector search produces
+candidate retrieval results at the end of each stage with a fixed time interval d. Since the batch
+size was set to only one, they could terminate any incorrect speculative generation requests.
+
+
+[INSERT IMAGE HERE: Figure 19: Optimal speculative pipelining strategy [44]]
+
+RAGCache assumes that the LLM engine can schedule requests in the queue in any order,
+but it processes speculative generation requests for a single request sequentially. Figure 19
+illustrates the optimal speculative pipelining strategy under this setting.
+5.4
+Challenges and Applications of Quantization in RAG
+5.5
+Retrieval Methods to enhance HyDE
+Due to the approach taken by RAG and HyDE on how they retrieve documents, these meth-
+ods could be adapted or specifically chosen based on their ability in certain tasks. Retrievers
+are the basis for content that was retrieved from an external document corpus to enhance the
+LLM output, as well as provide grounds for the generated information on accurate documents.
+A more in-depth research will be done about some of these retrievers.
+48
+5.5.1
+Contriever
+The original implementation of HyDE uses the Contriever model as its retriever. This ap-
+proach works on the basis of contrastive learning, which is based on the fact that every document
+is, in some way, unique. According to [49], this is the only available information in the absence
+of manual supervision. A contrastive loss is used to learn by discriminating between documents.
+This loss compares either a positive loss when they are the same document or negative when
+it’s from different documents. The formula responsible for this is:
+L(q, k+) = −
+exp (s(q, k+)/τ)
+τ
+′
+[49]
+(9)
+exp
+
+s(q,k+)
+τ
+
++ PK
+i=1 exp
+
+s(q,ki)
+In Equation 9, q corresponds to the given query, which has an associated positive document
+k+, and a pool of negative documents(ki)i=1..k, τ is the temperature parameter used to adjust
+the sensitivity of the Contriver. This function’s construction encourages positive pairs to have
+high scores and negative pairs to have low scores. One crucial piece of this method is how to
+build positive pairs from a single input. This could be done in two main ways: the Inverse Cloze
+Task or Independent cropping.
+The usage of the Inverse Cloze Task is a data augmentation strategy that generates two
+mutually exclusive views of a document. This approach was first described in [50]. The first
+view is obtained by randomly sampling a span of tokens from a segment of text, and the second
+view is obtained by using the complement of the span. This is done by in a given sequence of
+text (w1, ..., wn), ICT samples a span (wa, ..., wb), where 1 ≤a ≤b ≤n, and then uses the
+tokens of the span as the query and the complement (w1, ..., wa−1, wb+1, ..., wn) as the key.
+The usage of the Independent is critical for matching the query with the document directly.
+This method is commonly used on images where multiple views are generated independently
+by cropping the input. Since this implementation is used for text it is done by sampling a span
+of tokens. Because of the importance of the positive pairs this strategy samples independently
+two spans from a document to form the needed pair. Contrary to the inverse Cloze task in the
+cropping stage both views of the example correspond to the same contiguous subsequence of the
+original data. Another difference is that between cropping and ICT is that independent random
+cropping is symmetric meaning both of the queries and documents follow the same distribution.
+This also causes overlap between the two views of the data, this being one of the reasons that
+encourages the network to learn exact matches between query and document. This works very
+similar to how lexical matching methods function, BM25 being a great example of this. So you
+could either fix the length of the span for the query and key or sample them both.
+A big part of contrastive learning is how the system handles negative pairs this includes
+sampling a large set of negatives. This was tested by [49] using two methods, in-batch negative
+sampling and MoCo.
+The first approach is to generate the negatives by using the other samples from the same
+49
+batch. For example, each item in the batch is transformed twice to generate the positive pairs,
+and the negatives are generated by using the other examples views from the batch, they called
+these ”in-batch negatives”. In this specific case, the gradient is back-propagated through the
+representations of both the queries and the keys. The main downside to this method is the
+requirement for extremely large batch sizes to work well.
+The other approach Negative pairs across batches tries to solve the problem by storing the
+representations from previous batches in a queue and using these as negative examples in the
+loss calculation. This makes it possible to have a smaller batch size but may slightly change
+the loss by making it asymmetric between the queries. This being the view generated from
+the elements of the current batch, and the keys, which are the elements already stored in the
+queue. This occurs as the gradient is only back-propagated through the queries, leaving the
+representation of the keys fixed. This is caused by the features being already stored in the queue
+from prior batches coming from past interactions with the network. A problem occurs when the
+network is rapidly evolving during training can cause the performance to drop.
+Instead, they used the approach called MoCo [51] which generates representation keys from
+a second network that is updated more slowly, the two networks are as follows one is responsible
+for the keys, parametrized by 0k, and another network for the query, parametrized by 0q. The
+parameter for the query network gets updated using back-propagation and stochastic gradient
+descent. This works similarly to when in-batch negatives are used. On the other hand, the
+key network also called Momentum encoder is only updated from the parameters of the query
+network using an exponential moving average.
+5.6
+Self-Knowledge Guided Retrieval Augmentation
+This approach uses the few-shot prompts to make the LLM judge if it knows the answer or
+not. In the case that the answer isn’t known, SKR [52] proceeds to the retrieval using RAG to
+improve on the model response.
+Their method works by three main ways: Collecting Self-Knowledge, Eliciting Self-knowledge,
+and Using Self-Knowledge. These represent the main pipeline for SKR, as shown in Figure 20.
+
+
+[INSERT IMAGE HERE: Figure 20: The SKR Pipeline and its component interactions.[52]]
+
+50
+5.6.1
+Collecting Self-Knowledge
+Given a dataset D with question-answer pairs {qj, aj}|D|
+j=1, the model M is used to generate
+the answers for each entry qi:
+ˆa(M, qi) = M(q1 ◦a1, . . . , qd ◦ad, qi)
+[52]
+(10)
+Where ◦denotes the concatenation and {qj ◦aj}d
+j=1 are d demonstrations. Equation 10
+represents the generated answer with ˆa(M, qi), this also represents the internal knowledge to the
+question qi in M. The other approach is to possibly find passages from external resources that
+may be related with said question qi, these passages can then be used as additional information
+provided on the model input. This is done per query, using a pretrained retriever represented by
+R to find the related information from the corpus C:
+pi = {pi1, pi2, . . . , pik} = R(qi, C),
+[52]
+(11)
+According to Equation 11 the top-k retrieved passages for the question qi are represented
+by pi = {pi1, pi2, . . . , pik}. A dense passage retriever is used [36] for R, and C consists of
+passage chunks from Wikipedia. Then they use M again to generate the answer with retrieval
+augmentation:
+ˆaR(M, qi) = M(q1 ◦p1 ◦a1, . . . , qd ◦pd ◦ad, qi ◦pi).
+[52]
+(12)
+Based on both answers ˆa(M, qi), ˆaR(M, qi) 12, and the ground-truth answer ai, they can cat-
+egorize each question into a positive subset D+ and a negative sub-set D−using the differences
+between the results:
+
+
+
+D+,
+if E[ˆa(M, qi)] ≥E[ˆaR(M, qi)];
+qi ∈
+D−,
+otherwise,
+[52]
+In Equation 5.6.1 E is an evaluation metric like accuracy and exact match score, but they
+get discarded if the question qi, answer ˆa(M, qi) and ˆaR(M, qi) are incorrect. They then split
+the training set into a subset D+ = {q+
+i , . . . , q+
+m} which include questions that M can directly
+give correct answers to without external knowledge R and the other subset D−= {q−
+1 , . . . , q−
+n }
+where the R is needed for more accurate results.
+5.6.2
+Eliciting Self-Knowledge of LLMs
+The four different strategies proposed to detect the self knowledge of the target questions
+are direct prompting, in-context learning, training classifier, and nearest neighbor search. These
+work by on the first two using the LLM itself and the latter two using smaller nodes purposely
+built.
+51
+Direct Prompting given a question qt, a straight-forward approach to detect wether LLMs
+are capable of solving it is to ask them directly:
+
+
+[INSERT IMAGE HERE: Figure 21: Direct Prompting [52]]
+
+On this method the prompt is used in conjunction with ’Do you need additional information
+to answer this question?’ to detect self-knowledge based on the response provided by the LLM.
+This approach results in direct prompting the model and it may work. Although this doesn’t
+use any of the collected training questions shown previously. To improve on that 3 different
+strategies where created.
+In-Context Learning some questions where selected from D+ and D−as demonstrations to
+show the self-knowledge of the question qt:
+
+
+[INSERT IMAGE HERE: Figure 22: In-Context Learning [52]]
+
+52

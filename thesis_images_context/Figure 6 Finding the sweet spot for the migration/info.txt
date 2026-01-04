@@ -1,0 +1,10 @@
+--- Text Before ---
+result, the quantization errors tend to be larger in the weights, leading to significant accuracy
+degradation shown in Figure 6.
+
+--- Full Caption ---
+Figure 6: Finding the sweet spot for the migration strength[29]
+
+--- Text After ---
+However there is a possibility off also pushing all of the quantization difficulty from the
+31

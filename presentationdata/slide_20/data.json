@@ -1,0 +1,27 @@
+{
+    "slide_number": 20,
+    "text_elements": [
+        {
+            "text": "Average Energy vs Correctness",
+            "left": 749300,
+            "top": 329018,
+            "width": 10985500,
+            "height": 1569660
+        },
+        {
+            "text": "Incorrect answer almost always are more energy dependent than correct ones\n\nThis is especially true for latter instructions.\n\nThe straight model is the only version that this is not true.",
+            "left": 13944600,
+            "top": 3619500,
+            "width": 3886200,
+            "height": 2585323
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": []
+}

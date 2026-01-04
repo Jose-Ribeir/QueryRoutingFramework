@@ -1,0 +1,10 @@
+--- Text Before ---
+approach proposes a method that uses this increased context size to reduce the model latency
+and potential errors that could occur on RAG systems.
+
+--- Full Caption ---
+Figure 10: Comparison RAG on the top and CAG on the botom[43]
+
+--- Text After ---
+This approach works by enabling retrieval-free knowledge integration. This is done by
+preloading external knowledge sources, such as a collection of documents D = {d1, d2, ..., dn}

@@ -1,0 +1,75 @@
+{
+    "slide_number": 15,
+    "text_elements": [
+        {
+            "text": "Analysis V5: Accuracy-First Strategy\u000bDefaulting to Retrieval for Maximum Accuracy",
+            "left": 749300,
+            "top": 329018,
+            "width": 13271500,
+            "height": 1299074
+        },
+        {
+            "text": "Purpose\nAchieve the best possible accuracy on the provided dataset\n",
+            "left": 762000,
+            "top": 2095500,
+            "width": 16764000,
+            "height": 936154
+        },
+        {
+            "text": "1- Decision Patterns",
+            "left": 835025,
+            "top": 3605044,
+            "width": 3508375,
+            "height": 325089
+        },
+        {
+            "text": "2- Profile 1 Triggers",
+            "left": 6600775,
+            "top": 3605044,
+            "width": 3234690,
+            "height": 336550
+        },
+        {
+            "text": "Decision Rule",
+            "left": 12649200,
+            "top": 4000500,
+            "width": 4462145,
+            "height": 325089
+        },
+        {
+            "text": "Safety-first approach: Any ambiguity \u2192 Choose '1-Yes'\n\nBetter to retrieve unnecessarily than miss required information\n",
+            "left": 12589293,
+            "top": 4779945,
+            "width": 4645660,
+            "height": 1915268
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        },
+        {
+            "text": "Primary goal: Choose the BEST fit profile\n\nWhen in doubt \u2192 Default to retrieval (1-Yes)\n\n\"A slow but correct answer is always better than a fast but wrong one\"",
+            "left": 838399,
+            "top": 4602719,
+            "width": 5108526,
+            "height": 2532809
+        },
+        {
+            "text": "Specific & Non-Famous Entities\nPrecise Data (numbers, dates, statistics)\nComparative Judgments requiring evidence\nRecent Events (very recent topics)",
+            "left": 6596062,
+            "top": 4325589,
+            "width": 5108526,
+            "height": 1701813
+        }
+    ],
+    "colors_found": [
+        "D0D5DA",
+        "93C4FD",
+        "606C7E",
+        "FFFFFF",
+        "0E1729"
+    ]
+}

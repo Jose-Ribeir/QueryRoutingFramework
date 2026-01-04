@@ -1,0 +1,10 @@
+--- Text Before ---
+Figure 69: Average Energy for CORRECT Answers in Science Domain.
+126
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 70: Average Energy for INCORRECT Answers in Science Domain (with Counts).
+127

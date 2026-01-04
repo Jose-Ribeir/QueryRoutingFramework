@@ -1,0 +1,257 @@
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 66: Total Energy Consumption by Answer.
+123
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 67: Average Energy Consumption in Science Domain by Correctness.
+124
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 68: Average Energy for CORRECT Answers in Science Domain (with Counts).
+125
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 69: Average Energy for CORRECT Answers in Science Domain.
+126
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 70: Average Energy for INCORRECT Answers in Science Domain (with Counts).
+127
+References
+[1]
+Wenpeng Yin et al. Comparative Study of CNN and RNN for Natural Language Process-
+ing. arXiv:1702.01923 [cs]. Feb. 2017. DOI: 10.48550/arXiv.1702.01923. URL:
+http://arxiv.org/abs/1702.01923 (visited on 01/09/2025).
+[2]
+Jeffrey L. Elman. Finding Structure in Time. 1990. DOI: https : / / doi . org /
+10 . 1207 / s15516709cog1402 \ _1. eprint: https : / / onlinelibrary .
+wiley.com/doi/pdf/10.1207/s15516709cog1402_1. URL: https://
+onlinelibrary.wiley.com/doi/abs/10.1207/s15516709cog1402_1.
+[3]
+Neural Computation. “Long short-term memory”. In: Neural Comput 9 (2016), pp. 1735–
+1780. URL: https : / / interactiveaudiolab . github . io / teaching /
+casa/HorchreiterSchmidhuber_LSTM.pdf (visited on 01/09/2025).
+[4]
+Kyunghyun Cho et al. On the Properties of Neural Machine Translation: Encoder-Decoder
+Approaches. arXiv:1409.1259 [cs]. Oct. 2014. DOI: 10.48550/arXiv.1409.1259.
+URL: http://arxiv.org/abs/1409.1259 (visited on 01/09/2025).
+[5]
+Ashish Vaswani et al. “Attention is All you Need”. In: Advances in Neural Informa-
+tion Processing Systems. Vol. 30. Curran Associates, Inc., 2017. URL: https : / /
+proceedings.neurips.cc/paper/2017/hash/3f5ee243547dee91fbd053c1c4a845
+Abstract.html (visited on 01/08/2025).
+[6]
+Sofia Serrano and Noah A. Smith. Is Attention Interpretable? arXiv:1906.03731 [cs].
+June 2019. DOI: 10.48550/arXiv.1906.03731. URL: http://arxiv.org/
+abs/1906.03731 (visited on 01/09/2025).
+[7]
+[2006.16362] Multi-Head Attention: Collaborate Instead of Concatenate. URL: https:
+//arxiv.org/abs/2006.16362 (visited on 01/10/2025).
+[8]
+Katikapalli Subramanyam Kalyan, Ajit Rajasekharan, and Sivanesan Sangeetha. AM-
+MUS : A Survey of Transformer-based Pretrained Models in Natural Language Process-
+ing. arXiv:2108.05542 [cs]. Aug. 2021. DOI: 10.48550/arXiv.2108.05542.
+URL: http://arxiv.org/abs/2108.05542 (visited on 01/11/2025).
+[9]
+Tom B. Brown et al. Language Models are Few-Shot Learners. arXiv:2005.14165 [cs].
+July 2020. DOI: 10.48550/arXiv.2005.14165. URL: http://arxiv.org/
+abs/2005.14165 (visited on 01/11/2025).
+[10]
+Wei Zeng et al. PanGu-$α$: Large-scale Autoregressive Pretrained Chinese Language
+Models with Auto-parallel Computation. arXiv:2104.12369 [cs]. Apr. 2021. DOI: 10.
+48550/arXiv.2104.12369. URL: http://arxiv.org/abs/2104.12369
+(visited on 01/11/2025).
+128
+[11]
+Dmitry Lepikhin et al. GShard: Scaling Giant Models with Conditional Computation
+and Automatic Sharding. arXiv:2006.16668 [cs]. June 2020. DOI: 10.48550/arXiv.
+2006 . 16668. URL: http : / / arxiv . org / abs / 2006 . 16668 (visited on
+01/11/2025).
+[12]
+Jacob Devlin et al. BERT: Pre-training of Deep Bidirectional Transformers for Language
+Understanding. arXiv:1810.04805 [cs]. May 2019. DOI: 10.48550/arXiv.1810.
+04805. URL: http://arxiv.org/abs/1810.04805 (visited on 01/08/2025).
+[13]
+Microsoft. microsoft/Phi-3-mini-4k-instruct at main. Sept. 2024. URL: https://huggingface.
+co / microsoft / Phi - 3 - mini - 4k - instruct / tree / main (visited on
+01/13/2025).
+[14]
+Yanshu Wang et al. Art and Science of Quantizing Large-Scale Models: A Comprehen-
+sive Overview. arXiv:2409.11650 [cs]. Sept. 2024. DOI: 10.48550/arXiv.2409.
+11650. URL: http://arxiv.org/abs/2409.11650 (visited on 01/08/2025).
+[15]
+Zhewei Yao et al. ZeroQuant-V2: Exploring Post-training Quantization in LLMs from
+Comprehensive Study to Low Rank Compensation. arXiv:2303.08302 [cs]. May 2023.
+DOI: 10.48550/arXiv.2303.08302. URL: http://arxiv.org/abs/
+2303.08302 (visited on 01/08/2025).
+[16]
+Wenxiao Wang et al. Model Compression and Efficient Inference for Large Language
+Models: A Survey. arXiv:2402.09748 [cs]. Feb. 2024. DOI: 10.48550/arXiv.2402.
+09748. URL: http://arxiv.org/abs/2402.09748 (visited on 01/08/2025).
+[17]
+Gunho Park et al. LUT-GEMM: Quantized Matrix Multiplication based on LUTs for
+Efficient Inference in Large-Scale Generative Language Models. arXiv:2206.09557 [cs].
+Apr. 2024. DOI: 10.48550/arXiv.2206.09557. URL: http://arxiv.org/
+abs/2206.09557 (visited on 01/08/2025).
+[18]
+Sehoon Kim et al. SqueezeLLM: Dense-and-Sparse Quantization. arXiv:2306.07629 [cs].
+June 2024. DOI: 10.48550/arXiv.2306.07629. URL: http://arxiv.org/
+abs/2306.07629 (visited on 01/08/2025).
+[19]
+Elias Frantar et al. GPTQ: Accurate Post-Training Quantization for Generative Pre-
+trained Transformers. arXiv:2210.17323 [cs]. Mar. 2023. DOI: 10.48550/arXiv.
+2210 . 17323. URL: http : / / arxiv . org / abs / 2210 . 17323 (visited on
+01/08/2025).
+[20]
+Elias Frantar et al. “OPTQ: Accurate Quantization for Generative Pre-trained Transform-
+ers”. en. In: URL: https://openreview.net/forum?id=tcbBPnfwxS (vis-
+ited on 01/24/2025).
+129
+[21]
+Elias Frantar and Dan Alistarh. “Optimal Brain Compression: A Framework for Accurate
+Post-Training Quantization and Pruning”. en. In: (). URL: https://proceedings.
+neurips.cc/paper_files/paper/2022/hash/1caf09c9f4e6b0150b06a07e77f271
+Abstract-Conference.html (visited on 01/08/2025).
+[22]
+Hanlin Tang et al. EasyQuant: An Efficient Data-free Quantization Algorithm for LLMs.
+arXiv:2403.02775 [cs]. Mar. 2024. DOI: 10.48550/arXiv.2403.02775. URL:
+http://arxiv.org/abs/2403.02775 (visited on 01/08/2025).
+[23]
+Zhewei Yao et al. “ZeroQuant: Efficient and Affordable Post-Training Quantization for
+Large-Scale Transformers”. en. In: (). URL: https://proceedings.neurips.
+cc/paper_files/paper/2022/hash/adf7fa39d65e2983d724ff7da57f00ac-
+Abstract-Conference.html (visited on 01/08/2025).
+[24]
+Wei Huang et al. BiLLM: Pushing the Limit of Post-Training Quantization for LLMs.
+arXiv:2402.04291 [cs]. May 2024. DOI: 10.48550/arXiv.2402.04291. URL:
+http://arxiv.org/abs/2402.04291 (visited on 01/08/2025).
+[25]
+Chee-Yong Chan and Yannis E. Ioannidis. Bitmap index design and evaluation. Seattle,
+Washington, USA, 1998. DOI: 10.1145/276304.276336. URL: https://doi.
+org/10.1145/276304.276336.
+[26]
+Zefan Li et al. “ICCV 2017 Open Access Repository”. In: URL: https://openaccess.
+thecvf.com/content_iccv_2017/html/Li_Performance_Guaranteed_
+Network_ICCV_2017_paper.html (visited on 01/08/2025).
+[27]
+Wei Huang et al. An empirical study of LLaMA3 quantization: from LLMs to MLLMs.
+Dec. 2024. DOI: 10.1007/s44267-024-00070-x. URL: https://doi.org/
+10.1007/s44267-024-00070-x.
+[28]
+Saleh Ashkboos et al. QuaRot: Outlier-Free 4-Bit Inference in Rotated LLMs. arXiv:2404.00456
+[cs]. Oct. 2024. DOI: 10.48550/arXiv.2404.00456. URL: http://arxiv.
+org/abs/2404.00456 (visited on 01/08/2025).
+[29]
+Guangxuan Xiao et al. SmoothQuant: Accurate and Efficient Post-Training Quantization
+for Large Language Models. Ed. by Andreas Krause et al. July 2023. URL: https:
+//proceedings.mlr.press/v202/xiao23c.html.
+[30]
+Tim Dettmers et al. LLM.int8(): 8-bit Matrix Multiplication for Transformers at Scale.
+arXiv:2208.07339 [cs]. Nov. 2022. DOI: 10.48550/arXiv.2208.07339. URL:
+http://arxiv.org/abs/2208.07339 (visited on 01/14/2025).
+[31]
+Aohan Zeng et al. GLM-130B: An Open Bilingual Pre-trained Model. arXiv:2210.02414
+[cs]. Oct. 2023. DOI: 10.48550/arXiv.2210.02414. URL: http://arxiv.
+org/abs/2210.02414 (visited on 01/08/2025).
+130
+[32]
+Susan Zhang et al. OPT: Open Pre-trained Transformer Language Models. arXiv:2205.01068
+[cs]. June 2022. DOI: 10.48550/arXiv.2205.01068. URL: http://arxiv.
+org/abs/2205.01068 (visited on 01/08/2025).
+[33]
+Hugo Touvron et al. LLaMA: Open and Efficient Foundation Language Models. arXiv:2302.13971
+[cs]. Feb. 2023. DOI: 10.48550/arXiv.2302.13971. URL: http://arxiv.
+org/abs/2302.13971 (visited on 01/08/2025).
+[34]
+Fabio Petroni et al. Language Models as Knowledge Bases? arXiv:1909.01066 [cs]. Sept.
+2019. DOI: 10.48550/arXiv.1909.01066. URL: http://arxiv.org/abs/
+1909.01066 (visited on 01/08/2025).
+[35]
+Patrick Lewis et al. “Retrieval-Augmented Generation for Knowledge-Intensive NLP
+Tasks”. In: Advances in Neural Information Processing Systems. Vol. 33. Curran Asso-
+ciates, Inc., 2020, pp. 9459–9474. URL: https://proceedings.neurips.cc/
+paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.
+html (visited on 01/08/2025).
+[36]
+Vladimir Karpukhin et al. Dense Passage Retrieval for Open-Domain Question Answer-
+ing. arXiv:2004.04906 [cs]. Sept. 2020. DOI: 10.48550/arXiv.2004.04906.
+URL: http://arxiv.org/abs/2004.04906 (visited on 01/08/2025).
+[37]
+Mike Lewis et al. BART: Denoising Sequence-to-Sequence Pre-training for Natural Lan-
+guage Generation, Translation, and Comprehension. arXiv:1910.13461 [cs] version: 1.
+Oct. 2019. DOI: 10.48550/arXiv.1910.13461. URL: http://arxiv.org/
+abs/1910.13461 (visited on 01/08/2025).
+[38]
+Fabing Duan, Franc¸ois Chapeau-Blondeau, and Derek Abbott. “Optimized injection of
+noise in activation functions to improve generalization of neural networks”. In: Chaos,
+Solitons & Fractals 178 (Jan. 2024), p. 114363. ISSN: 0960-0779. DOI: 10.1016/
+j . chaos . 2023 . 114363. URL: https : / / www . sciencedirect . com /
+science/article/pii/S0960077923012651 (visited on 01/08/2025).
+[39]
+Patrick Lewis et al. “Retrieval-Augmented Generation for Knowledge-Intensive NLP
+Tasks”. In: Advances in Neural Information Processing Systems. Vol. 33. Curran Asso-
+ciates, Inc., 2020, pp. 9459–9474. URL: https://proceedings.neurips.cc/
+paper/2020/hash/6b493230205f780e1bc26945df7481e5-Abstract.
+html (visited on 01/08/2025).
+[40]
+Luyu Gao et al. Precise Zero-Shot Dense Retrieval without Relevance Labels. arXiv:2212.10496
+[cs]. Dec. 2022. DOI: 10.48550/arXiv.2212.10496. URL: http://arxiv.
+org/abs/2212.10496 (visited on 01/08/2025).
+131
+[41]
+Luyu Gao and Jamie Callan. Unsupervised Corpus Aware Language Model Pre-training
+for Dense Passage Retrieval. arXiv:2108.05540 [cs]. Aug. 2021. DOI: 10 . 48550 /
+arXiv.2108.05540. URL: http://arxiv.org/abs/2108.05540 (visited
+on 01/08/2025).
+[42]
+Long Ouyang et al. “Training language models to follow instructions with human feed-
+back”. en. In: (). URL: https://proceedings.neurips.cc/paper_files/
+paper/2022/hash/b1efde53be364a73914f58805a001731-Abstract-
+Conference.html (visited on 01/08/2025).
+[43]
+Brian J. Chan et al. Don’t Do RAG: When Cache-Augmented Generation is All You Need
+for Knowledge Tasks. arXiv:2412.15605 [cs]. Dec. 2024. DOI: 10.48550/arXiv.
+2412 . 15605. URL: http : / / arxiv . org / abs / 2412 . 15605 (visited on
+01/15/2025).
+[44]
+Chao Jin et al. RAGCache: Efficient Knowledge Caching for Retrieval-Augmented Gen-
+eration. arXiv:2404.12457 [cs]. Apr. 2024. DOI: 10.48550/arXiv.2404.12457.
+URL: http://arxiv.org/abs/2404.12457 (visited on 01/15/2025).
+[45]
+Zhuowan Li et al. “Retrieval Augmented Generation or Long-Context LLMs? A Com-
+prehensive Study and Hybrid Approach”. In: Proceedings of the 2024 Conference on Em-
+pirical Methods in Natural Language Processing: Industry Track. Ed. by Franck Dernon-
+court, Daniel Preot¸iuc-Pietro, and Anastasia Shimorina. Miami, Florida, US: Association
+for Computational Linguistics, Nov. 2024, pp. 881–893. DOI: 10.18653/v1/2024.
+emnlp-industry.66. URL: https://aclanthology.org/2024.emnlp-
+industry.66/ (visited on 01/15/2025).
+[46]
+Gemini 1.5: Unlocking multimodal understanding across millions of tokens of context.
+arXiv:2403.05530 [cs]. Dec. 2024. DOI: 10.48550/arXiv.2403.05530. URL:
+http://arxiv.org/abs/2403.05530.
+[47]
+Woosuk Kwon et al. “Efficient Memory Management for Large Language Model Serving
+with PagedAttention”. In: Proceedings of the 29th Symposium on Operating Systems
+Principles. SOSP ’23. New York, NY, USA: Association for Computing Machinery, Oct.
+2023, pp. 611–626. ISBN: 979-8-4007-0229-7. DOI: 10.1145/3600006.3613165.
+URL: https://dl.acm.org/doi/10.1145/3600006.3613165 (visited on
+01/16/2025).
+[48]
+Conglong Li et al. “Improving Approximate Nearest Neighbor Search through Learned
+Adaptive Early Termination”. In: Proceedings of the 2020 ACM SIGMOD International
+Conference on Management of Data. SIGMOD ’20. New York, NY, USA: Association
+for Computing Machinery, May 2020, pp. 2539–2554. ISBN: 978-1-4503-6735-6. DOI:
+10.1145/3318464.3380600. URL: https://dl.acm.org/doi/10.1145/
+3318464.3380600 (visited on 01/19/2025).
+132

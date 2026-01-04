@@ -1,0 +1,117 @@
+[49]
+Gautier Izacard et al. Unsupervised Dense Information Retrieval with Contrastive Learn-
+ing. arXiv:2112.09118 [cs]. Aug. 2022. DOI: 10.48550/arXiv.2112.09118. URL:
+http://arxiv.org/abs/2112.09118 (visited on 01/20/2025).
+[50]
+Kenton Lee, Ming-Wei Chang, and Kristina Toutanova. Latent Retrieval for Weakly Su-
+pervised Open Domain Question Answering. arXiv:1906.00300 [cs]. June 2019. DOI:
+10.48550/arXiv.1906.00300. URL: http://arxiv.org/abs/1906.
+00300 (visited on 01/20/2025).
+[51]
+Kaiming He et al. Momentum Contrast for Unsupervised Visual Representation Learn-
+ing. arXiv:1911.05722 [cs]. Mar. 2020. DOI: 10.48550/arXiv.1911.05722. URL:
+http://arxiv.org/abs/1911.05722 (visited on 01/21/2025).
+[52]
+Yile Wang et al. “Self-Knowledge Guided Retrieval Augmentation for Large Language
+Models”. In: Findings of the Association for Computational Linguistics: EMNLP 2023.
+Ed. by Houda Bouamor, Juan Pino, and Kalika Bali. Singapore: Association for Com-
+putational Linguistics, Dec. 2023, pp. 10303–10315. DOI: 10.18653/v1/2023.
+findings-emnlp.691. URL: https://aclanthology.org/2023.findings-
+emnlp.691/ (visited on 05/05/2025).
+[53]
+Evelyn Fix and J. L. Hodges. “Discriminatory Analysis. Nonparametric Discrimination:
+Consistency Properties”. In: International Statistical Review / Revue Internationale de
+Statistique 57.3 (1989), pp. 238–247. ISSN: 03067734, 17515823. URL: http://www.
+jstor.org/stable/1403797 (visited on 06/17/2025).
+[54]
+LLM Explorer. LLM Explorer: A Curated Large Language Model Directory. LLM List.
+41870 Open-Source Language Models. en. URL: https://llm.extractum.io
+(visited on 01/24/2025).
+[55]
+Dan Hendrycks et al. Measuring Massive Multitask Language Understanding. arXiv:2009.03300
+[cs]. Jan. 2021. DOI: 10.48550/arXiv.2009.03300. URL: http://arxiv.
+org/abs/2009.03300 (visited on 01/08/2025).
+[56]
+Yubo Wang et al. MMLU-Pro: A More Robust and Challenging Multi-Task Language Un-
+derstanding Benchmark. arXiv:2406.01574 [cs]. Nov. 2024. DOI: 10.48550/arXiv.
+2406 . 01574. URL: http : / / arxiv . org / abs / 2406 . 01574 (visited on
+01/08/2025).
+[57]
+David Rein et al. GPQA: A Graduate-Level Google-Proof Q&A Benchmark. arXiv:2311.12022
+[cs]. Nov. 2023. DOI: 10.48550/arXiv.2311.12022. URL: http://arxiv.
+org/abs/2311.12022 (visited on 01/08/2025).
+[58]
+Zayne Sprague et al. MuSR: Testing the Limits of Chain-of-thought with Multistep Soft
+Reasoning. arXiv:2310.16049 [cs]. Mar. 2024. DOI: 10 . 48550 / arXiv . 2310 .
+16049. URL: http://arxiv.org/abs/2310.16049 (visited on 01/08/2025).
+133
+[59]
+Jeffrey Zhou et al. Instruction-Following Evaluation for Large Language Models. arXiv:2311.07911
+[cs]. Nov. 2023. DOI: 10.48550/arXiv.2311.07911. URL: http://arxiv.
+org/abs/2311.07911 (visited on 01/08/2025).
+[60]
+Peter Clark et al. Think you have Solved Question Answering? Try ARC, the AI2 Reason-
+ing Challenge. arXiv:1803.05457 [cs]. Mar. 2018. DOI: 10.48550/arXiv.1803.
+05457. URL: http://arxiv.org/abs/1803.05457 (visited on 01/24/2025).
+[61]
+Rowan Zellers et al. HellaSwag: Can a Machine Really Finish Your Sentence? arXiv:1905.07830
+[cs]. May 2019. DOI: 10.48550/arXiv.1905.07830. URL: http://arxiv.
+org/abs/1905.07830 (visited on 01/08/2025).
+[62]
+Stephanie Lin, Jacob Hilton, and Owain Evans. TruthfulQA: Measuring How Models
+Mimic Human Falsehoods. arXiv:2109.07958 [cs]. May 2022. DOI: 10.48550/arXiv.
+2109 . 07958. URL: http : / / arxiv . org / abs / 2109 . 07958 (visited on
+01/08/2025).
+[63]
+Karl Cobbe et al. Training Verifiers to Solve Math Word Problems. arXiv:2110.14168
+[cs]. Nov. 2021. DOI: 10.48550/arXiv.2110.14168. URL: http://arxiv.
+org/abs/2110.14168 (visited on 01/08/2025).
+[64]
+Dan Hendrycks et al. Measuring Mathematical Problem Solving With the MATH Dataset.
+arXiv:2103.03874 [cs]. Nov. 2021. DOI: 10.48550/arXiv.2103.03874. URL:
+http://arxiv.org/abs/2103.03874 (visited on 01/08/2025).
+[65]
+Kunlun Zhu et al. RAGEval: Scenario Specific RAG Evaluation Dataset Generation
+Framework. arXiv:2408.01262 [cs]. Mar. 2025. DOI: 10 . 48550 / arXiv . 2408 .
+01262. URL: http://arxiv.org/abs/2408.01262 (visited on 03/28/2025).
+[66]
+Zhilin Yang et al. HotpotQA: A Dataset for Diverse, Explainable Multi-hop Question An-
+swering. arXiv:1809.09600 [cs]. Sept. 2018. DOI: 10.48550/arXiv.1809.09600.
+URL: http://arxiv.org/abs/1809.09600 (visited on 07/29/2025).
+[67]
+Rolf Jagerman et al. Query Expansion by Prompting Large Language Models. arXiv:2305.03653
+[cs]. May 2023. DOI: 10.48550/arXiv.2305.03653. URL: http://arxiv.
+org/abs/2305.03653 (visited on 01/22/2025).
+[68]
+Lihu Chen and Ga¨el Varoquaux. What is the Role of Small Models in the LLM Era: A
+Survey. arXiv:2409.06857 [cs]. Dec. 2024. DOI: 10.48550/arXiv.2409.06857.
+URL: http://arxiv.org/abs/2409.06857 (visited on 01/08/2025).
+[69]
+DeepSeek-AI et al. DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via Rein-
+forcement Learning. en. arXiv:2501.12948 [cs]. Jan. 2025. DOI: 10.48550/arXiv.
+2501 . 12948. URL: http : / / arxiv . org / abs / 2501 . 12948 (visited on
+06/20/2025).
+134
+[70]
+Mirac Suzgun et al. Challenging BIG-Bench Tasks and Whether Chain-of-Thought Can
+Solve Them. arXiv:2210.09261 [cs]. Oct. 2022. DOI: 10 . 48550 / arXiv . 2210 .
+09261. URL: http://arxiv.org/abs/2210.09261 (visited on 01/08/2025).
+[71]
+Xinyi Wu et al. On the Emergence of Position Bias in Transformers. arXiv:2502.01951
+[cs]. June 2025. DOI: 10.48550/arXiv.2502.01951. URL: http://arxiv.
+org/abs/2502.01951 (visited on 06/20/2025).
+[72]
+docs.nvidia.com/deploy/nvidia-smi/index.html. URL: https://docs.nvidia.com/
+deploy/nvidia-smi/index.html (visited on 07/02/2025).
+[73]
+NVML Device Queries. en-us. cppModule. URL: https://docs.nvidia.com/
+deploy/nvml-api/group__nvmlDeviceQueries.html#group__nvmlDeviceQuerie
+1g7ef7dff0ff14238d08a19ad7fb23fc87 (visited on 07/02/2025).
+[74]
+Alireza Salemi and Hamed Zamani. “Evaluating Retrieval Quality in Retrieval-Augmented
+Generation”. In: Proceedings of the 47th International ACM SIGIR Conference on Re-
+search and Development in Information Retrieval. SIGIR ’24. New York, NY, USA:
+Association for Computing Machinery, July 2024, pp. 2395–2400. ISBN: 979-8-4007-
+0431-4. DOI: 10.1145/3626772.3657957. URL: https://dl.acm.org/
+doi/10.1145/3626772.3657957 (visited on 01/23/2025).
+135

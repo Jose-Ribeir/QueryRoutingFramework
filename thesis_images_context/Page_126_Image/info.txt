@@ -1,0 +1,10 @@
+--- Text Before ---
+Figure 60: Science: Avg. Energy when Straight Model is Incorrect & System is Correct.
+117
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 61: Average CPU Energy Consumption by Method.
+118

@@ -1,0 +1,10 @@
+--- Text Before ---
+both small and large language models.
+110
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 54: Average GPU Energy Consumption by Domain.
+11

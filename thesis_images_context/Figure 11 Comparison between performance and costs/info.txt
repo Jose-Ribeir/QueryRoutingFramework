@@ -1,0 +1,11 @@
+--- Text Before ---
+models.
+40
+
+--- Full Caption ---
+Figure 11: Comparison between performance and costs on multiple models using LC, RAG and
+Self-Route[45]
+
+--- Text After ---
+As seen in Figure 11 the performance is maintained if not improved on some models but the
+cost on most cases is less than half. This is due to the nature of the approach, which combines

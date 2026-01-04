@@ -1,0 +1,10 @@
+--- Text Before ---
+6.8.2
+Instruction V2: An Aggressive, Safety-First Heuristic
+
+--- Full Caption ---
+Figure 32: Instruction V2
+
+--- Text After ---
+77
+To counteract the significant bias against retrieval observed on the first approach Figure

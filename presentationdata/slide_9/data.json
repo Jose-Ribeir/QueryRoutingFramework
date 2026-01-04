@@ -1,0 +1,122 @@
+{
+    "slide_number": 9,
+    "text_elements": [
+        {
+            "text": "Model Comparison and Benchmark Performance\nEvaluation Across Standard NLP and Reasoning Tasks",
+            "left": 1143000,
+            "top": 329018,
+            "width": 12115800,
+            "height": 1320874
+        },
+        {
+            "text": "Evaluation Benchmarks",
+            "left": 444500,
+            "top": 1930400,
+            "width": 3913504,
+            "height": 436880
+        },
+        {
+            "text": "Knowledge & Reasoning\nMMLU, MMLU-Pro, BBH, MUSR",
+            "left": 1413817,
+            "top": 2673350,
+            "width": 2258695,
+            "height": 551180
+        },
+        {
+            "text": "Question Answering\nARC, TruthfulQA, HotPotQA",
+            "left": 5978078,
+            "top": 2673350,
+            "width": 1931670,
+            "height": 551180
+        },
+        {
+            "text": "Specialized Tasks\nGPQA, GSM8K, IFEval",
+            "left": 10523289,
+            "top": 2673350,
+            "width": 1642110,
+            "height": 551180
+        },
+        {
+            "text": "Commonsense Reasoning\nHellaSwag, WinoGrande, PIQA",
+            "left": 14535844,
+            "top": 2673350,
+            "width": 2418080,
+            "height": 551180
+        },
+        {
+            "text": "Key Benchmark Results",
+            "left": 444500,
+            "top": 3587750,
+            "width": 3951604,
+            "height": 436880
+        },
+        {
+            "text": "MMLU\nDiverse, professional-level tasks. 8B models achieve 60-70%.",
+            "left": 606425,
+            "top": 4239498,
+            "width": 4277995,
+            "height": 604520
+        },
+        {
+            "text": "MMLU-Pro\nChallenging version with 10 options per question to reduce guessing. Difficult version of the original MMLU.",
+            "left": 9369425,
+            "top": 4239498,
+            "width": 7546975,
+            "height": 596317
+        },
+        {
+            "text": "ARC (AI2 Reasoning Challenge)\nGrade-school science questions. 8B models achieve ~70% on easy.",
+            "left": 606425,
+            "top": 5401548,
+            "width": 4815205,
+            "height": 604520
+        },
+        {
+            "text": "HotPotQA\nMulti-hop QA over multiple documents. Requires retrieval.",
+            "left": 9369425,
+            "top": 5401548,
+            "width": 4674870,
+            "height": 604520
+        },
+        {
+            "text": "BBH (Big-Bench-Hard)\nComplex reasoning tasks. CoT dramatically improves performance.",
+            "left": 606425,
+            "top": 6563597,
+            "width": 4777105,
+            "height": 604520
+        },
+        {
+            "text": "GPQA (Graduate-Level Q&A)\nPhD-level, 'Google-proof' questions. SOTA models score 40-50%.",
+            "left": 9369425,
+            "top": 6563597,
+            "width": 4651375,
+            "height": 596317
+        },
+        {
+            "text": "9",
+            "left": 13167361,
+            "top": 9566910,
+            "width": 4206240,
+            "height": 514350
+        },
+        {
+            "text": "Key Insights for Deployment\n\ud83d\udd0d Size vs. Perf: 8B quantized models achieve 70-80% of large model performance.\n\ud83d\ude80 RAG Impact: Boosts knowledge-heavy tasks (e.g., ARC, HotPotQA) by 15-25%.\n\ud83c\udfaf Optimization: Use CoT for reasoning and RAG for knowledge-intensive tasks.",
+            "left": 533400,
+            "top": 7581900,
+            "width": 7188834,
+            "height": 1463040
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "1D40AF",
+        "374050",
+        "3B81F5"
+    ]
+}

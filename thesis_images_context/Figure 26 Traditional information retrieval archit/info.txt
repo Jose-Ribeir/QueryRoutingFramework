@@ -1,0 +1,10 @@
+--- Text Before ---
+documents but also render lengthy and human-sounding responses, thereby overcoming the
+limitations between traditional IR systems and the present user expectations.
+
+--- Full Caption ---
+Figure 26: Traditional information retrieval architecture[68]
+
+--- Text After ---
+The proposed system will integrate a rewriter module that will be placed between the user
+query q and the retriever similar to [45], this will enable the injection of the retrieved documents

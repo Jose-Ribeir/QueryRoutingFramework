@@ -1,0 +1,10 @@
+--- Text Before ---
+trustworthy assessment possible, even at the cost of possible decrease in efficiency.
+89
+
+--- Full Caption ---
+Figure 39: Instruction V5 Results
+
+--- Text After ---
+The performance data shows that this refinement had a subtle but measurable impact, tuning
+the model’s behavior as it was intended.

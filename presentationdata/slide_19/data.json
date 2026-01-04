@@ -1,0 +1,27 @@
+{
+    "slide_number": 19,
+    "text_elements": [
+        {
+            "text": "Scatter plot Energy Cost vs. Correctness",
+            "left": 749300,
+            "top": 329018,
+            "width": 12966700,
+            "height": 1569660
+        },
+        {
+            "text": "The scatter plot shows a clear trade-off between energy consumption and correctness more accurate outputs usually require more energy.\n\nBaseline models cluster in the lower-left: low energy, low correctness.\n\nOne baseline looks better than expected, but this is misleading due to Wikipedia retrievals being somewhat relevant to the ARC-easy.\n\nOptimized systems move toward the upper-right: higher correctness and better quality, with increased energy use.\n\nSystem Analysis V1 is an outlier inefficient instructions caused high energy use but poor accuracy.\n\n",
+            "left": 10896600,
+            "top": 2628900,
+            "width": 6629400,
+            "height": 5940088
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6477000,
+            "top": 9715500,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": []
+}

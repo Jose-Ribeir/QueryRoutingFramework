@@ -1,0 +1,10 @@
+--- Text Before ---
+6.8.6
+Instruction V6: A Strategic Pivot to Efficiency
+
+--- Full Caption ---
+Figure 40: Instruction V6
+
+--- Text After ---
+The final iteration, V6, represented a deliberate reversal from the ”accuracy-first” principle
+that guided the previous version. The main goal was explicitly re-focused to ”AVOIDING un-

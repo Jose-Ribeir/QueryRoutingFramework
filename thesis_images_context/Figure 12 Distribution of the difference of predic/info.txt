@@ -1,0 +1,10 @@
+--- Text Before ---
+while maintaining most of the performance. However, despite the performance gap, there is a
+high degree of overlap in the predictions made by both methods.
+
+--- Full Caption ---
+Figure 12: Distribution of the difference of prediction scores between RAG and LC[45]
+
+--- Text After ---
+Figure 12 shows the differences between RAG prediction scores SRAG and LC prediction
+scores SLC these are not just similar, in 63% of queries the model predictions are exactly identi-

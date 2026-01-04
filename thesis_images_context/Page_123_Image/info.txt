@@ -1,0 +1,10 @@
+--- Text Before ---
+Figure 57: Average Energy Consumption by Domain.
+114
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 58: Average CPU Energy Consumption by Domain.
+115

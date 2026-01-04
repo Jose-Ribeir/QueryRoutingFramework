@@ -1,0 +1,10 @@
+--- Text Before ---
+6.8.1
+Instruction V1: A Simple Baseline
+
+--- Full Caption ---
+Figure 30: Instruction V1
+
+--- Text After ---
+The initial instruction, V1, was designed as a minimal baseline to assess the feasibility of the
+proposed approach. This instruction directly asks the model for a binary classification (”Would

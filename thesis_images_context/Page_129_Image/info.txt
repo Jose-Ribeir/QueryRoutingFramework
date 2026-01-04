@@ -1,0 +1,10 @@
+--- Text Before ---
+Figure 63: Average GPU Energy Consumption by Method.
+120
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 64: Average Energy Consumption by Method.
+121

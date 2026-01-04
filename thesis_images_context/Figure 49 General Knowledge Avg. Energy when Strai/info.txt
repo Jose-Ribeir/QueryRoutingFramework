@@ -1,0 +1,11 @@
+--- Text Before ---
+whole approach.
+101
+
+--- Full Caption ---
+Figure 49: General Knowledge: Avg. Energy when Straight Model is Incorrect & System is
+Correct
+
+--- Text After ---
+Figure 49 provides a quantitative analysis of the ’correction cost’ associated with ’General
+Knowledge’ queries. When the baseline fails while consuming around 0.95 Wh, the various

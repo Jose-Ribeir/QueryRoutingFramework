@@ -1,0 +1,600 @@
+ 
+ 
+- v - 
+ 
+ 
+Contents
+1
+Abstract
+2
+2
+Resumo
+3
+3
+Acknowledgments
+11
+4
+Introduction
+15
+4.1
+Motivation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+15
+4.2
+Aims and Research Questions
+. . . . . . . . . . . . . . . . . . . . . . . . . .
+16
+4.3
+Document Outline . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+17
+5
+State-of-the-Art
+17
+5.1
+Transformers and Language Models . . . . . . . . . . . . . . . . . . . . . . .
+17
+5.2
+Quantization . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+21
+5.2.1
+Post-Training Quantization (PTQ) . . . . . . . . . . . . . . . . . . . .
+21
+5.2.2
+Weight-Only Quantization . . . . . . . . . . . . . . . . . . . . . . . .
+23
+5.2.3
+Non Uniform Weight Quantization . . . . . . . . . . . . . . . . . . . .
+24
+5.2.4
+Weight + Activation Quantization . . . . . . . . . . . . . . . . . . . .
+30
+5.2.5
+Mixed Precision Quantization . . . . . . . . . . . . . . . . . . . . . .
+30
+5.2.6
+Quantization-Aware Training (QAT) . . . . . . . . . . . . . . . . . . .
+32
+5.3
+Retrieval-Augmented Generation (RAG) . . . . . . . . . . . . . . . . . . . . .
+34
+5.3.1
+Hypothetical Document Embeddings (HyDE) . . . . . . . . . . . . . .
+36
+5.3.2
+Cache Augmented Generation . . . . . . . . . . . . . . . . . . . . . .
+39
+5.3.3
+Hybrid approaches . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+40
+5.4
+Challenges and Applications of Quantization in RAG . . . . . . . . . . . . . .
+48
+5.5
+Retrieval Methods to enhance HyDE . . . . . . . . . . . . . . . . . . . . . . .
+48
+5.5.1
+Contriever . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+49
+5.6
+Self-Knowledge Guided Retrieval Augmentation
+. . . . . . . . . . . . . . . .
+50
+5.6.1
+Collecting Self-Knowledge . . . . . . . . . . . . . . . . . . . . . . . .
+51
+5.6.2
+Eliciting Self-Knowledge of LLMs
+. . . . . . . . . . . . . . . . . . .
+51
+5.6.3
+Using Self-Knowledge for Adaptive Retrieval Augmentation
+. . . . .
+54
+5.7
+Model Comparison . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+54
+5.7.1
+MMLU . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+54
+5.7.2
+MMLU-Pro . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+54
+5.7.3
+GPQA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+55
+5.7.4
+MUSR
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+56
+5.7.5
+BBH
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+57
+5.7.6
+IFEval . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+58
+5.7.7
+ARC
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+58
+4
+5.7.8
+HellaSwag
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+59
+5.7.9
+ThrutfulQA . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+59
+5.7.10 WinoGrande
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+60
+5.7.11 GSM8K . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+60
+5.7.12 Math Lvl5
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+60
+5.7.13 RAGEval . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+60
+5.7.14 HotPotQA
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+63
+6
+Methodology
+64
+6.1
+Overview of the Query Rewriting Flow
+. . . . . . . . . . . . . . . . . . . . .
+64
+6.2
+Hardware and Software Environment . . . . . . . . . . . . . . . . . . . . . . .
+66
+6.3
+Rewriting Approaches
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+66
+6.3.1
+Straight LLM . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+66
+6.3.2
+Chain-of-Thought
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+66
+6.3.3
+RAG
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+67
+6.3.4
+Selecting the Approach . . . . . . . . . . . . . . . . . . . . . . . . . .
+67
+6.4
+Dataset Augmentation
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+69
+6.5
+Query-Answer Validation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+69
+6.5.1
+Automated Preparation . . . . . . . . . . . . . . . . . . . . . . . . . .
+69
+6.5.2
+AI-Powered Triage . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+69
+6.5.3
+Human Verification . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+69
+6.5.4
+Dataset formation . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+70
+6.6
+Power Data Collection
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+70
+6.6.1
+GPU
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+70
+6.6.2
+CPU . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+70
+6.7
+Evaluation Framework
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+71
+6.7.1
+Retrieval Performance Metrics . . . . . . . . . . . . . . . . . . . . . .
+72
+6.7.2
+Straight Model . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+73
+6.7.3
+Chain-of-Thought Reasoning Performance Metrics . . . . . . . . . . .
+73
+6.7.4
+Automated Evaluation Script . . . . . . . . . . . . . . . . . . . . . . .
+73
+6.7.5
+Efficiency Metrics
+. . . . . . . . . . . . . . . . . . . . . . . . . . . .
+74
+6.8
+Optimizing Query Classification through Iterative Prompt Refinement . . . . .
+74
+6.8.1
+Instruction V1: A Simple Baseline . . . . . . . . . . . . . . . . . . . .
+75
+6.8.2
+Instruction V2: An Aggressive, Safety-First Heuristic . . . . . . . . . .
+77
+6.8.3
+Instruction V3: Introducing Balanced Criteria . . . . . . . . . . . . . .
+80
+6.8.4
+Instruction V4: A Shift to Profile-Based Classification . . . . . . . . .
+84
+6.8.5
+Instruction V5: Final Refinement with a Guiding Principle . . . . . . .
+88
+6.8.6
+Instruction V6: A Strategic Pivot to Efficiency
+. . . . . . . . . . . . .
+92
+6.9
+Analysis of Energy Consumption and Efficiency . . . . . . . . . . . . . . . . .
+94
+5
+6.10 Detailed Energy Consumption Profiles . . . . . . . . . . . . . . . . . . . . . .
+98
+6.10.1 Overall Energy Trends Across Instruction Versions . . . . . . . . . . .
+98
+6.10.2 CPU vs. GPU: Deconstructing the Energy Cost . . . . . . . . . . . . . 100
+6.10.3 The Energetic Cost of Correcting Errors . . . . . . . . . . . . . . . . . 101
+6.10.4 Energy Distribution and Consumption Predictability
+. . . . . . . . . . 104
+6.10.5 Overall Performance Quadrant: Synthesizing Accuracy and Efficiency
+for ARC queries
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . 105
+7
+Experimental Consistency and Reproducibility
+107
+8
+Challenges and Abandoned Approaches
+108
+9
+Conclusion
+109
+10 Future work
+109
+11 Images
+111
+6
+List of Figures
+1
+Transformer model architecture [5] . . . . . . . . . . . . . . . . . . . . . . . .
+18
+2
+RN18 squared error. [21] . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+22
+3
+The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs.
+The weights of different layers in LLMs are characterized by bell-shaped dis-
+tribution, accompanied by a few salient values.[24] . . . . . . . . . . . . . . .
+27
+4
+Illustration of salient weight binarization. The B1 binarized from salient weight
+is made into a residual with the original value and then binarized again to obtain
+B2.[24]
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+27
+5
+Comparison of activations and weights in LLAMA2-7B and OPT-13B models.
+30
+6
+Finding the sweet spot for the migration strength[29] . . . . . . . . . . . . . .
+31
+7
+Main idea of SmoothQuant when α is 0.5. The smoothing factor s is obtained
+on calibration samples and the entire transformation is performed offline. At
+runtime, the activations are smooth without scaling.[29] . . . . . . . . . . . . .
+32
+8
+RAG implementation overview[35] . . . . . . . . . . . . . . . . . . . . . . . .
+34
+9
+An illustration of the HyDE model.[40]
+. . . . . . . . . . . . . . . . . . . . .
+36
+10
+Comparison RAG on the top and CAG on the botom[43] . . . . . . . . . . . .
+39
+11
+Comparison between performance and costs on multiple models using LC,
+RAG and Self-Route[45] . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+41
+12
+Distribution of the difference of prediction scores between RAG and LC[45] . .
+41
+13
+Trade-off curves between (a) model performance and (b) token percentage as a
+function of k.[45] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+42
+14
+RAGCache Overview[44] . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+43
+15
+Knowledge Tree[44]
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+43
+16
+Cost estimation PGDSF[44]
+. . . . . . . . . . . . . . . . . . . . . . . . . . .
+44
+17
+Cache aware Reordering[44] . . . . . . . . . . . . . . . . . . . . . . . . . . .
+46
+18
+Speculative Pipelining[44] . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+47
+19
+Optimal speculative pipelining strategy [44] . . . . . . . . . . . . . . . . . . .
+48
+20
+The SKR Pipeline and its component interactions.[52] . . . . . . . . . . . . . .
+50
+21
+Direct Prompting [52] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+52
+22
+In-Context Learning [52] . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+52
+23
+k-nearest-neighbor to understand model knowledge [52]
+. . . . . . . . . . . .
+53
+24
+RAGEval System: 1 summarizing a schema containing specific knowledge
+from seed documents. 2 filling in factual information based on this schema
+to generate diverse configurations. 3 generating documents according to the
+configurations. 4 creating evaluation data composed of questions, answers, and
+references derived from the configurations and documents.[65] . . . . . . . . .
+62
+25
+Relationship between model size and monthly downloads[68] . . . . . . . . . .
+64
+7
+26
+Traditional information retrieval architecture[68]
+. . . . . . . . . . . . . . . .
+65
+27
+Graphical representation of the system diagram[68] . . . . . . . . . . . . . . .
+65
+28
+Analysis Prompt . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+67
+29
+Jsonl Data Structure . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+71
+30
+Instruction V1 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+75
+31
+Instruction V1 Results
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+76
+32
+Instruction V2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+77
+33
+Instruction V2 Results
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+79
+34
+Instruction V3 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+80
+35
+Instruction V3 Results
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+82
+36
+Instruction V4 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+84
+37
+Instruction V4 Results
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+86
+38
+Instruction V5 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+88
+39
+Instruction V5 Results
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+90
+40
+Instruction V6 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+92
+41
+Instruction V6 Results
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+93
+42
+Energy Costs vs. Correctness Scatterplot . . . . . . . . . . . . . . . . . . . . .
+95
+43
+Energy Costs vs. Correctness Scatterplot . . . . . . . . . . . . . . . . . . . . .
+96
+44
+Domain Average Energy per Correct Answer
+. . . . . . . . . . . . . . . . . .
+97
+45
+Domain Average Energy per Incorrect Answer . . . . . . . . . . . . . . . . . .
+97
+46
+Average Energy Consumption per Query by File . . . . . . . . . . . . . . . . .
+99
+47
+Total Energy Percentage Difference from Baseline . . . . . . . . . . . . . . . . 100
+48
+Total Energy Consumption by File (CPU vs GPU) . . . . . . . . . . . . . . . . 101
+49
+General Knowledge: Avg. Energy when Straight Model is Incorrect & System
+is Correct . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 102
+50
+Science: Avg. Energy when Straight Model is Incorrect & System is Correct . . 103
+51
+Science: Avg. Energy when Straight Model is Incorrect & System is also Incorrect103
+52
+Distribution of Energy Consumption per Query by File . . . . . . . . . . . . . 104
+53
+Overall Performance Overview: Correctness vs. Energy Cost for ARC queries . 106
+54
+Average GPU Energy Consumption by Domain. . . . . . . . . . . . . . . . . . 111
+55
+Avg. Energy of Analysis Instructions that were also INCORRECT when Base-
+line Failed.
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 112
+56
+Correctness Comparison between system versus a 14B Model. . . . . . . . . . 113
+57
+Average Energy Consumption by Domain. . . . . . . . . . . . . . . . . . . . . 114
+58
+Average CPU Energy Consumption by Domain. . . . . . . . . . . . . . . . . . 115
+59
+Avg. Energy of Analysis Models that were CORRECT when Baseline Failed. . 116
+60
+Science: Avg. Energy when Straight Model is Incorrect & System is Correct.
+. 117
+61
+Average CPU Energy Consumption by Method. . . . . . . . . . . . . . . . . . 118
+8
+62
+Efficiency Score: Energy Cost of a Correct Answer for the system versus the
+14B Model at the science domain. . . . . . . . . . . . . . . . . . . . . . . . . 119
+63
+Average GPU Energy Consumption by Method. . . . . . . . . . . . . . . . . . 120
+64
+Average Energy Consumption by Method. . . . . . . . . . . . . . . . . . . . . 121
+65
+Science Domain: Avg. Energy when Baseline is Incorrect & System is also
+Incorrect.
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 122
+66
+Total Energy Consumption by Answer. . . . . . . . . . . . . . . . . . . . . . . 123
+67
+Average Energy Consumption in Science Domain by Correctness.
+. . . . . . . 124
+68
+Average Energy for CORRECT Answers in Science Domain (with Counts). . . 125
+69
+Average Energy for CORRECT Answers in Science Domain. . . . . . . . . . . 126
+70
+Average Energy for INCORRECT Answers in Science Domain (with Counts). . 127
+9
+List of Tables
+2
+Maximum path lengths, per-layer complexity and minimum number of sequen-
+tial operations for different layer types. [5] . . . . . . . . . . . . . . . . . . . .
+18
+3
+Runtime Analysis . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+23
+4
+PPL results on Wikitext2 of BLOOM-7B with and without outlier isolation. [22]
+25
+5
+PPL results after pruning 1% weight with different magnitude [22] . . . . . . .
+25
+6
+Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma
+threshold [22] . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+26
+7
+Outlier fraction distribution in different layer index in BLOOM-7B under 3-
+sigma threshold [22]
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+26
+8
+Quantized LLaMA3-8B performance[27]
+. . . . . . . . . . . . . . . . . . . .
+29
+9
+Comparison of Decoding Methods . . . . . . . . . . . . . . . . . . . . . . . .
+36
+10
+Results for web search on DL19/20. Best performing w/o relevance and over-
+all system(s) are marked bold. DPR, ANCE and ContrieverFT are in-domain
+supervised models that are finetuned on MS MARCO training data. [40] . . . .
+38
+11
+Accuracy on each set [57] . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+56
+12
+LLMs using CoT+, Humans scores on the multiple domains[58] . . . . . . . .
+57
+10
+3
+Acknowledgments
+I want to express my deepest gratitude to my grandfather, Leonel Pires Ribeiro, for not only
+giving me a place to stay but also helping with all the expenses. I appreciated every conversation
+throughout most of college and all the help he provided.
+A great thanks to my advisor, Prof. Cl´audia Sofia Sevivas Ribeiro, for all the great insights
+provided throughout the thesis and all the constructive discussions held along the way.
+A heartfelt thanks to my beautiful girlfriend, B´arbara H¨oller, for taking care of most of the
+household tasks while I was focused on bringing this thesis to its end.
+None of this work could have been done without the help of my parents, L´ıdia Ribeiro and
+Nuno Ribeiro, for all the resources provided to run the required models and processe including
+the expensive electricity bill, which was paid without hesitation by my grandmother, Maria
+Ribeiro.
+The biggest thanks go to my other grandmother, Maria Lopes Marc¸al, for all the support
+she gave me throughout my entire studies, and for all the boxes of vegetables that give me my
+beautiful eyes according to her.
+11
+List of Abbreviations
+AF
+Adversarial Filtering
+AI
+Artificial Intelligence
+ARC
+AI2 Reasoning Challenge
+BART
+Bidirectional Auto-Regressive Transformer
+BBH
+Big-Bench-Hard
+BERT
+Bidirectional Encoder Representations from Transformers
+BM25
+Best Match 25
+BPTT
+Backpropagation Through Time
+CAG
+Cache Augmented Generation
+CCPA
+California Consumer Privacy Act
+CoT
+Chain of Thought
+CoT+
+Chain of Thought plus
+DNNs
+Deep Neural Networks
+DPR
+Dense Passage Retriever
+EM
+Exact Match
+FFN
+Feed-Forward Network
+FLOPs
+Floating Point Operations per Second
+FP16
+16-bit Floating Point
+FP32
+32-bit Floating Point
+GDPR
+General Data Protection Regulation
+GPQA
+Graduate-Level Google-Proof Q&A
+GPT
+Generative Pre-trained Transformer
+GRU
+Gated Recurrent Unit
+GSM8K
+Grade School Math 8K
+12

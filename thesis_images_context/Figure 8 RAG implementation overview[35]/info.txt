@@ -1,0 +1,10 @@
+--- Text Before ---
+main components: a query encoder (q), a retriever (pn), a document indexer, and a generator
+(p0).
+
+--- Full Caption ---
+Figure 8: RAG implementation overview[35]
+
+--- Text After ---
+The first required model is a retriver DPR based on [36]. This retriver works by indexing all
+the passages in a low-dimensional and continuous space, so that later the top K passages can

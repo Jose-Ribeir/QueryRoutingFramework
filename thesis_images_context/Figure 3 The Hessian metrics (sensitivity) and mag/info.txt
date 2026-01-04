@@ -1,0 +1,12 @@
+--- Text Before ---
+majority of the weights that are sensitive Hessian values are predominantly concentrated in
+specific columns or rows.
+
+--- Full Caption ---
+Figure 3: The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs. The
+weights of different layers in LLMs are characterized by bell-shaped distribution, accompanied
+by a few salient values.[24]
+
+--- Text After ---
+This pattern is due to the convergence effects inherent in multi-head self-attention mecha-
+nism of the models, thus needing a structured approach to select salient weights, reducing the

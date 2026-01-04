@@ -1,0 +1,11 @@
+--- Text Before ---
+additional bit-map. The approach described in [24] is to employ a per-channel or per row type of
+binarization, they determine salience through a per-column segmentation on the whole matrix.
+
+--- Full Caption ---
+Figure 4: Illustration of salient weight binarization. The B1 binarized from salient weight is
+made into a residual with the original value and then binarized again to obtain B2.[24]
+
+--- Text After ---
+The main idea is to rank the columns by their salience in descending order and use an
+optimized search algorithm to minimize quantization error. This process determines the optimal

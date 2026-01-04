@@ -1,0 +1,1066 @@
+[
+  {
+    "folderName": "Figure 1 Transformer model architecture [5]",
+    "contextBefore": [
+      "Table 2: Maximum path lengths, per-layer complexity and minimum number of sequential",
+      "operations for different layer types. [5]"
+    ],
+    "caption": "Figure 1: Transformer model architecture [5]",
+    "contextAfter": [
+      "Transformer models introduced many changes to try to solve all of the problems in the",
+      "previous models. Starting with the Self-attention Mechanism which lowers the complexity"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 1 Transformer model architecture [5]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 10 Comparison RAG on the top and CAG on the botom[43]",
+    "contextBefore": [
+      "approach proposes a method that uses this increased context size to reduce the model latency",
+      "and potential errors that could occur on RAG systems."
+    ],
+    "caption": "Figure 10: Comparison RAG on the top and CAG on the botom[43]",
+    "contextAfter": [
+      "This approach works by enabling retrieval-free knowledge integration. This is done by",
+      "preloading external knowledge sources, such as a collection of documents D = {d1, d2, ..., dn}"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 10 Comparison RAG on the top and CAG on the\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 11 Comparison between performance and costs on multiple models using LC, RAG and",
+    "contextBefore": [],
+    "caption": "Figure 11: Comparison between performance and costs on multiple models using LC, RAG and",
+    "contextAfter": [
+      "As seen in Figure 11 the performance is maintained if not improved on some models but the",
+      "cost on most cases is less than half. This is due to the nature of the approach, which combines"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 11 Comparison between performance and costs\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 12 Distribution of the difference of prediction scores between RAG and LC[45]",
+    "contextBefore": [
+      "while maintaining most of the performance. However, despite the performance gap, there is a",
+      "high degree of overlap in the predictions made by both methods."
+    ],
+    "caption": "Figure 12: Distribution of the difference of prediction scores between RAG and LC[45]",
+    "contextAfter": [
+      "Figure 12 shows the differences between RAG prediction scores SRAG and LC prediction",
+      "scores SLC these are not just similar, in 63% of queries the model predictions are exactly identi-"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 12 Distribution of the difference of predic\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 13 Trade-off curves between (a) model performance and (b) token percentage as a",
+    "contextBefore": [
+      "that require deeper reasoning may benefit from a higher k. Therefore, the optimal value of k is",
+      "dependent on both the nature of the task and the level of performance required."
+    ],
+    "caption": "Figure 13: Trade-off curves between (a) model performance and (b) token percentage as a",
+    "contextAfter": [
+      "The other hybrid approach RAGCache works by caching the key-value tensors of retrieved",
+      "documents across multiple requests, this is done to try and minimize redundant computation for"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 13 Trade-off curves between (a) model perfo\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 14 RAGCache Overview[44]",
+    "contextBefore": [],
+    "caption": "Figure 14: RAGCache Overview[44]",
+    "contextAfter": [
+      "Cache Structure and Replacement Policy operate differently from traditional cache systems",
+      "that cache individual objects. Instead, this method caches the key-value tensor of the retrieved"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 14 RAGCache Overview[44]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 15 Knowledge Tree[44]",
+    "contextBefore": [
+      "nated, and the longest identified document sequence is returned. This method ensures efficiency",
+      "with a time complexity of O(h), where h is the height of the tree."
+    ],
+    "caption": "Figure 15: Knowledge Tree[44]",
+    "contextAfter": [
+      "Prefix-aware Greedy-Dual-Size-Frequency (PGDSF) replacement policy is the name for the",
+      "43"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 15 Knowledge Tree[44]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 16 Cost estimation PGDSF[44]",
+    "contextBefore": [
+      "ment’s key-value tensors, this can vary depending on GPU performance as well as document",
+      "size and the sequence of preceding documents."
+    ],
+    "caption": "Figure 16: Cost estimation PGDSF[44]",
+    "contextAfter": [
+      "Prefix awareness for RAG is achieved by the PGDSF method through two primary com-",
+      "ponents, cost estimation and node placement. Accurately determining the computational cost"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 16 Cost estimation PGDSF[44]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 17 Cache aware Reordering[44]",
+    "contextBefore": [],
+    "caption": "Figure 17: Cache aware Reordering[44]",
+    "contextAfter": [
+      "Cache hit rate is vital for RAG Cache’s cache efficiency, but when paired with the unpre-",
+      "dictability of the arrival pattern in user requests, this results in substantial cache trashing."
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 17 Cache aware Reordering[44]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 18 Speculative Pipelining[44]",
+    "contextBefore": [
+      "engine simply returns the latest speculative generation. Otherwise, the LLM performs a new",
+      "generation with the new top-k documents."
+    ],
+    "caption": "Figure 18: Speculative Pipelining[44]",
+    "contextAfter": [
+      "Figure 18 shows how RAGCache splits the retrieval process into four stages. The top-2",
+      "documents in candidate queue are [D1, D3], [D1, D2], [D1, D2] and [D1, D2] in the four stages."
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 18 Speculative Pipelining[44]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 19 Optimal speculative pipelining strategy [44]",
+    "contextBefore": [
+      "candidate retrieval results at the end of each stage with a fixed time interval d. Since the batch",
+      "size was set to only one, they could terminate any incorrect speculative generation requests."
+    ],
+    "caption": "Figure 19: Optimal speculative pipelining strategy [44]",
+    "contextAfter": [
+      "RAGCache assumes that the LLM engine can schedule requests in the queue in any order,",
+      "but it processes speculative generation requests for a single request sequentially. Figure 19"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 19 Optimal speculative pipelining strategy\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 2 RN18 squared error. [21]",
+    "contextBefore": [
+      "Columns within blocks are quantized recursively and at each step, unquantized weights are",
+      "updated based on the quantized weights."
+    ],
+    "caption": "Figure 2: RN18 squared error. [21]",
+    "contextAfter": [
+      "With that it also achieved efficiency gains compared to OBQ which achieved O(drow · d3",
+      "col)"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 2 RN18 squared error. [21]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 20 The SKR Pipeline and its component interactions.[52]",
+    "contextBefore": [
+      "Their method works by three main ways: Collecting Self-Knowledge, Eliciting Self-knowledge,",
+      "and Using Self-Knowledge. These represent the main pipeline for SKR, as shown in Figure 20."
+    ],
+    "caption": "Figure 20: The SKR Pipeline and its component interactions.[52]",
+    "contextAfter": [
+      "50"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 20 The SKR Pipeline and its component inter\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 21 Direct Prompting [52]",
+    "contextBefore": [
+      "Direct Prompting given a question qt, a straight-forward approach to detect wether LLMs",
+      "are capable of solving it is to ask them directly:"
+    ],
+    "caption": "Figure 21: Direct Prompting [52]",
+    "contextAfter": [
+      "On this method the prompt is used in conjunction with ’Do you need additional information",
+      "to answer this question?’ to detect self-knowledge based on the response provided by the LLM."
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 21 Direct Prompting [52]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 22 In-Context Learning [52]",
+    "contextBefore": [
+      "In-Context Learning some questions where selected from D+ and D−as demonstrations to",
+      "show the self-knowledge of the question qt:"
+    ],
+    "caption": "Figure 22: In-Context Learning [52]",
+    "contextAfter": [
+      "52"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 22 In-Context Learning [52]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 23 k-nearest-neighbor to understand model knowledge [52]",
+    "contextBefore": [
+      "the similarity between the semantically embedded space of two questions if these are closely",
+      "related then the knowledge needed for the model to answer would also be similar."
+    ],
+    "caption": "Figure 23: k-nearest-neighbor to understand model knowledge [52]",
+    "contextAfter": [
+      "Each question was encoded into embeddings, and computed the semantic similarity through",
+      "cosine distance sim(qt, qi) = ("
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 23 k-nearest-neighbor to understand model k\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 24 RAGEval System 1 summarizing a schema containing specific knowledge from",
+    "contextBefore": [
+      "same is done with other topics but with categories that better align with them."
+    ],
+    "caption": "Figure 24: RAGEval System: 1 summarizing a schema containing specific knowledge from",
+    "contextAfter": [
+      "Question-Reference-Answer (QRA) to generate these RAGEval uses the documents D and",
+      "configurations C these are used to establish a robust evaluation framework ready to be used"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 24 RAGEval System 1 summarizing a schema co\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 25 Relationship between model size and monthly downloads[68]",
+    "contextBefore": [
+      "points of the research are the efficiency and performance using some of the enhancing methods",
+      "described above. These will be paired with a small LLM meaning less than 36B tokens."
+    ],
+    "caption": "Figure 25: Relationship between model size and monthly downloads[68]",
+    "contextAfter": [
+      "6.1",
+      "Overview of the Query Rewriting Flow"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 25 Relationship between model size and mont\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 26 Traditional information retrieval architecture[68]",
+    "contextBefore": [
+      "documents but also render lengthy and human-sounding responses, thereby overcoming the",
+      "limitations between traditional IR systems and the present user expectations."
+    ],
+    "caption": "Figure 26: Traditional information retrieval architecture[68]",
+    "contextAfter": [
+      "The proposed system will integrate a rewriter module that will be placed between the user",
+      "query q and the retriever similar to [45], this will enable the injection of the retrieved documents"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 26 Traditional information retrieval archit\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 27 Graphical representation of the system diagram[68]",
+    "contextBefore": [
+      "instruction will prompt the LLM to evaluate which of the three approaches is the more suitable",
+      "normal response, RAG, or Chain-of-Thought."
+    ],
+    "caption": "Figure 27: Graphical representation of the system diagram[68]",
+    "contextAfter": [
+      "If the models concludes that it can answer directly then the model proceeds to generate the",
+      "answer without the need of a new generation, meaning only one hop. As for Chain-of-Thought,"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 27 Graphical representation of the system d\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 28 Analysis Prompt",
+    "contextBefore": [
+      "mechanism is required. This selection is performed using the model (M) and the content of the",
+      "query (q), this is shown in Figure 29"
+    ],
+    "caption": "Figure 28: Analysis Prompt",
+    "contextAfter": [
+      "Figure 28 presents the analysis prompt responsible for this selection. This instruction can",
+      "be divided into two parts. The first part is responsible for the Straight Answer (S), it asks the"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 28 Analysis Prompt\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 29 Jsonl Data Structure",
+    "contextBefore": [
+      "already recorded in the JSONL, and the trapezoidal rule is applied in real time during inference",
+      "to account for variations in the intervals between data points."
+    ],
+    "caption": "Figure 29: Jsonl Data Structure",
+    "contextAfter": [
+      "In Figure 29 is depicted the final JSONL structure. The structure is devised into four main",
+      "parts Query Information, Ground Truth, AI Prediction, and Performance & Metrics each being"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 29 Jsonl Data Structure\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 3 The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs. The",
+    "contextBefore": [
+      "majority of the weights that are sensitive Hessian values are predominantly concentrated in",
+      "specific columns or rows."
+    ],
+    "caption": "Figure 3: The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs. The",
+    "contextAfter": [
+      "This pattern is due to the convergence effects inherent in multi-head self-attention mecha-",
+      "nism of the models, thus needing a structured approach to select salient weights, reducing the"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 3 The Hessian metrics (sensitivity) and mag\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 30 Instruction V1",
+    "contextBefore": [
+      "6.8.1",
+      "Instruction V1: A Simple Baseline"
+    ],
+    "caption": "Figure 30: Instruction V1",
+    "contextAfter": [
+      "The initial instruction, V1, was designed as a minimal baseline to assess the feasibility of the",
+      "proposed approach. This instruction directly asks the model for a binary classification (”Would"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 30 Instruction V1\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 31 Instruction V1 Results",
+    "contextBefore": [],
+    "caption": "Figure 31: Instruction V1 Results",
+    "contextAfter": [
+      "76"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 31 Instruction V1 Results\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 32 Instruction V2",
+    "contextBefore": [
+      "6.8.2",
+      "Instruction V2: An Aggressive, Safety-First Heuristic"
+    ],
+    "caption": "Figure 32: Instruction V2",
+    "contextAfter": [
+      "77"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 32 Instruction V2\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 33 Instruction V2 Results",
+    "contextBefore": [],
+    "caption": "Figure 33: Instruction V2 Results",
+    "contextAfter": [
+      "79"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 33 Instruction V2 Results\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 34 Instruction V3",
+    "contextBefore": [
+      "6.8.3",
+      "Instruction V3: Introducing Balanced Criteria"
+    ],
+    "caption": "Figure 34: Instruction V3",
+    "contextAfter": [
+      "The third iteration, Instruction V3, tried to strike a balance between the aggressive retrieval",
+      "strategy of V2 and the passive approach of V1. The goal was to try and improve efficiency by re-"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 34 Instruction V3\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 35 Instruction V3 Results",
+    "contextBefore": [],
+    "caption": "Figure 35: Instruction V3 Results",
+    "contextAfter": [
+      "82"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 35 Instruction V3 Results\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 36 Instruction V4",
+    "contextBefore": [
+      "6.8.4",
+      "Instruction V4: A Shift to Profile-Based Classification"
+    ],
+    "caption": "Figure 36: Instruction V4",
+    "contextAfter": [
+      "The mixed results presented on the previous iteration highlighted a potential weakness in",
+      "the sequential, rules-based checklist approach. This new instruction V4 represented a major"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 36 Instruction V4\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 37 Instruction V4 Results",
+    "contextBefore": [],
+    "caption": "Figure 37: Instruction V4 Results",
+    "contextAfter": [
+      "86"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 37 Instruction V4 Results\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 38 Instruction V5",
+    "contextBefore": [
+      "6.8.5",
+      "Instruction V5: Final Refinement with a Guiding Principle"
+    ],
+    "caption": "Figure 38: Instruction V5",
+    "contextAfter": [
+      "Building on the successful profile-based structure of V4, the fifth version was a final re-",
+      "finement aimed at maximizing reliability. The core structure of the two profiles remained un-"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 38 Instruction V5\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 39 Instruction V5 Results",
+    "contextBefore": [],
+    "caption": "Figure 39: Instruction V5 Results",
+    "contextAfter": [
+      "The performance data shows that this refinement had a subtle but measurable impact, tuning",
+      "the model’s behavior as it was intended."
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 39 Instruction V5 Results\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 4 Illustration of salient weight binarization. The B1 binarized from salient weight is",
+    "contextBefore": [
+      "additional bit-map. The approach described in [24] is to employ a per-channel or per row type of",
+      "binarization, they determine salience through a per-column segmentation on the whole matrix."
+    ],
+    "caption": "Figure 4: Illustration of salient weight binarization. The B1 binarized from salient weight is",
+    "contextAfter": [
+      "The main idea is to rank the columns by their salience in descending order and use an",
+      "optimized search algorithm to minimize quantization error. This process determines the optimal"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 4 Illustration of salient weight binarizati\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 40 Instruction V6",
+    "contextBefore": [
+      "6.8.6",
+      "Instruction V6: A Strategic Pivot to Efficiency"
+    ],
+    "caption": "Figure 40: Instruction V6",
+    "contextAfter": [
+      "The final iteration, V6, represented a deliberate reversal from the ”accuracy-first” principle",
+      "that guided the previous version. The main goal was explicitly re-focused to ”AVOIDING un-"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 40 Instruction V6\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 41 Instruction V6 Results",
+    "contextBefore": [],
+    "caption": "Figure 41: Instruction V6 Results",
+    "contextAfter": [
+      "This strategic change had a profound and predictable impact on the system’s performance",
+      "effectively trading accuracy for efficiency."
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 41 Instruction V6 Results\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 42 Energy Costs vs. Correctness Scatterplot",
+    "contextBefore": [],
+    "caption": "Figure 42: Energy Costs vs. Correctness Scatterplot",
+    "contextAfter": [
+      "This is clearly lustrated in the progression from the baseline models, which occupy the",
+      "lower-left quadrant of the graph which represents both the lowest energy consumption and the"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 42 Energy Costs vs. Correctness Scatterplot\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 43 Energy Costs vs. Correctness Scatterplot",
+    "contextBefore": [
+      "consumption, but rather to maximize the productive use of that energy aiming to yield the most",
+      "accurate results possible."
+    ],
+    "caption": "Figure 43: Energy Costs vs. Correctness Scatterplot",
+    "contextAfter": [
+      "Looking further into the energy dynamics of this project, an analysis of the average energy",
+      "per query reveals a striking and consistent pattern, incorrect answers are consistently more"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 43 Energy Costs vs. Correctness Scatterplot\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 44 Domain Average Energy per Correct Answer",
+    "contextBefore": [],
+    "caption": "Figure 44: Domain Average Energy per Correct Answer",
+    "contextAfter": [
+      "Figure 45: Domain Average Energy per Incorrect Answer",
+      "Further analysis of the results, now split by the query’s original dataset (domain), reveals"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 44 Domain Average Energy per Correct Answer\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 45 Domain Average Energy per Incorrect Answer",
+    "contextBefore": [
+      "Figure 44: Domain Average Energy per Correct Answer"
+    ],
+    "caption": "Figure 45: Domain Average Energy per Incorrect Answer",
+    "contextAfter": [
+      "Further analysis of the results, now split by the query’s original dataset (domain), reveals",
+      "another clear efficiency trend: queries related to ’General Knowledge’ consistently require more"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 45 Domain Average Energy per Incorrect Answ\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 46 Average Energy Consumption per Query by File",
+    "contextBefore": [],
+    "caption": "Figure 46: Average Energy Consumption per Query by File",
+    "contextAfter": [
+      "The baseline models establish a lower bound for energy usage, using around 1.1 and 1.3",
+      "Wh per query. The introduction of the first routing instruction, V1, immediately results in a"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 46 Average Energy Consumption per Query by\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 47 Total Energy Percentage Difference from Baseline",
+    "contextBefore": [],
+    "caption": "Figure 47: Total Energy Percentage Difference from Baseline",
+    "contextAfter": [
+      "This increased energy overhead is clearly illustrated in Figure 47. The graph shows that,",
+      "compared to the baseline, the more advanced routing systems consistently increase total energy"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 47 Total Energy Percentage Difference from\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 48 Total Energy Consumption by File (CPU vs GPU)",
+    "contextBefore": [],
+    "caption": "Figure 48: Total Energy Consumption by File (CPU vs GPU)",
+    "contextAfter": [
+      "A clear pattern emerges from the data, the baseline ”straight model”, which relies almost ex-",
+      "clusively on model inference, shows the lowest relative CPU energy consumption. On the other"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 48 Total Energy Consumption by File (CPU vs\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 49 General Knowledge Avg. Energy when Straight Model is Incorrect & System is",
+    "contextBefore": [],
+    "caption": "Figure 49: General Knowledge: Avg. Energy when Straight Model is Incorrect & System is",
+    "contextAfter": [
+      "Figure 49 provides a quantitative analysis of the ’correction cost’ associated with ’General",
+      "Knowledge’ queries. When the baseline fails while consuming around 0.95 Wh, the various"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 49 General Knowledge Avg. Energy when Strai\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models",
+    "contextBefore": [
+      "outliers if clipped during quantization can cause significant degradation in performance and",
+      "require special attention if model accuracy is to be preserved [16]."
+    ],
+    "caption": "Figure 5: Comparison of activations and weights in LLAMA2-7B and OPT-13B models.",
+    "contextAfter": [
+      "Another problem that makes it hard to quantize is the significant variations in value range",
+      "across different channels, which can be troublesome for the quatization algorithm. However, a"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 5 Comparison of activations and weights in\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1",
+    "contextBefore": [
+      "outliers if clipped during quantization can cause significant degradation in performance and",
+      "require special attention if model accuracy is to be preserved [16]."
+    ],
+    "caption": "Figure 5: Comparison of activations and weights in LLAMA2-7B and OPT-13B models.",
+    "contextAfter": [
+      "Another problem that makes it hard to quantize is the significant variations in value range",
+      "across different channels, which can be troublesome for the quatization algorithm. However, a"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1\\Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1.png",
+    "imageFilename": "Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1.png"
+  },
+  {
+    "folderName": "Figure 50 Science Avg. Energy when Straight Model is Incorrect & System is Correct",
+    "contextBefore": [],
+    "caption": "Figure 50: Science: Avg. Energy when Straight Model is Incorrect & System is Correct",
+    "contextAfter": [
+      "A similar trend is observed in the Science domain, as shown in Figure 60. Correcting",
+      "the baseline in this approach also required a substantial energy investment, with the V6 again"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 50 Science Avg. Energy when Straight Model\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 51 Science Avg. Energy when Straight Model is Incorrect & System is also Incorrect",
+    "contextBefore": [
+      "showing the highest consumption at nearly 2.5 Wh. Thus reinforcing that the act of correcting",
+      "the responses regardless of the domain is inherently more energy demanding."
+    ],
+    "caption": "Figure 51: Science: Avg. Energy when Straight Model is Incorrect & System is also Incorrect",
+    "contextAfter": [
+      "On the other hand Figure 51 analyzes the scenario where both the baseline and the system",
+      "failed to produce a correct answer. This represents the least efficient use of energy, showing that"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 51 Science Avg. Energy when Straight Model\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 52 Distribution of Energy Consumption per Query by File",
+    "contextBefore": [
+      "Figure 52 provides valuable insight into all the versions by visually representing the distribution",
+      "of energy consumption per query for each one."
+    ],
+    "caption": "Figure 52: Distribution of Energy Consumption per Query by File",
+    "contextAfter": [
+      "The baseline models, particularly the ”straight model”, presents the tightest distribution.",
+      "The small inter quartile range shows that most of the queries are processed using a very con-"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 52 Distribution of Energy Consumption per Q\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 53 Overall Performance Overview Correctness vs. Energy Cost for ARC queries",
+    "contextBefore": [],
+    "caption": "Figure 53: Overall Performance Overview: Correctness vs. Energy Cost for ARC queries",
+    "contextAfter": [
+      "The optimal position on this graph is at the top-left quadrant, which represents the highest",
+      "accuracy with the lowest energy consumption. The bottom-right represents the inverse so the"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 53 Overall Performance Overview Correctness\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 6 Finding the sweet spot for the migration strength[29]",
+    "contextBefore": [
+      "result, the quantization errors tend to be larger in the weights, leading to significant accuracy",
+      "degradation shown in Figure 6."
+    ],
+    "caption": "Figure 6: Finding the sweet spot for the migration strength[29]",
+    "contextAfter": [
+      "However there is a possibility off also pushing all of the quantization difficulty from the",
+      "31"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 6 Finding the sweet spot for the migration\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 7 Main idea of SmoothQuant when α is 0.5. The smoothing factor s is obtained on cal-",
+    "contextBefore": [
+      "max(|Wj|)1−α",
+      "[29]"
+    ],
+    "caption": "Figure 7: Main idea of SmoothQuant when α is 0.5. The smoothing factor s is obtained on cal-",
+    "contextAfter": [
+      "This formula ensures that the weights and activations at the corresponding channel share a",
+      "similar maximum value, thus sharing the same difficulty[29]. Figure 7 illustrates the smoothing"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 7 Main idea of SmoothQuant when α is 0.5. T\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 8 RAG implementation overview[35]",
+    "contextBefore": [
+      "main components: a query encoder (q), a retriever (pn), a document indexer, and a generator",
+      "(p0)."
+    ],
+    "caption": "Figure 8: RAG implementation overview[35]",
+    "contextAfter": [
+      "The first required model is a retriver DPR based on [36]. This retriver works by indexing all",
+      "the passages in a low-dimensional and continuous space, so that later the top K passages can"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 8 RAG implementation overview[35]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Figure 9 An illustration of the HyDE model.[40]",
+    "contextBefore": [
+      "document is fed into the model which also receives the input query, it then generates the output",
+      "for the query based on the retrieved document."
+    ],
+    "caption": "Figure 9: An illustration of the HyDE model.[40]",
+    "contextAfter": [
+      "The main issue addressed by [40] is the dependence on a separate query encoder required",
+      "36"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 9 An illustration of the HyDE model.[40]\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_119_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "111"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_119_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_120_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "112"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_120_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_121_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "113"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_121_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_122_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "114"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_122_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_123_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "115"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_123_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_124_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "116"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_124_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_125_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "117"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_125_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_126_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "118"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_126_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_127_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "119"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_127_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_128_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "120"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_128_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_129_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "121"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_129_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_130_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "122"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_130_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_131_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "123"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_131_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_132_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "124"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_132_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_133_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "125"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_133_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_134_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "126"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_134_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_135_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "127"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_135_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_1_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "2025",
+      "<colocar o ano"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_1_Image\\image.jpeg",
+    "imageFilename": "image.jpeg"
+  },
+  {
+    "folderName": "Page_1_Image_2",
+    "contextBefore": [
+      "Optimizing Small Language Models in Resource-",
+      "Constrained Environments"
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_1_Image_2\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_26_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 2: Maximum path lengths, per-layer complexity and minimum number of sequential",
+      "operations for different layer types. [5]"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_26_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_2_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_2_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_33_Image_1",
+    "contextBefore": [
+      "overhead introduced by the dequantization kernel increases, which can lead to a reduction in",
+      "overall throughput."
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 4: PPL results on Wikitext2 of BLOOM-7B with and without outlier isolation. [22]",
+      "EasyQuant also experimented with an ablation study focusing on three aspects, the outlier"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_33_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_33_Image_2",
+    "contextBefore": [
+      "magnitude have on the model performance, this was done by pruning 1% of the values (accord-",
+      "ing to their magnitude) in the weights into 0 and see the perplexity results."
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 5: PPL results after pruning 1% weight with different magnitude [22]",
+      "Based on Table 5 [22] shows that the largest magnitude outliers imposed the same influence"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_33_Image_2\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_34_Image_1",
+    "contextBefore": [
+      "influence on model accuracy as regular weights, thereby indicating that isolating outliers has an",
+      "important indirect impact on the overall performance of the model."
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 6: Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma thresh-",
+      "old [22]"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_34_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_34_Image_2",
+    "contextBefore": [
+      "Table 6: Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma thresh-",
+      "old [22]"
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 7: Outlier fraction distribution in different layer index in BLOOM-7B under 3-sigma",
+      "threshold [22]"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_34_Image_2\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_37_Image_1",
+    "contextBefore": [
+      "sive, only losing about 45% of the performance of the original model on a suit of benchmarks",
+      "consisting of PIQA, ARC-e, ARC-c, HellaSwag and WinoGrand, as depicted on Figure 8."
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 8: Quantized LLaMA3-8B performance[27]",
+      "29"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_37_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_3_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "2025",
+      "<colocar o ano"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_3_Image\\image.jpeg",
+    "imageFilename": "image.jpeg"
+  },
+  {
+    "folderName": "Page_3_Image_2",
+    "contextBefore": [
+      "científica da Doutora Cláudia Sofia Sevivas Ribeiro,",
+      "professora auxiliar da Universidade Europeia."
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_3_Image_2\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_46_Image_1",
+    "contextBefore": [
+      "of HyDE is particularly impressive even when compared to methods that rely on relevance",
+      "judgments. Notably, HyDE achieves these results without requiring such judgments."
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 10: Results for web search on DL19/20. Best performing w/o relevance and overall",
+      "system(s) are marked bold. DPR, ANCE and ContrieverFT are in-domain supervised models"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_46_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_4_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_4_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_5_Image_1",
+    "contextBefore": [
+      "(opcional)"
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_5_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_64_Image_1",
+    "contextBefore": [
+      "was the state of the art with older models like GPT-3.5 only achieving 28% check Table 11 for",
+      "more tests."
+    ],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 11: Accuracy on each set [57]",
+      "5.7.4"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_64_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_65_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [
+      "Table 12: LLMs using CoT+, Humans scores on the multiple domains[58]",
+      "This data set was constructed using an LLM that is prompted to generate the gold facts"
+    ],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_65_Image\\image.png",
+    "imageFilename": "image.png"
+  },
+  {
+    "folderName": "Page_6_Image_1",
+    "contextBefore": [],
+    "caption": "No Caption Detected",
+    "contextAfter": [],
+    "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_6_Image\\image.png",
+    "imageFilename": "image.png"
+  }
+]

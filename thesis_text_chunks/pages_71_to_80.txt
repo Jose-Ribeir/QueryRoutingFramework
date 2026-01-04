@@ -1,0 +1,344 @@
+and RAG questions across 3 main domains finance, law, and medical. This dataset consists
+of both Chinese and English texts, that serve as a comprehensive resource for multi-language
+scenario-specific research. Due to its big size of 6.711 questions it can be used on just English
+or Chinese assessment.
+5.7.14
+HotPotQA
+HotPotQA [66] is a dataset with 113k question-answer pairs that contain 4 main features
+that tell it apart. Number one being the question requires finding and reasoning over multiple
+documents to achieve a correct answer. Number two is the variety these questions present, these
+are diverse and aren’t constrained to any pre-existing knowledge bases or schemas. Number
+three this dataset provides sentence-level supporting facts that are needed for reasoning. Lastly
+number four it also introduces factoid comparison questions that test wether QA systems can,
+not only extract relevant facts, but also compare them.
+The data used for this dataset creation was gathered by crowd-workers on Amazon Mechan-
+ical Turk. The gathered data had it’s origin on English Wikipedia, the process followed five
+major steps. Starting with finding a paragraph on a specific Wikipedia page, next is the navi-
+gation to a hyperlynk found in that paragraph, this will later be a related article. The following
+task is the formation of a question about the two articles, this formed query can’t be answered
+with just the information of one and needs the two of them to be complete. The following
+step is the generation of a answer to the previous question this answer gets information from
+both pages. The final step is to identify the supporting facts, this is a crucial explainability step
+where the worker must select the specific sentences from the two articles that are needed to
+reason through and arrive to the final answer. The specific sentences found are the ground-truth
+supporting facts. These steps form the generation pipeline of this method.
+This method being specially develop with reasoning in mind, comes with two main types of
+reasoning Bridge-Entity, and Comparison Reasoning.
+Bridge-Entity Reasoning is most prevalent question in HotPotQA and involves a bridge
+entity, meaning the two necessary documents are linked by a common person, place, or thing.
+To answer the question, the model must first use one document to identify this bridge and
+then use the second document to find the final piece of information. As for the Comparison
+Reasoning this requires the model to extract information and form various facts, these facts
+need then to be compared between themselves to find the final solution. This can be something
+like ”when was the last public record of Astra systems publicized”. This would require the
+model to find all the public records about Astra systems, then it would need to compare dates
+of all the documents, and only then would the final answer be evident.
+This dataset also comes with a evaluation framework specially designed to work with the
+differences found from more common datasets. The evaluation is measured in answer accuracy
+that is the standard evaluation of wether the final answer is correct, this is done using a Exact
+Match (EM) and F1 score. To measure the Supporting Facts Accuracy the same EM and F1
+63
+scores are also used, this evaluates wether the model correctly identified what was needed to
+reach the final answer. One important thing to note is that the paper argues that for the model to
+be accurate it should get both the answer and the reasoning path correct. So a combined metric
+is proposed where a model only gets the full credit when success at both tasks is achieved, thus
+a stricter and more meaningful evaluation of a model’s true reasoning capabilities is achieved.
+6
+Methodology
+As more powerful models hit the market with more expensive requirements, finding a model
+that suits low-budget companies or entities is becoming harder. The problem occurs due to the
+gap in the performance of LMMs. LMMs with more tokens will always tend to have greater
+performance [8]. However, this performance could be increased with methods described pre-
+viously like HyDE [40], RAG [35], CoT [67], CAG [43], RAGCache [44], SKR [52], and
+Contriever [49]. All of these methods aim to improve model performance, but they do so at the
+cost of increased computational overhead. This overhead is variable, meaning that depending
+on the method or combination of methods used, the system’s requirements and consequently its
+energy consumption can change significantly. Since most of the studies are also on bigger mod-
+els a new approach will be taken to see if the results are similar to the bigger models. The key
+points of the research are the efficiency and performance using some of the enhancing methods
+described above. These will be paired with a small LLM meaning less than 36B tokens.
+
+
+[INSERT IMAGE HERE: Figure 25: Relationship between model size and monthly downloads[68]]
+
+6.1
+Overview of the Query Rewriting Flow
+The use of Large Language Models (LLMs) in Information Retrieval (IR) systems has rev-
+olutionized the way people interact with and retrieve information. Traditionally IR systems,
+such as search engines, have evolved from term-based to neural network models, which are
+uniquely suited to detect semantic nuance and contextual hints. Nevertheless, such systems still
+pose challenges like query vagueness, data sparsity, and generation of responses that, although
+64
+plausible, are actually incorrect. LLMs, with their remarkable ability in language generation,
+comprehension, and reasoning, offer a unmatched solution for the aforementioned challenges.
+Leveraging their huge pre-training on diverse text-based data, LLMs enhance various IR com-
+ponents like query rewriting, retrieval, reranking, and response generation and enable more
+precise, contextual, and user-centric search experience as shown in Figure 26.
+Breakthroughs in cutting-edge large language models (LLMs) LLaMA have exhibited the
+capability to accomplish demanding tasks and optimize information retrieval (IR) performance.
+These models have not just the capacity to de-modularize user queries and retrieve relevant
+documents but also render lengthy and human-sounding responses, thereby overcoming the
+limitations between traditional IR systems and the present user expectations.
+
+
+[INSERT IMAGE HERE: Figure 26: Traditional information retrieval architecture[68]]
+
+The proposed system will integrate a rewriter module that will be placed between the user
+query q and the retriever similar to [45], this will enable the injection of the retrieved documents
+as-well as the injection of instruction like CoT. This system works by first receiving the user
+query, which will be processed by the rewriter module. This module inserts an instruction
+inst that is used to determine the most suitable rewriting strategy to optimize the query. The
+instruction will prompt the LLM to evaluate which of the three approaches is the more suitable
+normal response, RAG, or Chain-of-Thought.
+
+
+[INSERT IMAGE HERE: Figure 27: Graphical representation of the system diagram[68]]
+
+If the models concludes that it can answer directly then the model proceeds to generate the
+answer without the need of a new generation, meaning only one hop. As for Chain-of-Thought,
+65
+the approach works by injecting a command to try and force the model into thinking step by
+step to obtain the answer. The final approach is Retrieval-Augmented Generation (RAG), which
+is also the most complex. It begins by passing the query to a smaller model that generates an
+embedding representation of the query, aligned with a pre-embedded document collection. A
+similarity comparison is then performed to retrieve the most relevant documents based on this
+embedding space. Next, a rewriter is used to extract and pass only the most important parts
+of the retrieved documents, reducing the amount of irrelevant information passed to the model.
+Finally, a reranker prioritizes the most relevant documents so that they are presented first during
+the generation process. The last two aren’t necessarily needed so they can be turned off as
+needed for more .
+6.2
+Hardware and Software Environment
+The experiments were conducted on a high-performance workstation running windows 10,
+equipped with an Intel Core i7-13700KF processor, an NVIDIA RTX 4090 GPU, and 32 GB
+of DDR5 RAM operating at 6000 MHz. The software environment was managed using Python
+3.12 within a virtual environment (.venv), ensuring isolation and reproducibility of dependen-
+cies. The main libraries required are PyTorch (with CUDA 12.6 support) and the Hugging
+Face Transformers library, which was used to download and run the deepseek-ai/DeepSeek-
+R1-Distill-Llama-8B LLM. To monitor the system performance and power consumption during
+model inference and other system requirements, HWInfo was employed. Additional Python
+libraries were installed as required to support the various aspects needed for the workflow. This
+setup provides a robust and efficient platform for running and evaluating the proposed system.
+6.3
+Rewriting Approaches
+6.3.1
+Straight LLM
+This approach uses the initial model response as the final answer. It is designed for ques-
+tions that are too simple to require more complex methods. From an efficiency standpoint,
+minimizing processing steps is desirable, and using the first response avoids redundant genera-
+tion. As the simplest approach, it does not enhance the model’s answer but provides a baseline
+for comparison.
+6.3.2
+Chain-of-Thought
+The Chain-of-Thought (CoT) approach enhances model performance by encouraging it to
+reason through the logical steps of a query. In some models, this can be achieved with simple
+prompts such as ”Please reason step by step, and put your final answer within a box.”, as seen
+with DeepSeek models [69]. Other models may require more elaborate and tailored
+66
+This approach has been widely adopted to improve and enhance the reasoning capabilities of
+LLMs. One of the reasons for this adoption comes from the simple requirements since it doesn’t
+need much change on already-built systems. This method has shown significant improvements
+in certain tasks that require logical thinking and contextual understanding. For instance, some
+benchmarks often use both with and without Chain-of-Thought prompting to show the direct
+impact of the on reasoning performance [70], [58]. The proposed system selects this option
+when the initial model response indicates that Chain-of-Thought reasoning is required. This
+method involves two inference steps: the first allows the LLM to assess whether CoT is neces-
+sary, and the second passes a modified query containing the appropriate instruction to prompt
+the model to reason through the problem. Finally the model answer the instruction that now
+contains a CoT instruction.
+6.3.3
+RAG
+This approach is used to retrieve documents or passages that are relevant to the user’s query.
+This is done by embedding the user query into a vector , which is then compared to the vectors
+of stored documents. Based on a top-K similarity ranking, the most relevant documents are
+retrieved. These documents can then be refined by removing non-essential parts, aiming to make
+the resulting content as concise and relevant as possible. Following refinement, the documents
+may be reranked, as language models tend to focus more on the initial tokens in the input [71].
+Similar to the Chain-of-Thought method, this approach also requires two hops: The first hop
+acts as a reflection step to determine whether the LLM deems document retrieval necessary; The
+second hops consists on passing the query as well as the retrieved documents to the LL;
+6.3.4
+Selecting the Approach
+The system has three possible approaches to choose from: Retrieval R, CoT C, and Straight
+answer S. Since only one of these approaches can be selected for a given query, a selection
+mechanism is required. This selection is performed using the model (M) and the content of the
+query (q), this is shown in Figure 29
+
+
+[INSERT IMAGE HERE: Figure 28: Analysis Prompt]
+
+Figure 28 presents the analysis prompt responsible for this selection. This instruction can
+be divided into two parts. The first part is responsible for the Straight Answer (S), it asks the
+67
+model to respond directly to the query if it is confident it can do so correctly. This approach
+is not only the fastest as well as the simplest, as the system does not need to perform any
+additional steps to achieve the response. The second part of the prompt is responsible to induce
+the model into deciding between Retrieval (R) or CoT (C). This is done by asking the model if
+it would benefit from retrieval of documents. If the response is ”Yes” then Retrieval process is
+triggered, and all subsequent steps such as reranking and refining are also executed. However,
+if the model’s answer is ’No’, the system interprets this as a lack of confidence in the initial
+response. To improve the quality of the final output, the system then forces the model to use
+Chain-of-Thought (CoT) reasoning.
+To translate the model’s textual output into a definitive choice, the system employs a so-
+phisticated post-processing and also voting mechanism rather than simply looking for a single
+keyword. This implementation is a critical part that enables the system to use a decision-making
+process robust and resilient to multiple formatting variations. The process unfolds as follows:
+1. Initial Cleaning: The raw output from the model is first decoded and also normalized
+to standardize characters and spacings. Any preliminary ”Chain-of-Thought” reasoning,
+which is normally enclosed in special tags like ” < /think > ”, is stripped away to
+isolate the final answer.
+2. Check for a Direct Answer(early exit): Before classifying the need for retrieval, the sys-
+tem first checks if the model already provided the final answer on it’s first analysis. It
+specifically looks for a ”\\boxed{...}” pattern containing a single alphabetic character
+(e.g., ”\\boxed{A}”). If this pattern is found, the system assumes it corresponds to strat-
+egy S. The process then halts immediately, returning the response as the final output. The
+’method used’ is set to ’none’, indicating that no additional processing was necessary.
+3. A Voting System For Decision Making: Instead of a simple parse, the system incurs a
+scoring mechanism to ”vote” on the best possible approach. It initializes counters for
+both R and C.
+4. Identifying Strong Signals: The code meticulously scans the output for high-confidence
+indicators. A ”\\boxed{1}” pattern is considered a strong, explicit vote for R, adding a
+significant score of 100 points. Similarly, a ”\\boxed{2}” is a strong vote for C.
+5. Identifying Secondary Signals: To enhance robustness and accuracy, the system also looks
+for secondary indicators. The presence of the word ”yes”(case-insensitive) in the analysis
+also adds 100 points to the R counter. This ensures the model’s intent is captured even
+when the model fails to use the precise boxed format.
+6. Final Decision: After analyzing the entire output, the approach with the highest accumu-
+lated score is chosen as the ”suggested method”. This multi-signal, voting-based mech-
+68
+anism makes the classification resilient to minor formatting errors from the model, thus
+prioritizing a correct interpretation over strict adherence to a single output format.
+6.4
+Dataset Augmentation
+6.5
+Query-Answer Validation
+The proposed validation framework is comprised of a three-stage process that is used to sys-
+tematically differentiate between high-quality and problematic queries. This hybrid approach
+integrates automated analysis with a human-in-the-loop component.
+6.5.1
+Automated Preparation
+The data is ingested and categorized using a python script. The script then splits the queries
+into those that require retrieval and those that do not. Depending on the configuration, one
+of these two sets is selected for further processing. This set is then divided into batches of
+n queries, a value that can be configured in the settings. Each time the Alt key is pressed, a
+new batch is compiled and copied to the clipboard, ready to be pasted into the LLM chat. The
+generated batch already includes the appropriate instruction, tailored to the selected query type.
+6.5.2
+AI-Powered Triage
+The LLM analyzes the provided query and determines if the options are clear and the ground
+truth is correct, paying special attention to the number of correct options. If these prove to be
+correct then a Green Flag is assigned. This flag contains an emoji so the human supervisor
+can identified the queries easily. In this workflow, a Green Flag is treated as a definitive pass,
+meaning these queries are not further reviewed by the supervisor.
+A Red Flag, on the other hand, is assigned to any query that fails to meet the criteria for
+example, due to ambiguous wording or other inconsistencies. Unlike the Green Flag, a Red
+Flag does not automatically discard the query. Instead, it signals that the query requires human
+verification. Although the model provides an explanation for why the Red Flag was assigned,
+the final decision rests with the human supervisor.
+6.5.3
+Human Verification
+The human validator is instructed to only look at the Red Flags queries to maintain attention
+and reduce the number of queries a human needs to verify. The job of the validator falls into the
+verification of the LLM’s justification for the Red Flag, this verification can lead to the validator
+doing some research on the query and the correctness of the expected output. In case a query
+fails this verification it is deemed unusable and gets removed from the dataset, a new one is
+added to it’s place that passes this validation.
+69
+6.5.4
+Dataset formation
+The output of all the previous points are fully answerable queries that are free of ambiguity.
+This is used for two distinct datasets, the ARC-easy and the HotPotQA, the results are then
+joined to combine queries that require retrieval as well as those needing step-by-step reasoning.
+This new dataset is specially designed for systems that can decide what approach is required for
+the best possible outcome. However due to the lack of complexity of the ARC-easy queries this
+is more suited towards weaker than state-of-the-art, more around 32B tokens and lower.
+6.6
+Power Data Collection
+6.6.1
+GPU
+To compare the different components of the system, one important aspect is energy con-
+sumption. However, collecting this data on Windows is not straightforward. Due to hardware
+limitations, all measurements will be performed using software tools that query system com-
+ponents to report energy usage at a given moment. Starting with GPU the power consumption
+is collected using nvidia-smi [72], this tool acts as bridge that queries the GPU driver directly
+and converts the retrieved data into a useful unit, these data points are collected every 15ms,
+however due to driver overhead the real gap is around 50ms. The data collected according to
+Nvidia NVML [73] is related to TBP or total board power, meaning that the consumption of
+VRAM and all the necessary components to support the GPU die itself are included in that
+power measurement. This is important as the power consumption of VRAM is highly used by
+LLM’s during inference. This data is collected directly by a purpose-built library that monitors
+GPU power draw. The power measurements are added directly into the JSONL file, which also
+contains the model’s response and all relevant metadata for later analysis.
+6.6.2
+CPU
+The other power consumption metric is the CPU package. This measures the power used by
+the CPU chip itself, excluding any power consumed by supporting components such as voltage
+regulator modules (VRMs), the chipset, and other peripherals. Although it would be interesting
+to measure the full system power draw, this requires specific hardware that was not available for
+this project. This CPU package draw isn’t super easy to obtain in a Windows system so the use
+of a proprietary tool called HWiNFO this tool offers a logging feature that creates a CSV with
+all the collected data, this collection is done every 20ms theoretically however in reality there
+are a lot of times where it takes more than that, but on average it takes 31ms.
+Because the CSV is generated by a third-party tool, it is only available at the end of the
+run when logging is manually stopped. To align energy data with query execution, a script is
+used to match each query’s start and end times (from the previously mentioned JSONL file)
+with the corresponding timestamps in the CSV. All data points that fall within a query’s time
+70
+window are extracted. Using these points and their timestamps, the trapezoidal rule is applied to
+approximate the energy consumption. This method works by summing the areas of trapezoids
+under the power curve, providing an estimate of the integral of power over time (watts × time).
+This approach compensates for the irregular intervals in data retrieval by HWiNFO. The result
+is an estimate of energy consumption by the CPU package, expressed in watt-hours. This value
+is then added to the JSONL file, along with the total energy consumption calculated as the sum
+of the GPU’s Total Board Power (TBP) and the CPU package power. GPU power usage is
+already recorded in the JSONL, and the trapezoidal rule is applied in real time during inference
+to account for variations in the intervals between data points.
+
+
+[INSERT IMAGE HERE: Figure 29: Jsonl Data Structure]
+
+In Figure 29 is depicted the final JSONL structure. The structure is devised into four main
+parts Query Information, Ground Truth, AI Prediction, and Performance & Metrics each being
+finalized at different stages. The system initially gets a JSONL with just the Query Information
+and the Ground Truth. Part 2 is formed by the responses and metrics from the system solution.
+6.7
+Evaluation Framework
+The evaluation framework may vary depending on the specific domain being tested. This
+is because some domains might require different metrics to understand the real capabilities of
+71
+the model in a given task [74]. Another key point is the need to access each part individually
+as well as combined. This is key in accessing the quality of the system and understand which
+points could be improved for a better combined performance.One of the most important metrics
+across all components of the system is efficiency, as it helps to assess how each part contributes
+to the overall energy consumption. What will be compared and obtained is the following:
+• System answers to full dataset.
+• Straight model answers to full dataset.
+• Forced CoT answers to full dataset.
+• Forced Retrieval answers to just full dataset.
+The full dataset consists of 3000 queries, with 1312 originating from the ARC-Easy dataset
+and the remainder from the DragonBall dataset. The ARC-Easy dataset was selected because
+it primarily contains simple reasoning queries that the model can answer without relying on
+external knowledge, although a few questions do require more complex reasoning. The Drag-
+onBall dataset, on the other hand, was chosen because it mostly includes queries that necessitate
+retrieval, with some also requiring advanced reasoning to be answered correctly.
+Together, these datasets offer a comprehensive evaluation of the system’s capabilities. Ad-
+ditionally, if the model under study is a larger one, the ARC-Easy portion can be replaced by
+ARC-Challenge, which features more complex queries that demand deeper reasoning than its
+simpler counterpart.
+6.7.1
+Retrieval Performance Metrics
+Due to the nature of this work, the quality of the retrieval itself will not be evaluated, as it
+depends on the specific RAG method employed. Instead, the evaluation will focus on whether
+retrieval occurred when it was necessary. This will be represented as a binary outcome: 1 if
+retrieval was triggered, and 0 if not. However, what needs to be evaluated is a direct compari-
+son between the energy consumption of the proposed system and that of a baseline that always
+performs retrieval. This comparison is important because the system requires two hops to de-
+cide whether to retrieve, whereas always retrieving eliminates the need for this decision-making
+step. However, since the dataset includes questions both with and without the need for retrieval,
+an evaluation will be conducted to determine whether the system results in lower energy con-
+sumption. This is based on the premise that retrieval is not necessary for every query, and the
+system may avoid unnecessary retrieval steps. The quality and correctness of the answer will
+also be evaluated. This is important because, in cases where retrieval is not necessary, the sys-
+tem may still retrieve documents from the database that are not directly relevant to the query.
+As a result, these retrieved passages may not contribute meaningfully to the answer.
+72

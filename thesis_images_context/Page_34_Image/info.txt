@@ -1,0 +1,10 @@
+--- Text Before ---
+influence on model accuracy as regular weights, thereby indicating that isolating outliers has an
+important indirect impact on the overall performance of the model.
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 6: Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma thresh-
+old [22]

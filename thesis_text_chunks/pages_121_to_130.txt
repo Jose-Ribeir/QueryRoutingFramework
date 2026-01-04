@@ -1,0 +1,60 @@
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 56: Correctness Comparison between system versus a 14B Model.
+113
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 57: Average Energy Consumption by Domain.
+114
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 58: Average CPU Energy Consumption by Domain.
+115
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 59: Avg. Energy of Analysis Models that were CORRECT when Baseline Failed.
+116
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 60: Science: Avg. Energy when Straight Model is Incorrect & System is Correct.
+117
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 61: Average CPU Energy Consumption by Method.
+118
+Figure 62: Efficiency Score: Energy Cost of a Correct Answer for the system versus the 14B Model at the science domain.
+
+
+[INSERT IMAGE HERE: No Caption]
+
+119
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 63: Average GPU Energy Consumption by Method.
+120
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 64: Average Energy Consumption by Method.
+121
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 65: Science Domain: Avg. Energy when Baseline is Incorrect & System is also Incorrect.
+122

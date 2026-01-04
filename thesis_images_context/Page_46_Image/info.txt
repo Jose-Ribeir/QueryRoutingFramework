@@ -1,0 +1,10 @@
+--- Text Before ---
+of HyDE is particularly impressive even when compared to methods that rely on relevance
+judgments. Notably, HyDE achieves these results without requiring such judgments.
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 10: Results for web search on DL19/20. Best performing w/o relevance and overall
+system(s) are marked bold. DPR, ANCE and ContrieverFT are in-domain supervised models

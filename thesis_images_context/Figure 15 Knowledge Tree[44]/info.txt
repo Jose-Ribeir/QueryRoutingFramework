@@ -1,0 +1,9 @@
+--- Text Before ---
+RAGCache retrieves tensors by performing prefix matching along these paths. If a subsequent document in a sequence cannot be found among the child nodes, the traversal is terminated, and the longest identified document sequence is returned. This method ensures efficiency with a time complexity of O(h), where h is the height of the tree.
+
+--- Full Caption ---
+Figure 15: Knowledge Tree[44]
+
+--- Text After ---
+Prefix-aware Greedy-Dual-Size-Frequency (PGDSF) replacement policy is the name for the
+43

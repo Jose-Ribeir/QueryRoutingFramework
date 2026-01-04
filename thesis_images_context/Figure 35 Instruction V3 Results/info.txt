@@ -1,0 +1,10 @@
+--- Text Before ---
+reason through its decision-making process to select the appropriate path.
+81
+
+--- Full Caption ---
+Figure 35: Instruction V3 Results
+
+--- Text After ---
+82
+The results depicted in Figure 35 reflect this new found balance. The Retrieval Task Routing

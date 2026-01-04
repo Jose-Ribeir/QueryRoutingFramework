@@ -1,0 +1,265 @@
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+ 
+ 
+2025 
+<colocar o ano 
+em que 
+ as provas se irão 
+realizar> 
+ 
+ 
+ 
+José Pedro Farinha 
+Ribeiro 
+ 
+An Adaptive Query-Routing Framework for 
+Optimizing Small Language Models in Resource-
+Constrained Environments 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+MOD-195.IADEV02;  07-07-2023 
+ 
+ 
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+MOD-195.IADEV02;  07-07-2023 
+ 
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+ 
+ 
+2025 
+<colocar o ano 
+em que 
+ as provas se irão 
+realizar> 
+ 
+ 
+ 
+José Pedro Farinha 
+Ribeiro 
+ 
+An Adaptive Query-Routing Framework for 
+Optimizing Small Language Models in Resource-
+Constrained Enviornments  
+ 
+ 
+ 
+ 
+Dissertação apresentada ao IADE - Faculdade de 
+Design, Tecnologia e Comunicação da Universidade 
+Europeia, para cumprimento dos requisitos necessários à 
+obtenção do grau de Mestre em Creative Computing and 
+Artificial Intelligence realizada sob a orientação 
+científica da Doutora Cláudia Sofia Sevivas Ribeiro, 
+professora auxiliar da Universidade Europeia. 
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+MOD-195.IADEV02;  07-07-2023 
+ 
+texto Apoio financeiro da FCT ou outro... 
+ 
+(se aplicável) 
+ 
+ 
+ 
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+MOD-195.IADEV02;  07-07-2023 
+ 
+I want to express my deepest gratitude to my grandfather, 
+Leonel Pires Ribeiro, for not only giving me a place to stay 
+but also for helping with all the expenses. I cherished every 
+conversation we had throughout most of college and deeply 
+appreciate all the support he provided. 
+    A sincere thanks to my advisor, Prof. Cláudia Sofia 
+Sevivas Ribeiro, for the valuable insights shared throughout 
+the thesis and for the many constructive discussions along 
+the way. 
+    A heartfelt thank you to my wonderful girlfriend, 
+Bárbara Höller, for taking care of most of the household 
+tasks while I focused on completing this thesis. 
+    None of this work would have been possible without the 
+support of my parents, Lídia Ribeiro and Nuno Ribeiro, 
+who provided the resources needed to run all the required 
+models and processes including the high electricity costs, 
+kindly and unquestioningly covered by my grandmother, 
+Maria Ribeiro. 
+    And finally, the biggest thanks go to my other 
+grandmother, Maria Lopes Marçal, for all the support she 
+gave me throughout my academic journey and for all the 
+boxes of vegetables which, according to her, gave me my 
+beautiful eyes. 
+ 
+(opcional) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Acknowledgements 
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+MOD-195.IADEV02;  07-07-2023 
+ 
+ 
+ 
+
+
+[INSERT IMAGE HERE: No Caption]
+
+MOD-195.IADEV02;  07-07-2023 
+ 
+AI; RAG; Quantization; HyDE; Large Language Models; 
+Instruction Optimization. 
+ 
+ 
+ 
+palavras-chave 
+ 
+resumo 
+ 
+À medida que os custos computacionais e financeiros dos 
+modelos de linguagem de grande escala (LLMs) de última 
+geração continuam a aumentar, a sua implementação torna-
+se mais difícil para organizações com recursos limitados. 
+Uma vez que métodos de melhoria como a Retrieval 
+Augmented Generation (RAG), Chain-of-Thought (CoT), 
+HyDE e técnicas relacionadas melhoram a qualidade, mas 
+implicam custos variáveis. Este trabalho apresenta uma 
+estrutura dinâmica de encaminhamento de consultas, na 
+qual um LLM compacto (8 mil milhões de parâmetros) é 
+emparelhado com um controlador adaptativo que seleciona 
+uma de três vias por consulta: resposta direta, CoT ou 
+RAG. Para tal, o controlador baseia-se no refinamento 
+iterativo de prompts, progredindo através de seis designs de 
+instrução que evoluem de heurísticas baseadas em formato 
+para uma classificação baseada em perfil, e emprega um 
+pós-processador do tipo votação para garantir uma extração 
+de decisão robusta. A estrutura proposta é avaliada em 
+termos de precisão de encaminhamento, correção da 
+resposta de ponta a ponta e perfil energético detalhado 
+(CPU e GPU), utilizando um conjunto de dados compósito 
+que combina conhecimento geral com forte dependência de 
+recuperação de informação e questões de ciência focadas 
+em raciocínio (itens ao estilo ARC-Easy e HotPotQA), num 
+computador com uma única GPU. Os resultados mostram 
+que os prompts baseados em perfil podem melhorar o 
+equilíbrio do encaminhamento: as versões mais 
+desenvolvidas atingem uma precisão de resposta superior a 
+85% em consultas do tipo ARC, mantendo-se muito mais 
+eficientes em termos energéticos do que modelos maiores. 
+Além disso, as análises demonstram que as respostas 
+incorretas consomem mais energia e que o design da 
+instrução transfere o consumo de energia entre a 
+recuperação de informação (RAG), intensiva em CPU, e o 
+raciocínio, intensivo em GPU. Consequentemente, os 
+nossos resultados indicam que o controlo arquitetónico e a 
+engenharia de prompts podem diminuir a diferença de 
+desempenho entre modelos de pequena e média dimensão, 
+enquanto alcançam ganhos de eficiência significativos e 
+fornecem um caminho prático para sistemas de 
+Recuperação de Informação (IR) e de Pergunta-Resposta 
+- i - 
+ 
+ 
+(QA) de alta qualidade, sob fortes restrições de recursos e 
+requisitos de segurança de dados. 
+ 
+ 
+ 
+ 
+ 
+ 
+- ii - 
+ 
+ 
+ 
+ 
+- iii - 
+ 
+ 
+AI; RAG; Quantization; HyDE; Large Language Models; 
+Instruction Optimization. 
+ 
+ 
+Keywords 
+ 
+As the computational and financial costs of state-of-the-art 
+large language models (LLMs) continue to grow, deploying 
+them becomes harder for resource-constrained 
+organizations as improvement methods such as Retrieval-
+Augmented Generation (RAG), Chain-of-Thought (CoT), 
+HyDE, and related techniques enhance quality but incur 
+variable overheads. This work presents a dynamic query-
+routing framework, in which a compact LLM (8B 
+parameters) is paired with an adaptive controller that selects 
+from three routes per query: direct answer, CoT or, RAG. 
+Therefore the controller builds on iterative prompt 
+refinement, proceeding through six instruction designs that 
+evolve from format-driven heuristics to profile-based 
+classification, and employs a voting-style post-processor to 
+ensure robust decision extraction. The proposed framework 
+is evaluated on routing accuracy, end-to-end answer 
+correctness, and detailed energy profiling (CPU and GPU) 
+using a composite dataset that combines retrieval-heavy 
+general-knowledge and reasoning-focused science 
+questions (ARC-Easy and HotPotQA-style items), on a 
+single-GPU workstation. Results show that profile-based 
+prompts can improve routing balance: mature versions 
+reach 85%+ answer accuracy on ARC-style queries while 
+remaining much more energy efficient than larger models. 
+Moreover, analyses show that incorrect answers consume 
+more energy, and that instruction design shifts the energy 
+burden between CPU-heavy retrieval and GPU-heavy 
+reasoning. Consequently our results indicate that 
+architectural control and prompt engineering can close the 
+performance gap between small and mid-sized models 
+while achieving significant efficiency gains and providing a 
+practical path to high-quality IR and QA systems under 
+tight resource constraints and data security requirements. 
+ 
+ 
+ 
+ 
+ 
+abstract 
+ 
+- iv - 
+ 
+ 

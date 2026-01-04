@@ -1,0 +1,373 @@
+Parameter
+Value
+drow
+10000
+dcol
+100
+Runtime Type
+Calculation
+OBQ Runtime
+O(10000 · 1003) = O(10, 000 · 1, 000, 000) = O(1010)
+Max Term: O(max{10000 · 1002, 1003})
+Calculations: 10000 · 1002 = 10, 000 · 10, 000 = 108
+OPTQ Runtime
+1003 = 106
+Result: O(max{108, 106}) = O(108)
+Table 3: Runtime Analysis
+using only a few FLOPs per entry[21]. This means that the GPU usage was limited by the
+speed of the memory bandwidth. Lazy Batch-Updates addressed this issue by grouping updates
+across B × B blocks of the inverse Hessian matrix H−1, with B being typically set to 128
+columns at a time. These blocks are processed and after that, they are used to apply updates to
+the matrix. Thus avoiding the need for frequent recalculations throughout the matrix, cutting
+on memory-bound operations.
+The final modification was the Cholesky Reformulation that was used to improve on two
+key issues, numerical inaccuracies and error accumulation, the numerical inaccuracies occur as
+model sizes increase beyond a few billion parameters, these can lead to instability. This hap-
+pens because the matrix H−1
+F
+becomes indefinite during iterative updates causing erratic weight
+updates, the error accumulation is caused by the compounding numerical errors of the matrix
+inversion. Though previously they used dampening techniques like adding a small constant λ
+(which was normally always 1% of the average diagonal value) to the diagonal elements of H.
+However, this proved to be inefficient on larger models, but by combining Cholesky decom-
+position, precomputation of necessary rows, and dampening prevents the H−1
+F
+from becoming
+indefinite mitigating the accumulation of numerical errors, and makes the algorithm suitable
+for large models. A deeper dive into some of these methods are described in the subsequent
+sections.
+5.2.2
+Weight-Only Quantization
+The Weight-Only Quantization focuses on quantizing only the weights of the LLM and not
+the activations, this reduces the model size and memory transfer time. However, this doesn’t
+benefit from hardware-accerlerated low-bit operations.[16] The most used quantization method
+23
+is rounding to nearest-nember (RTN).[22], this works by quantizing a tensor x into k-bits.
+Q[x] = s × clamp
+x
+s, lmin, lmax
+
+[22]
+Here the s is the quantization scale, lmin and lmax are the low and upper bound clipping, which
+is then rounded to the nearest number ⌊·⌋. Usually setting lmin = −2k−1 + 1 and lmax = 2k −1
+and set s to be the maximum absolute value in x. There are two main ways to find the best
+configuration in weight only quantization. The first one is by minimizing the reconstruction
+error of the weight parameter which is define as
+r(W) := ∥Q[W] −W∥2
+[22]
+On the function above only the weights are accessed therefore it’s a data-free process. However
+recent studies ([19], [23]) propose the usage of output error as compensation.
+e(W) =
+X
+X∈D
+∥Q[W]X −WX∥2
+[22]
+D corresponds to the calibration set sampled form of the original training data, for optimization.
+By regularizing the model with its training data, more promising results are achieved com-
+pared to the reconstruction-based method. The data requirements of these 2 methods have a two
+big draw backs, the first one being that there’s a requirement of having the original training data
+of the model since most quantizations are done by others than the creators off the model makes
+it hard to find exactly which data was used to train the model. The second problem is that using
+the same data again can jeopardize the ability of generalization of the model due to the model
+over-fitting to the calibration set. For this two reasons it is clearly very important to achieve a
+Data-free quantization.
+5.2.3
+Non Uniform Weight Quantization
+Most of the typical quantization methods handle the weights differently from this approach.
+This method quantizes weights differently depending on their importance to the LLM. Not all
+weights are of equal importance to the performance of a model, and so they should not be
+treated similarly, which is the case with techniques such as EasyQuant.
+EasyQuant[22] proposes the usage of the reconstruction error as the regulation metric since
+this can be used to optimize the quantized model indirectly improving the generalization ability
+of the model. According to [22] the performance gap of the quantized model (INT4) and the full
+precision model is due to two main factors. The first being that normally the quantization range
+is picked as the maximum absolute value of the weight thus inducing a large reconstruction error
+for low-bits quantization. The latter refers to the fact that the 0.1% of weights corresponds to
+outliers, although representing a small percentage of the total, have a significant impact on the
+24
+model’s performance.Keeping this in mind, if we try to define the outliers using the condition:
+|Wi,j −mean(W)| ≥n · var(W)
+[22]
+For any weight W, where Wij is the (i, j)-th weight and (n) representing the threshold for
+identifying the outliers, we can classify certain weights as outliers [22]. However, the challenge
+is that simply detecting the outliers and avoiding their quantization is not sufficient to achieve
+good model performance. Furthermore, if the percentage of outliers becomes too large, the
+overhead introduced by the dequantization kernel increases, which can lead to a reduction in
+overall throughput.
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 4: PPL results on Wikitext2 of BLOOM-7B with and without outlier isolation. [22]
+EasyQuant also experimented with an ablation study focusing on three aspects, the outlier
+influence, outlier distribution, and the Quantization Range. The ablation study began by pre-
+serving 10% of the weights in FP16. This resulted in an 8% increase in perplexity, compared to
+only a 1% increase achieved with EasyQuant. These findings suggest that simply isolating the
+outliers was not sufficient to maintain the expected perplexity levels. To check the outlier influ-
+ence on EasyQUant, outlier isolation is key however this can only impose an indirect influence
+on the model accuracy. The phenomenon found is the outliers behave like a gating mechanism
+meaning that without the outlier isolation, the model performance deteriorates significantly with
+smaller reconstruction error, and with outliers in FP16 the model shows continuous improve-
+ment decreasing the perplexity with smaller reconstruction error Table 4. Another study was
+done to understand how much influence outliers with big weight magnitude and small weight
+magnitude have on the model performance, this was done by pruning 1% of the values (accord-
+ing to their magnitude) in the weights into 0 and see the perplexity results.
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 5: PPL results after pruning 1% weight with different magnitude [22]
+Based on Table 5 [22] shows that the largest magnitude outliers imposed the same influence
+on the model performance as the normal values. This suggests that outliers exert a similar direct
+25
+influence on model accuracy as regular weights, thereby indicating that isolating outliers has an
+important indirect impact on the overall performance of the model.
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 6: Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma thresh-
+old [22]
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 7: Outlier fraction distribution in different layer index in BLOOM-7B under 3-sigma
+threshold [22]
+On the outlier distribution, it was explored the distribution along different modules and
+layers, and it showed that the fraction of the outliers share different patterns in different modules
+and layers, refer to Tables 6 and 7.
+Another characteristic found was that the FFN.2 module showed a significantly higher frac-
+tion of outliers, however there was no pattern along the layer index.
+On the quantization range, it was observed that the dynamic quantization range of different
+optimization steps and concluded that the range decreased fast in the early stages of training
+meaning a smaller quantization range facilitating more precise quantization of parameters. The
+study also revealed that after a certain number of steps, the quantization range became stable
+meaning that the optimal range had already been achieved. In deep neural networks, not all
+weights have the same influence on the model’s performance some contribute more significantly
+than others [22]. This implies that relying solely on the magnitude of the weights is insufficient
+to fully capture the impact of each element on the model’s behavior. A good benchmark to
+detect parameter sensitivity is the Hessian metric. This occurs due to the fact of the Hessian
+matrix being leveraged to assess the salience of parameters in each under-binarized layer. The
+optimized computation process to derive weight sensitivity is given by:
+si =
+w2
+i
+[H−1]2
+ii
+[24]
+26
+The H represents the Hessian matrix of each layer and the wi which represents the original
+value of each element. The si is then used as a criterion for assessing the weight significance of
+the element also used as a feature indicator for a structured selection.
+Structural search selection can be implemented using unstructured selection, allowing the
+model to cover all salient weights. However, this approach requires an additional 1-bit bitmap
+index [25], which increases the average bit-width. This proves to be inefficient, especially
+for the Hessian outlier weights that are only less than 1% of the total. According to [24] the
+majority of the weights that are sensitive Hessian values are predominantly concentrated in
+specific columns or rows.
+
+
+[INSERT IMAGE HERE: Figure 3: The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs. The weights of different layers in LLMs are characterized by bell-shaped distribution, accompanied by a few salient values.[24]]
+
+This pattern is due to the convergence effects inherent in multi-head self-attention mecha-
+nism of the models, thus needing a structured approach to select salient weights, reducing the
+additional bit-map. The approach described in [24] is to employ a per-channel or per row type of
+binarization, they determine salience through a per-column segmentation on the whole matrix.
+
+
+[INSERT IMAGE HERE: Figure 4: Illustration of salient weight binarization. The B1 binarized from salient weight is made into a residual with the original value and then binarized again to obtain B2.[24]]
+
+The main idea is to rank the columns by their salience in descending order and use an
+optimized search algorithm to minimize quantization error. This process determines the optimal
+number of columns to include in the salient group. Based on this formula:
+Wb = α · sign(Wf),
+[24]
+27
+where Wb corresponds to the binarized output, α denotes the scaling factor and Wf denotes the
+weights at full precision (FP16). This was then used to define the objective of the binarization
+quantization, used in this equation:
+arg min
+α,B ∥W −αB∥2,
+[24]
+(1)
+where the B is the number of selected columns, α and B can simply be solved as α =
+∥W∥ℓ1
+n×k
+and B = sign(W). Then the optimization function to select salient columns is defined as:
+arg min
+Wuns ∥W −(αsal sign(Wsal) ∪αuns sign(Wuns))∥2 ,
+[24]
+where Wsal denotes the column-wise combination of the original weight and Wuns is the
+left non-salient part. W can be determined by Wsal ∪Wuns so the only variable parameter is the
+number of rows in Wsal.
+Binary Residual approximation is a technique use to address the challenge of preserving
+salient weights which are limited in quantity, but exhibit significant variance when aggregated.
+If these weights are preserved at their original formats FP16 or INT8 it increased the aver-
+age weight bit-width, reducing the compression beneficts of binarization. However traditional
+methods of binarization result in a substantial quantization errors. Contrary to the comprehen-
+sive high-order quantization [26] which also applies quantization to the entire weight matrix,
+the approach described in [24] uses a residual approximation method. This approach focuses on
+binarizing only a subset of salient weights minimizing the error through a second-order aprox-
+imation. This method grants the precision of salient weights while simultaneously decreasing
+bit-width overhead. As shown in Figure 3 this approach incorporates a recursive computation
+strategy for weight binarization compensation, applying a subsequent binarization process to
+the residuals remaining after the initial binary process. Based on the equation 1 they redesigned
+the residual approximation optimization specifically for salient weights by implementing:
+
+
+
+α∗
+o, B∗
+o = arg minαo,Bo ∥W −αoBo∥2,
+α∗
+r, B∗
+r = arg minαr,Br ∥(W −α∗
+oB∗
+o) −αrBr∥2
+[24]
+
+
+the Bo represents the original binary tensor, while Br denotes the residual binarized matrix
+with the same size as Bo. Efficiently solving it for the two binarized optimization objectives
+results on this approximation:
+W ≈α∗
+oB∗
+o + α∗
+r B∗
+r
+[24]
+To prove that the residual approach of the equation above has a lower quantization error than
+28
+the direct one of 1. The residual binarization error was defined by E.
+Erb = ∥W −α∗
+oB∗
+o −α∗
+r B∗
+r ∥2
+2
+[24]
+The original binarized quantization error is calculated as ∥W −α∗
+oB∗
+o∥2
+2, and from the second
+sub-equation of equation 5.2.3 it’s determined that loss Erb ≤∥W −α∗
+oB∗
+o∥2. Thus showing
+that the method of residual approximation proved to be able to further reduce the binary quanti-
+zation error of salient weights with ultra-low bit-width storage compared to retaining the salient
+weights at their full precision or even INT8.
+The performance of a LLaMA model with this super low quantization method is still impres-
+sive, only losing about 45% of the performance of the original model on a suit of benchmarks
+consisting of PIQA, ARC-e, ARC-c, HellaSwag and WinoGrand, as depicted on Figure 8.
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 8: Quantized LLaMA3-8B performance[27]
+29
+5.2.4
+Weight + Activation Quantization
+Although weights are already extremely hard to quantize, incorporating the activations into
+the quantization pipeline adds another degree of complexity, especially for large language mod-
+els. Compared to weights, activations have some unique challenges since they are dynamic, and
+their range and statistics are unknown until runtime. The LLMs also have a unique problem,
+not broadly seen for other transformer-based models: the systematic outlier activations. These
+outliers if clipped during quantization can cause significant degradation in performance and
+require special attention if model accuracy is to be preserved [16].
+
+
+[INSERT IMAGE HERE: Figure 5: Comparison of activations and weights in LLAMA2-7B and OPT-13B models.]
+
+
+
+[INSERT IMAGE HERE: Figure 5: Comparison of activations and weights in LLAMA2-7B and OPT-13B models.]
+
+(a) The distributions of activations at the input to the
+FFN block in LLAMA2-7B model[28]
+(b) Magnitude of the input activations and
+weights of a linear layer in OPT-13B[29]
+Another problem that makes it hard to quantize is the significant variations in value range
+across different channels, which can be troublesome for the quatization algorithm. However, a
+strong motivation for undertaking this complexity is the efficiency gained by quantizing both
+weights and activations to low-bit data types on specific hardware. This efficiency is demon-
+strated by the performance of SmoothQuant, as shown in Figure 8.
+5.2.5
+Mixed Precision Quantization
+RPTQ, or Reorder-based Post-Training Quantization, differs from per-tensor quantization
+techniques in that it does not apply the same quantization parameters uniformly across the entire
+tensor. This distinction is important, as uniform quantization can sometimes lead to suboptimal
+results.
+One key problem consists of the range of quantization being too wide to cover a large value
+range, as this can cause increased quantization errors in channels with smaller value ranges. On
+30
+the other hand if the quantization range is too narrow it could lead to truncation of the outliers
+resulting in quantization errors.
+For example if one channel as a range of -100 to -50 and another 80 to 100 when trying to
+cover their ranges by quantizing them form -100 to 100 this will result in a significant quanti-
+zation error for both channels.
+To address this researchers have proposed several methods one of them being LLM.int8 [30]
+which utilizes mixed-precision quantization by using high-precision data types (FP16) to quan-
+tize the outliers in activations and low precision data types (INT8) for the remaining values. As
+explained above this improves model performance preventing errors caused by the quantization
+of a wide range of values. Another method for quantizing the activation SmoothQuant [29]
+solved the problem by introducing a process that is meant to ”smooth” the input activation by
+dividing it by a per-channel smoothing factor s ∈R, Ci. To keep the mathematical equivalence
+of a linear layer the weights are scaled accordingly in the reversed direction:
+Y = (X diag(s)−1) · (diag(s)W) = ˆX ˆW
+[29]
+The next point of SmoothQuant is called Migrate Quantization Difficulty and the idea is to con-
+trol the trade-off between the quantization difficulty of activations and weights by redistributing
+their values scale, meaning migrating the difficulty from activation to weights.
+The idea works by choosing a per-channel smoothing factor s such that ˆX = X diag(s)−1
+so it’s easier to quantize. To reduce quantization error, the effective quantization bits for all
+channels should be increased. This maximizes the total effective quantization bits when all
+channels share the same maximum magnitude, making the optimal choice the scale factor sj =
+max(|Xj|), j = 1, 2, . . . , Ci where j corresponds to the j-th input channel. This choice grants
+that after the division, all the channels will have the same maximum value, which makes it easy
+to quantize. However, this formula shifts all the quantization difficulty to the weights. As a
+result, the quantization errors tend to be larger in the weights, leading to significant accuracy
+degradation shown in Figure 6.
+
+
+[INSERT IMAGE HERE: Figure 6: Finding the sweet spot for the migration strength[29]]
+
+However there is a possibility off also pushing all of the quantization difficulty from the
+31
+weights to the activations by choosing sj =
+1
+max(|Wj|). Similarly the model performance will
+degrade heavily due to the activation quantization errors this introduces, therefore there is a
+need to split all of the quantization difficulty between weights and activations so they are both
+easier to quantize.
+SmoothQuant achieves this by introducing a hyper-parameter migration strength, depicted
+in Figure 6, to control how much difficulty will be migrated from activation to weights, this is
+done using:
+sj =
+max(|Xj|)α
+max(|Wj|)1−α
+[29]
+
+
+[INSERT IMAGE HERE: Figure 7: Main idea of SmoothQuant when α is 0.5. The smoothing factor s is obtained on cal- ibration samples and the entire transformation is performed offline. At runtime, the activations are smooth without scaling.[29]]
+
+This formula ensures that the weights and activations at the corresponding channel share a
+similar maximum value, thus sharing the same difficulty[29]. Figure 7 illustrates the smoothing
+transformation when α = 0.5, this works for models where the activation outliers aren’t very
+significant, on models where the outliers are more significant (e.g. GLM-130B[31] which hap-
+pens to have ∼30% outliers), a larger α can be picked to migrate more quantization difficulty
+to the weights(like 0.7).
+The performance results for this method are very promising on models like OPT-175B [32]
+show an efficient quantization at INT8 quantization level since the method can match the FP16
+accuracy on all evaluation datasets. This also proved to be true for LLaMA [33]. Although the
+outliers in this model tend to be less severe, SmoothQuant still performed well, with an average
+performance drop of only 0.4%. The PyTorch implementation also proved effective, achieving
+a 1.51× speedup and a 1.96× memory reduction for OPT models.
+5.2.6
+Quantization-Aware Training (QAT)
+LLM-QAT is an advanced method for Quantization-Aware training (QAT) specifically de-
+signed for LLMs[14]. This method as been proven to be accurate to quantization levels as low as
+4-bits. This method helps in keeping the origianl output distribution and allows the quantization
+of weights, activations, and the key-value cache. There are three core components, Symetric
+MinMax Quantization, Student-Teacher Framework and Data Generation Process. Symmet-
+32

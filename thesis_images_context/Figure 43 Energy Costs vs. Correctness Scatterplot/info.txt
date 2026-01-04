@@ -1,0 +1,10 @@
+--- Text Before ---
+consumption, but rather to maximize the productive use of that energy aiming to yield the most
+accurate results possible.
+
+--- Full Caption ---
+Figure 43: Energy Costs vs. Correctness Scatterplot
+
+--- Text After ---
+Looking further into the energy dynamics of this project, an analysis of the average energy
+per query reveals a striking and consistent pattern, incorrect answers are consistently more

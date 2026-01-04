@@ -1,0 +1,10 @@
+--- Text Before ---
+efficiency gains.
+42
+
+--- Full Caption ---
+Figure 14: RAGCache Overview[44]
+
+--- Text After ---
+Cache Structure and Replacement Policy operate differently from traditional cache systems
+that cache individual objects. Instead, this method caches the key-value tensor of the retrieved

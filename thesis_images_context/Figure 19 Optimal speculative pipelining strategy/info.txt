@@ -1,0 +1,10 @@
+--- Text Before ---
+candidate retrieval results at the end of each stage with a fixed time interval d. Since the batch
+size was set to only one, they could terminate any incorrect speculative generation requests.
+
+--- Full Caption ---
+Figure 19: Optimal speculative pipelining strategy [44]
+
+--- Text After ---
+RAGCache assumes that the LLM engine can schedule requests in the queue in any order,
+but it processes speculative generation requests for a single request sequentially. Figure 19

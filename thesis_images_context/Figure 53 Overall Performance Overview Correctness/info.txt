@@ -1,0 +1,10 @@
+--- Text Before ---
+parameter model (DeepSeek-R1-Distill-Qwen-14B).
+105
+
+--- Full Caption ---
+Figure 53: Overall Performance Overview: Correctness vs. Energy Cost for ARC queries
+
+--- Text After ---
+The optimal position on this graph is at the top-left quadrant, which represents the highest
+accuracy with the lowest energy consumption. The bottom-right represents the inverse so the

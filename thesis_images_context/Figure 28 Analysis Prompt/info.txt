@@ -1,0 +1,10 @@
+--- Text Before ---
+mechanism is required. This selection is performed using the model (M) and the content of the
+query (q), this is shown in Figure 29
+
+--- Full Caption ---
+Figure 28: Analysis Prompt
+
+--- Text After ---
+Figure 28 presents the analysis prompt responsible for this selection. This instruction can
+be divided into two parts. The first part is responsible for the Straight Answer (S), it asks the

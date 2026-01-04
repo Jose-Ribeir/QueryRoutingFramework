@@ -1,0 +1,102 @@
+{
+    "slide_number": 18,
+    "text_elements": [
+        {
+            "text": "Accessing the Correctness\u000bAligned with problems that come with small LLMs",
+            "left": 749300,
+            "top": 329018,
+            "width": 13271500,
+            "height": 1299074
+        },
+        {
+            "text": "Purpose\nEvaluate model correctness and retrieval performance efficiently using an automated script.\n",
+            "left": 762000,
+            "top": 2095500,
+            "width": 16764000,
+            "height": 936154
+        },
+        {
+            "text": "1. Answer Extraction Pipeline",
+            "left": 835025,
+            "top": 3605044,
+            "width": 3508375,
+            "height": 325089
+        },
+        {
+            "text": "Definitive Extraction\nLooks for explicit patterns, e.g. \\boxed{B}\nMost reliable, but smaller models may be inconsistent.",
+            "left": 990600,
+            "top": 4229100,
+            "width": 5032376,
+            "height": 823302
+        },
+        {
+            "text": "Pattern-Based Fallback\nSearches for phrases like \u201cThe answer is B\u201d or \u201cAnswer: B\u201d. \nTakes the last match to account for reasoning before final answer.",
+            "left": 990600,
+            "top": 5372100,
+            "width": 4879975,
+            "height": 1274708
+        },
+        {
+            "text": "Positional Fallback\nFinds all standalone A/B/C/D. occurrences.\nChooses final occurrence as the intended answer.\n",
+            "left": 987425,
+            "top": 6800239,
+            "width": 4382770,
+            "height": 1049005
+        },
+        {
+            "text": "Evaluation Metrics",
+            "left": 6600775,
+            "top": 3605044,
+            "width": 3234690,
+            "height": 336550
+        },
+        {
+            "text": "Correct Answer (ARC)\nExtracted answer vs. ground truth \u2192 marked True/False.\n",
+            "left": 6753175,
+            "top": 4123613,
+            "width": 4413250,
+            "height": 1156086
+        },
+        {
+            "text": "Retrieval Performance\nChecks if question required retrieval.\nIf method used = \u201cretrieval\u201d \u2192 metric retrieved correctly = True.\n",
+            "left": 6753175,
+            "top": 5847738,
+            "width": 4196080,
+            "height": 1202893
+        },
+        {
+            "text": "Key Benefits",
+            "left": 12649200,
+            "top": 4000500,
+            "width": 4462145,
+            "height": 325089
+        },
+        {
+            "text": "Consistent & scalable evaluation\n\n\nAligns with binary evaluation scheme\n\n\nAutomates parsing of verbose model outputs",
+            "left": 12573000,
+            "top": 4838700,
+            "width": 4645660,
+            "height": 2494914
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "D0D5DA",
+        "93C4FD",
+        "854D0D",
+        "334054",
+        "606C7E",
+        "1D40AF",
+        "FFFFFF",
+        "993312",
+        "991B1B",
+        "166533",
+        "0E1729"
+    ]
+}

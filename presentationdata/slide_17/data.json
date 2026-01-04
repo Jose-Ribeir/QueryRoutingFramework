@@ -1,0 +1,201 @@
+{
+    "slide_number": 17,
+    "text_elements": [
+        {
+            "text": "Optimizing Query Classification\u000bIterative Prompt Refinement and Performance Analysis",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1299074
+        },
+        {
+            "text": "Context\nLLM performance linked to instruction clarity and quality",
+            "left": 1055290,
+            "top": 2164324,
+            "width": 3561715,
+            "height": 768985
+        },
+        {
+            "text": "Classification Task\nRetrieval | Step-by-step reasoning | Direct answer",
+            "left": 5230365,
+            "top": 2178546,
+            "width": 3622040,
+            "height": 528955
+        },
+        {
+            "text": "Evaluation Metrics\nRouting Accuracy\tAnswer Accuracy",
+            "left": 9786739,
+            "top": 2203984,
+            "width": 2240915,
+            "height": 511175
+        },
+        {
+            "text": "Efficiency",
+            "left": 12149980,
+            "top": 2536473,
+            "width": 556895,
+            "height": 178435
+        },
+        {
+            "text": "Approach\nSix versions: simple prompt \u2192 structured framework",
+            "left": 13547625,
+            "top": 2184898,
+            "width": 3808729,
+            "height": 522605
+        },
+        {
+            "text": "Early Iterations (V1-V3)",
+            "left": 835025,
+            "top": 3605044,
+            "width": 2624455,
+            "height": 336550
+        },
+        {
+            "text": "V1: Simple Baseline\nApproach: Minimal instruction, binary classification\nResults: 52.3% routing accuracy, 16.59% retrieval identification\nIssue: Strong anti-retrieval bias, insufficient for smaller models",
+            "left": 987424,
+            "top": 4171338,
+            "width": 4803775,
+            "height": 887730
+        },
+        {
+            "text": "V2: Aggressive Safety-First\nApproach: Strong bias toward retrieval as default\nResults: 66.7% routing accuracy, 98.22% retrieval, 26.07% general knowledge\nIssue: Over-correction led to inefficient, redundant processing",
+            "left": 987425,
+            "top": 5390538,
+            "width": 4274185,
+            "height": 1078230
+        },
+        {
+            "text": "V3: Balanced Criteria\nApproach: Explicit categories with two-step reasoning\nResults: ~98% retrieval accuracy, but general knowledge dropped to 21.27%\nIssue: Sequential checklist approach remained problematic",
+            "left": 987425,
+            "top": 6800239,
+            "width": 4382770,
+            "height": 1078230
+        },
+        {
+            "text": "Advanced Iterations (V4-V6)",
+            "left": 6600775,
+            "top": 3605044,
+            "width": 3234690,
+            "height": 336550
+        },
+        {
+            "text": "V4: Profile-Based Classification \u2b50\nApproach: Holistic classification matching queries to detailed profiles Results: 82.0% routing accuracy, 91.88% retrieval, 69.36% general knowledge\nImpact: 95.27% answer accuracy (20.35pp better than baseline)\nBreakthrough: Leveraged LLM's pattern-matching, introduced 'Recent Events'",
+            "left": 6753175,
+            "top": 4123613,
+            "width": 4413250,
+            "height": 1392555
+        },
+        {
+            "text": "V5: Guiding Principle\nApproach: Added tie-breaker: \"slow but correct > fast but wrong\"\nResults: 81.1% routing accuracy, 92.0% retrieval, 67.07% general knowledge\nPhilosophy: Accuracy-first principle with safety default",
+            "left": 6753175,
+            "top": 5847738,
+            "width": 4196080,
+            "height": 1116330
+        },
+        {
+            "text": "V6: Efficiency-Focused \u26a1\nApproach: Non-retrieval as default unless clear trigger present Results: 72.6% routing accuracy, 58.77% retrieval, 90.47% general knowledge\nAchievement: 97.18% answer accuracy for general knowledge (22.26pp over baseline)\nTrade-off: Sacrificed complex query accuracy for efficiency gains",
+            "left": 6753175,
+            "top": 7247812,
+            "width": 4581525,
+            "height": 1583055
+        },
+        {
+            "text": "Key Insights\nInstruction engineering provides high degree of control over LLM behavior",
+            "left": 12595126,
+            "top": 3605044,
+            "width": 4462145,
+            "height": 947419
+        },
+        {
+            "text": "Simple prompts insufficient for reliable routing in smaller models",
+            "left": 12595126,
+            "top": 4665723,
+            "width": 4645660,
+            "height": 229235
+        },
+        {
+            "text": "Profile-based classification outperforms sequential checklists",
+            "left": 12595126,
+            "top": 5008623,
+            "width": 4466590,
+            "height": 229235
+        },
+        {
+            "text": "Clear trade-off between accuracy and efficiency",
+            "left": 12595126,
+            "top": 5351523,
+            "width": 3525520,
+            "height": 229235
+        },
+        {
+            "text": "V5 optimal for reliability (accuracy-first systems)",
+            "left": 12595126,
+            "top": 5694423,
+            "width": 3525520,
+            "height": 229235
+        },
+        {
+            "text": "V6 optimal for efficiency (speed-critical systems)",
+            "left": 12595126,
+            "top": 6037323,
+            "width": 3575685,
+            "height": 229235
+        },
+        {
+            "text": "Conclusion\nInstruction choice depends entirely on desired system behavior and priorities",
+            "left": 12480826,
+            "top": 6560984,
+            "width": 4594225,
+            "height": 742382
+        },
+        {
+            "text": "Research Alignment: Prioritizing efficiency when trade-offs prove worthwhile",
+            "left": 12442726,
+            "top": 7662664,
+            "width": 4865370,
+            "height": 210820
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 5872857,
+            "top": 9437747,
+            "width": 6542405,
+            "height": 217367
+        }
+    ],
+    "colors_found": [
+        "E4E7EB",
+        "6A20A7",
+        "854D0D",
+        "15803C",
+        "7C2D12",
+        "A16107",
+        "993312",
+        "BAF6D0",
+        "D8B4FE",
+        "D0D5DA",
+        "7D21CD",
+        "334054",
+        "606C7E",
+        "CA8A04",
+        "2562EB",
+        "991B1B",
+        "9CA2AF",
+        "0E1729",
+        "B91B1B",
+        "1C4ED8",
+        "86EFAB",
+        "16A24A",
+        "9333E9",
+        "166533",
+        "FED6AA",
+        "E9580C",
+        "93C4FD",
+        "C2400C",
+        "1D40AF",
+        "66E7F9",
+        "BEDAFE",
+        "FFFFFF",
+        "DB2525"
+    ]
+}

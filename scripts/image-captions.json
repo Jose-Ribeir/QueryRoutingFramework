@@ -1,0 +1,73 @@
+{
+  "64": {
+    "1": "Figure 1: Transformer model architecture[5]"
+  },
+  "65": {
+    "1": "Figure 2: RN18 squared error. [21]"
+  },
+  "70": {
+    "1": "Figure 3: The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs. The weights of different layers in LLMs are characterized by bell-shaped distribution, accompanied by a few salient values"
+  },
+  "72": {
+    "1": "Figure 4: Illustration of salient weight binarization. The B1 binarized from salient weight is made into a residual with the original value and then binarized again to obtain B2.[24]"
+  },
+  "73": {
+    "1": "Figure 8: RAG implementation overview[35]",
+    "2": "Figure 9: DPR dual-encoder architecture[36]"
+  },
+  "75": {
+    "1": "Figure 25: Relationship between model size and monthly downloads[68]"
+  },
+  "79": {
+    "1": "Figure 26: Traditional information retrieval architecture[68]"
+  },
+  "83": {
+    "1": "Figure 27: Graphical representation of the system diagram[68]"
+  },
+  "84": {
+    "1": "Figure 24: RAGEval System: 1 summarizing a schema containing specific knowledge from seed documents. 2 filling in factual information based on this schema to generate diverse configurations. 3 generating documents according to the configurations. 4 creating evaluation data composed of questions, answers, and references derived from the configurations and documents.[65]"
+  },
+  "88": {
+    "1": "Figure 35: Instruction V3 Results"
+  },
+  "90": {
+    "1": "Figure 27: Graphical representation of the system diagram[68]"
+  },
+  "92": {
+    "1": "Figure 28: Analysis Prompt"
+  },
+  "94": {
+    "1": "Figure 29: Jsonl Data Structure"
+  },
+  "96": {
+    "1": "Figure 42: Energy Costs vs. Correctness Scatterplot"
+  },
+  "98": {
+    "1": "Figure 44: Domain Average Energy per Correct Answer"
+  },
+  "100": {
+    "1": "Figure 46: Average Energy Consumption per Query by File"
+  },
+  "101": {
+    "1": "Figure 48: Total Energy Consumption by File (CPU vs GPU)"
+  },
+  "103": {
+    "1": "Figure 52: Distribution of Energy Consumption per Query by File"
+  },
+  "104": {
+    "1": "Figure 53: Overall Performance Overview: Correctness vs. Energy Cost for ARC queries"
+  },
+  "105": {
+    "1": "Figure 30: Instruction V1",
+    "2": "Figure 30: Instruction V1"
+  },
+  "107": {
+    "1": "Figure 41: Instruction V6 Results"
+  },
+  "108": {
+    "1": "Figure 33: Instruction V2"
+  },
+  "109": {
+    "1": "Figure 36: Instruction V4"
+  }
+}

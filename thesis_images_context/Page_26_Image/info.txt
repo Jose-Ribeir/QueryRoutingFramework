@@ -1,0 +1,10 @@
+--- Text Before ---
+network the ability to control how much information it forgets.
+17
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 2: Maximum path lengths, per-layer complexity and minimum number of sequential
+operations for different layer types. [5]

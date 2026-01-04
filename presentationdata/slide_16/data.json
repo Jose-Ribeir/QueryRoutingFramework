@@ -1,0 +1,89 @@
+{
+    "slide_number": 16,
+    "text_elements": [
+        {
+            "text": "Analysis V6: Reducing Unnecessary Retrieval\u000bEfficiency-Driven: Retrieve Only When Necessary",
+            "left": 749300,
+            "top": 329018,
+            "width": 14185900,
+            "height": 1299074
+        },
+        {
+            "text": "Purpose\nAchieve the best possible efficiency on the provided dataset\n",
+            "left": 762000,
+            "top": 2095500,
+            "width": 16764000,
+            "height": 936154
+        },
+        {
+            "text": "1- Decision Patterns",
+            "left": 835025,
+            "top": 3605044,
+            "width": 3508375,
+            "height": 325089
+        },
+        {
+            "text": "2- Profile 1 Triggers",
+            "left": 6600775,
+            "top": 3605044,
+            "width": 3234690,
+            "height": 336550
+        },
+        {
+            "text": "Decision Rule",
+            "left": 12649200,
+            "top": 4000500,
+            "width": 4462145,
+            "height": 325089
+        },
+        {
+            "text": "Scrutinize for clear triggers - don't default to '1-Yes' out of caution\n\n\n\nExplicit reason required for retrieval",
+            "left": 12612370,
+            "top": 5197802,
+            "width": 4645660,
+            "height": 1915268
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        },
+        {
+            "text": "Primary goal: Reduce incorrect '1-Yes' classifications\nDefault assumption: Query is '2-No' (direct answer)\nRequires explicit retrieval trigger - no caution-based defaults",
+            "left": 838399,
+            "top": 4602719,
+            "width": 5108526,
+            "height": 2532809
+        },
+        {
+            "text": "Low-Fame Entities (if lacking confident knowledge)\nHard Data (not common trivia)\nRecent Information (last 2 years: events, releases, news)\nDocument-Based Analysis (specific text comparisons)",
+            "left": 6629400,
+            "top": 4047803,
+            "width": 5108526,
+            "height": 2948308
+        },
+        {
+            "text": "3- Profile 2 Expansion",
+            "left": 6600775,
+            "top": 7248526,
+            "width": 3234690,
+            "height": 336550
+        },
+        {
+            "text": "Now includes: globally famous entities, major historical events, well-established facts\nExamples: \"When did WWII end?\", \"Value of Pi?\"",
+            "left": 6448343,
+            "top": 7585076,
+            "width": 5462668,
+            "height": 1286314
+        }
+    ],
+    "colors_found": [
+        "D0D5DA",
+        "93C4FD",
+        "606C7E",
+        "FFFFFF",
+        "0E1729"
+    ]
+}

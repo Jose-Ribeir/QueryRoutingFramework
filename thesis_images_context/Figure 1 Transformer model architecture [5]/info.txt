@@ -1,0 +1,9 @@
+--- Text Before ---
+a separate memory cell; instead, it directly updates the hidden state using two gates: an update gate that combines the forget and input gates of the LSTM model and a reset gate that gives the network the ability to control how much information it forgets.
+
+--- Full Caption ---
+Figure 1: Transformer model architecture [5]
+
+--- Text After ---
+Transformer models introduced many changes to try to solve all of the problems in the
+previous models. Starting with the Self-attention Mechanism which lowers the complexity

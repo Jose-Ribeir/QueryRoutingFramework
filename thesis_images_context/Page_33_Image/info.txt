@@ -1,0 +1,10 @@
+--- Text Before ---
+overhead introduced by the dequantization kernel increases, which can lead to a reduction in
+overall throughput.
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 4: PPL results on Wikitext2 of BLOOM-7B with and without outlier isolation. [22]
+EasyQuant also experimented with an ablation study focusing on three aspects, the outlier

@@ -1,0 +1,10 @@
+--- Text Before ---
+6.8.4
+Instruction V4: A Shift to Profile-Based Classification
+
+--- Full Caption ---
+Figure 36: Instruction V4
+
+--- Text After ---
+The mixed results presented on the previous iteration highlighted a potential weakness in
+the sequential, rules-based checklist approach. This new instruction V4 represented a major

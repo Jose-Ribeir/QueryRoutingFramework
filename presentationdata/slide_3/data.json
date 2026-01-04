@@ -1,0 +1,92 @@
+{
+    "slide_number": 3,
+    "text_elements": [
+        {
+            "text": "Problem Statement & Motivation\nCritical Challenges in Current LLM Deployment",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1357630
+        },
+        {
+            "text": "High Computational Costs\nHigh cost of specialized GPUs\nProhibitive for many SMEs\nExpensive infrastructure",
+            "left": 1473200,
+            "top": 2060599,
+            "width": 2911475,
+            "height": 1395095
+        },
+        {
+            "text": "Data Privacy Constraints\nStrict compliance needs (GDPR/CCPA)\nRestrictions on cloud-based LLMs\nOn-premises solutions essential",
+            "left": 1473200,
+            "top": 3927499,
+            "width": 3661410,
+            "height": 1395095
+        },
+        {
+            "text": "Resource Limitations\nDeployment on single-GPU workstations\nLimited access to high-performance hardware\nPractical deployment constraints",
+            "left": 1473200,
+            "top": 5794399,
+            "width": 4352925,
+            "height": 1395095
+        },
+        {
+            "text": "Performance Gap\nSLMs (~8B params) suffer accuracy degradation\nTrade-off between model size and quality\nNeed for efficiency without sacrificing performance",
+            "left": 1473200,
+            "top": 7661299,
+            "width": 4834890,
+            "height": 1395095
+        },
+        {
+            "text": "The Challenge\n8B\nParameter SLMs\nAccessible but limited accuracy",
+            "left": 12151766,
+            "top": 2156218,
+            "width": 2595245,
+            "height": 1628775
+        },
+        {
+            "text": "vs\n70B+\nParameter LLMs\nHigh accuracy, prohibitive costs",
+            "left": 12140009,
+            "top": 3875881,
+            "width": 2618740,
+            "height": 1586865
+        },
+        {
+            "text": "Core Dilemma",
+            "left": 9588500,
+            "top": 6683029,
+            "width": 1574800,
+            "height": 334645
+        },
+        {
+            "text": "Organizations face high costs, strict privacy rules, and limited hardware. \nSmaller models are accessible but often lack the required accuracy.",
+            "left": 9588500,
+            "top": 7125875,
+            "width": 7243445,
+            "height": 609847
+        },
+        {
+            "text": "How can we boost SLM accuracy within tight resource and privacy constraints?",
+            "left": 9779000,
+            "top": 8079672,
+            "width": 7251700,
+            "height": 281940
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "94A2B8",
+        "CBD5E1",
+        "334054",
+        "F1F5F9",
+        "0E756E",
+        "FFFFFF",
+        "465469",
+        "0E1729"
+    ]
+}

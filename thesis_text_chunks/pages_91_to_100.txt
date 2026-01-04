@@ -1,0 +1,109 @@
+The results depicted in Figure 35 reflect this new found balance. The Retrieval Task Routing
+Accuracy remained exceptionally high at around 98%, indicating that the safety-first principle
+for complex questions was successfully maintained. The model correctly identified 1655 out of
+1688 queries that required retrieval.
+Crucially, the opposite task had been the main weakness of the previous iteration, and this
+remained true in the current version, with results deteriorating further the General Knowledge
+Routing Accuracy dropped from 26.07% to 21.27% on the General Knowledge Routing Accu-
+racy. This can also be seen on the number of times that the model picked ”retrieval” 1033 of the
+1312 general knowledge questions that don’t require it.
+83
+6.8.4
+Instruction V4: A Shift to Profile-Based Classification
+
+
+[INSERT IMAGE HERE: Figure 36: Instruction V4]
+
+The mixed results presented on the previous iteration highlighted a potential weakness in
+the sequential, rules-based checklist approach. This new instruction V4 represented a major
+conceptual shift, this time re-framing the task following a procedure to a more holistic classi-
+fication exercise. Instead of the previous step-by-step process, the model was now tasked with
+matching the user’s query to one of two detailed profiles: ”Profile 1: Retrieval Required” or
+”Profile 2: Direct Answer Sufficient”.
+This new profile-based structure is more intuitive for the LLM, as it leverages a core strength
+of these types of models pattern-matching. The profiles provided a clearer, more organized
+84
+framework, and critically introduced the ”Recent Events” as a trigger for retrieval, this was the
+approach chosen to try and remedy the LLM knowledge cut-off from more recent knowledge.
+The decision rule, however, still maintained a cautious stance, instructing the model to default
+to the safety of ”1-Yes” in cases of doubt or ambiguity.
+85
+
+
+[INSERT IMAGE HERE: Figure 37: Instruction V4 Results]
+
+86
+This new approach proved to be a big breakthrough. The results show a dramatically more
+balanced and effective system as showed in Figure 37.
+The General Knowledge Routing Accuracy saw a massive crucial improvement jumping
+from the previous 21.27% to 69.36%. For the first time, the model could correctly identify the
+majority of the questions that did not require retrieval.
+This improvement came with a small trade-off. The Retrieval Task Routing Accuracy saw
+a slight dip from the near perfect levels of V2/V3, but still remaining very good at 91.88%.
+As a result of this new balance, the Overall Routing Accuracy increased to 82.0% the highest
+and most effective level achieved so far indicating that the instruction was finally moving in the
+right direction.
+The success of this version is best captured in the ”Routing System Vs. Baseline Model”
+analysis for general knowledge questions. This version of the routing system achieved a 95.27%
+answer accuracy, which was 20.35 percentage points better than the baseline for just model
+answering on its own without any guiding instruction. By successfully re-framing the task to
+align with the LLM’s natural capabilities, this instruction created a far more reliable and smart
+classification system.
+87
+6.8.5
+Instruction V5: Final Refinement with a Guiding Principle
+
+
+[INSERT IMAGE HERE: Figure 38: Instruction V5]
+
+Building on the successful profile-based structure of V4, the fifth version was a final re-
+finement aimed at maximizing reliability. The core structure of the two profiles remained un-
+changed, but a critical addition was made to the Decision Rule. This new rule introduced an
+explicit guiding principle to resolve the possible ambiguity: ”A slow but correct answer is al-
+ways better than a fast but wrong one.”.
+This principle served as a powerful tie-breaker, forcing the idea of accuracy on to the model.
+It explicitly stated that if there was any ambiguity, or if a query even touched on the character-
+88
+istics from ”Profile 1” (like a specific name or date), it must default to the safety of retrieval.
+This approach was designed to try and solidify the instruction’s focus on producing the most
+trustworthy assessment possible, even at the cost of possible decrease in efficiency.
+89
+
+
+[INSERT IMAGE HERE: Figure 39: Instruction V5 Results]
+
+The performance data shows that this refinement had a subtle but measurable impact, tuning
+the model’s behavior as it was intended.
+90
+The model became slightly more cautious. The Retrieval Task Routing Accuracy slightly
+increased from 91.88% to 92.0%, which means the model identified 1553 of the 1688 queries
+that required retrieval. This increased caution also resulted in a minor decrease in the General
+Knowledge Routing Accuracy, which shifted from 69.36% to 67.07%.
+The model was now slightly more likely to send a simple query for retrieval if it contained
+any element of ambiguity. This adjustment was made based on the reasoning that the model
+might still produce a correct answer even when retrieval is not strictly necessary. However, the
+inverse failing to retrieve when it is required almost always results in incorrect answers. As
+a consequence of this shift, a slight dip in accuracy was observed, with the Overall Routing
+Accuracy decreasing to 81.1%.
+Despite the minor shifts in routing metrics, the final answer quality for general knowledge
+questions remained identical to that of V4, with the routing system achieving a 95.27% . Simi-
+larly to V4, this instruction resulted in a 20.35 percentage point improvement over the baseline.
+This shows that V5 successfully reinforced the system’s reliability.
+91
+6.8.6
+Instruction V6: A Strategic Pivot to Efficiency
+
+
+[INSERT IMAGE HERE: Figure 40: Instruction V6]
+
+The final iteration, V6, represented a deliberate reversal from the ”accuracy-first” principle
+that guided the previous version. The main goal was explicitly re-focused to ”AVOIDING un-
+necessary document retrieval” and to ”reduce incorrect ’1-Yes’ classifications”. This instruction
+was designed to test a high-efficiency approach, that prioritizes speed and resource conservation
+for general knowledge questions.
+To achieve this, the core logic was inverted. Non-retrieval (”2-No”) was made to be the
+default path, and the model was instructed to choose this approach unless a ”clear and definite
+’retrieve trigger’” was present on the query. The burden of proof was shifted: instead of de-
+faulting to the safer retrieval in cases of ambiguity, the model now required compelling explicit
+reason to engage the retrieval system.
+92

@@ -1,0 +1,10 @@
+--- Text Before ---
+each iteration of the instructions against the baseline models.
+98
+
+--- Full Caption ---
+Figure 46: Average Energy Consumption per Query by File
+
+--- Text After ---
+The baseline models establish a lower bound for energy usage, using around 1.1 and 1.3
+Wh per query. The introduction of the first routing instruction, V1, immediately results in a

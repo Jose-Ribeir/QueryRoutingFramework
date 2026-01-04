@@ -1,0 +1,149 @@
+{
+    "slide_number": 13,
+    "text_elements": [
+        {
+            "text": "Power Data Collection",
+            "left": 838200,
+            "top": 342900,
+            "width": 8645525,
+            "height": 957580
+        },
+        {
+            "text": "GPU and CPU Energy Measurement Methodology",
+            "left": 990600,
+            "top": 1333500,
+            "width": 8067675,
+            "height": 399468
+        },
+        {
+            "text": "GPU\nTool:\tnvidia-smi\nType: TBP (Total Board Power)",
+            "left": 758825,
+            "top": 1933329,
+            "width": 2813685,
+            "height": 1476375
+        },
+        {
+            "text": "Includes: GPU die, VRAM, and all supporting components.",
+            "left": 873125,
+            "top": 3615134,
+            "width": 5287010,
+            "height": 290195
+        },
+        {
+            "text": "Rate: ~50ms (actual via NVML driver queries).",
+            "left": 758825,
+            "top": 4110434,
+            "width": 4200525,
+            "height": 278923
+        },
+        {
+            "text": "Integration: Power measurements are added directly to the final JSONL file.",
+            "left": 873125,
+            "top": 4605734,
+            "width": 6861175,
+            "height": 290195
+        },
+        {
+            "text": "CPU\nTool:\tHWiNFO (proprietary) Type: CPU Package Power",
+            "left": 9407525,
+            "top": 1933329,
+            "width": 2501900,
+            "height": 1476375
+        },
+        {
+            "text": "Scope: CPU chip only (excludes VRMs, chipset, peripherals).",
+            "left": 9521825,
+            "top": 3615134,
+            "width": 5521325,
+            "height": 290195
+        },
+        {
+            "text": "Rate: ~150ms (actual from CSV generated at end of run).",
+            "left": 9407524,
+            "top": 4110434,
+            "width": 5603875,
+            "height": 278923
+        },
+        {
+            "text": "Processing: A script applies the trapezoidal rule to approximate energy consumption from power data and adds it to the JSONL.",
+            "left": 9521825,
+            "top": 4605734,
+            "width": 7661275,
+            "height": 554990
+        },
+        {
+            "text": "\u26a1 VRAM power is a significant factor for LLM inference.\n\n\nJSONL Data Structure\nFinal structure comprising four main parts, finalized at different stages.",
+            "left": 873125,
+            "top": 5209381,
+            "width": 11468735,
+            "height": 1647189
+        },
+        {
+            "text": "Query Info\nStage: Initial\nQuery text\nMetadata & IDs",
+            "left": 911225,
+            "top": 7049298,
+            "width": 1247140,
+            "height": 1179830
+        },
+        {
+            "text": "Ground Truth\nStage: Initial\nExpected answer\nCorrect options",
+            "left": 5135562,
+            "top": 7046994,
+            "width": 1395730,
+            "height": 1181735
+        },
+        {
+            "text": "AI Prediction\nStage: Post-Inference\nModel responses\nRouting decisions",
+            "left": 9359900,
+            "top": 7039912,
+            "width": 1615440,
+            "height": 1188720
+        },
+        {
+            "text": "Performance\nStage: Post-Processing\nGPU & CPU Power\nTotal Energy\nTimestamps",
+            "left": 13584237,
+            "top": 7049298,
+            "width": 1736725,
+            "height": 1446530
+        },
+        {
+            "text": "System receives Parts 1-2",
+            "left": 7012731,
+            "top": 8799572,
+            "width": 1888489,
+            "height": 229235
+        },
+        {
+            "text": "System adds Parts 3-4",
+            "left": 9599662,
+            "top": 8799572,
+            "width": 1675764,
+            "height": 229235
+        },
+        {
+            "text": "Software-Based Energy Monitoring on Windows Systems",
+            "left": 6814343,
+            "top": 9390260,
+            "width": 4659630,
+            "height": 263525
+        }
+    ],
+    "colors_found": [
+        "6A20A7",
+        "1C4ED8",
+        "E9580C",
+        "1D293B",
+        "15803C",
+        "7D21CD",
+        "334054",
+        "606C7E",
+        "C2400C",
+        "1D40AF",
+        "E2E7F0",
+        "9CA2AF",
+        "2562EB",
+        "993312",
+        "166533",
+        "0E1729"
+    ]
+}

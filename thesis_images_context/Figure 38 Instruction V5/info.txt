@@ -1,0 +1,10 @@
+--- Text Before ---
+6.8.5
+Instruction V5: Final Refinement with a Guiding Principle
+
+--- Full Caption ---
+Figure 38: Instruction V5
+
+--- Text After ---
+Building on the successful profile-based structure of V4, the fifth version was a final re-
+finement aimed at maximizing reliability. The core structure of the two profiles remained un-

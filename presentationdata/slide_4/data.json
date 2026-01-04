@@ -1,0 +1,119 @@
+{
+    "slide_number": 4,
+    "text_elements": [
+        {
+            "text": "Research Objectives\nEnabling Efficient SLM Deployment",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1357630
+        },
+        {
+            "text": "Primary Goals\nDesign and validate an adaptive framework to optimize SLMs for real-world deployment.",
+            "left": 977900,
+            "top": 2251729,
+            "width": 9560560,
+            "height": 824230
+        },
+        {
+            "text": "01",
+            "left": 1124644,
+            "top": 3931249,
+            "width": 341630,
+            "height": 401955
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        },
+        {
+            "text": "Resource-Constrained Deployment\nDeploy on-premises with strict resource, privacy, and single-GPU constraints.",
+            "left": 977900,
+            "top": 4444255,
+            "width": 4886960,
+            "height": 1222375
+        },
+        {
+            "text": "Practical, real-world applicability",
+            "left": 1130300,
+            "top": 5872559,
+            "width": 3016885,
+            "height": 290195
+        },
+        {
+            "text": "02",
+            "left": 6785768,
+            "top": 3931249,
+            "width": 398145,
+            "height": 401955
+        },
+        {
+            "text": "Adaptive Query-Routing\nSelect between Direct Answer, CoT, and RAG based on the query.",
+            "left": 6667450,
+            "top": 4444255,
+            "width": 4892675,
+            "height": 1222375
+        },
+        {
+            "text": "Intelligent path selection",
+            "left": 6819850,
+            "top": 5879397,
+            "width": 2256155,
+            "height": 281940
+        },
+        {
+            "text": "03",
+            "left": 12473087,
+            "top": 3931249,
+            "width": 402590,
+            "height": 401955
+        },
+        {
+            "text": "End-to-End Efficiency\nOptimize latency, energy, and cost while maintaining accuracy.",
+            "left": 12357001,
+            "top": 4444255,
+            "width": 4380230,
+            "height": 1222375
+        },
+        {
+            "text": "Efficiency without sacrifice",
+            "left": 12509401,
+            "top": 5879397,
+            "width": 2494280,
+            "height": 281940
+        },
+        {
+            "text": "04",
+            "left": 1089669,
+            "top": 6845899,
+            "width": 411480,
+            "height": 401955
+        },
+        {
+            "text": "Generalization\nValidate on diverse datasets like ARC-Easy and HotPotQA.",
+            "left": 977900,
+            "top": 7367878,
+            "width": 4647565,
+            "height": 1213485
+        },
+        {
+            "text": "Broad applicability",
+            "left": 1130300,
+            "top": 8794047,
+            "width": 1714500,
+            "height": 281940
+        }
+    ],
+    "colors_found": [
+        "F5F8FA",
+        "334054",
+        "F6F8FA",
+        "0E756E",
+        "0D9487",
+        "465469",
+        "0E1729"
+    ]
+}

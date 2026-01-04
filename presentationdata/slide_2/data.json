@@ -1,0 +1,64 @@
+{
+    "slide_number": 2,
+    "text_elements": [
+        {
+            "text": "Index",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 784830
+        },
+        {
+            "text": "Problem Statement & Motivation",
+            "left": 304800,
+            "top": 7734300,
+            "width": 3657600,
+            "height": 677108
+        },
+        {
+            "text": "Research Objectives",
+            "left": 1676400,
+            "top": 3543300,
+            "width": 3657600,
+            "height": 369332
+        },
+        {
+            "text": "Related Work",
+            "left": 4038600,
+            "top": 7734300,
+            "width": 3657600,
+            "height": 369332
+        },
+        {
+            "text": "Methodology Overview",
+            "left": 5943600,
+            "top": 3467100,
+            "width": 3657600,
+            "height": 369332
+        },
+        {
+            "text": "Key Findings & Results",
+            "left": 8305800,
+            "top": 7658100,
+            "width": 3657600,
+            "height": 369332
+        },
+        {
+            "text": "Summary & Future Work",
+            "left": 10820400,
+            "top": 3314700,
+            "width": 3657600,
+            "height": 369332
+        },
+        {
+            "text": "Broader Impact",
+            "left": 13563600,
+            "top": 7581900,
+            "width": 3657600,
+            "height": 369332
+        }
+    ],
+    "colors_found": [
+        "0E1729"
+    ]
+}

@@ -1,0 +1,10 @@
+--- Text Before ---
+Figure 55: Avg. Energy of Analysis Instructions that were also INCORRECT when Baseline Failed.
+112
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 56: Correctness Comparison between system versus a 14B Model.
+113

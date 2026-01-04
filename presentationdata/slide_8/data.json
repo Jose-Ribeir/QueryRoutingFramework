@@ -1,0 +1,115 @@
+{
+    "slide_number": 8,
+    "text_elements": [
+        {
+            "text": "Quantization Techniques for LLMs\nReducing Computational and Memory Requirements",
+            "left": 1295400,
+            "top": 196850,
+            "width": 12523598,
+            "height": 1374735
+        },
+        {
+            "text": "Overview\nQuantization converts weights to lower precision (e.g., INT8/INT4) to reduce memory usage and accelerate computation.",
+            "left": 596900,
+            "top": 1792287,
+            "width": 9732645,
+            "height": 1162050
+        },
+        {
+            "text": "Key Challenge: Balancing model size reduction with performance.",
+            "left": 647700,
+            "top": 3197225,
+            "width": 10020300,
+            "height": 254000
+        },
+        {
+            "text": "Post-Training Quantization (PTQ)\nDefinition: Applied after model training, no retraining or data required.\nMost common method due to its accessibility.\nMethods: OPTQ, ZeroQuant-V2\n\nAdvanced Methods\n",
+            "left": 533400,
+            "top": 3771900,
+            "width": 16459200,
+            "height": 3387466
+        },
+        {
+            "text": "Non-Uniform\nAllocates more precision to important weight ranges.",
+            "left": 682625,
+            "top": 6959600,
+            "width": 3566795,
+            "height": 608330
+        },
+        {
+            "text": "Weight+Activation\nQuantizes both weights and activations (e.g., SmoothQuant).",
+            "left": 5788025,
+            "top": 6959600,
+            "width": 4134485,
+            "height": 608330
+        },
+        {
+            "text": "Mixed Precision\nUses different bit-widths for different layers.",
+            "left": 682625,
+            "top": 8121650,
+            "width": 2950845,
+            "height": 608330
+        },
+        {
+            "text": "Quantization-Aware\nSimulates quantization during training for adaptation.",
+            "left": 5788025,
+            "top": 8121650,
+            "width": 3583940,
+            "height": 608330
+        },
+        {
+            "text": "Featured: OPTQ Algorithm\nA Breakthrough in Extreme Quantization",
+            "left": 11122025,
+            "top": 2168525,
+            "width": 3324860,
+            "height": 631190
+        },
+        {
+            "text": "Key Achievement: Enables OPT-175B on a single A100 GPU.",
+            "left": 11172825,
+            "top": 3092450,
+            "width": 6343650,
+            "height": 208279
+        },
+        {
+            "text": "Technical Innovations:\nArbitrary Order: Simultaneous multi-row processing.\nLazy Batch Updates: Groups updates across blocks.\nPerformance: Effective down to 2-bit precision.",
+            "left": 11122025,
+            "top": 3496548,
+            "width": 3754754,
+            "height": 1176020
+        },
+        {
+            "text": "Runtime Comparison",
+            "left": 10960100,
+            "top": 5073650,
+            "width": 2337435,
+            "height": 299720
+        },
+        {
+            "text": "8",
+            "left": 13167361,
+            "top": 9566910,
+            "width": 4206240,
+            "height": 514350
+        },
+        {
+            "text": "Impact: Makes extreme quantization practical for deploying large models on standard hardware.",
+            "left": 11010900,
+            "top": 7593965,
+            "width": 6667500,
+            "height": 558800
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "1D40AF",
+        "374050",
+        "3B81F5"
+    ]
+}

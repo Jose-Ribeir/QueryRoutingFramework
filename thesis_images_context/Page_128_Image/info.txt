@@ -1,0 +1,10 @@
+--- Text Before ---
+Figure 62: Efficiency Score: Energy Cost of a Correct Answer for the system versus the 14B Model at the science domain.
+119
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 63: Average GPU Energy Consumption by Method.
+120

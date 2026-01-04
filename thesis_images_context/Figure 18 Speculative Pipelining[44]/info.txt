@@ -1,0 +1,10 @@
+--- Text Before ---
+engine simply returns the latest speculative generation. Otherwise, the LLM performs a new
+generation with the new top-k documents.
+
+--- Full Caption ---
+Figure 18: Speculative Pipelining[44]
+
+--- Text After ---
+Figure 18 shows how RAGCache splits the retrieval process into four stages. The top-2
+documents in candidate queue are [D1, D3], [D1, D2], [D1, D2] and [D1, D2] in the four stages.

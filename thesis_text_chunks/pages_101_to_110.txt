@@ -1,0 +1,211 @@
+
+
+[INSERT IMAGE HERE: Figure 41: Instruction V6 Results]
+
+This strategic change had a profound and predictable impact on the system’s performance
+effectively trading accuracy for efficiency.
+93
+The instruction’s goal was a success for the General Knowledge Routing Accuracy making
+it surge to its highest point across all the previous versions, reaching and impressive 90.47%
+as depicted in Figure 41. The system was now exceptionally skilled at identifying and directly
+answering simple queries without using wasteful processing when not required.
+This efficiency came at a significant and expected cost. The Retrieval Task Routing Accu-
+racy fell sharply from 92.00% to a measly 58.77%. By no longer erring on the side of caution,
+the system failed to identify a large portion of queries that genuinely required the retrieval of
+external information.
+As a result of this trade-off , the Overall Routing Accuracy dropped to 72.6%.
+Interestingly, despite the lower routing accuracy for complex queries, this approach achieved
+the highest final answer accuracy on general knowledge questions with 97.18%. This was a
+22.26 percentage points over the baseline answers. This outcome shows that by correctly routing
+a very high volume of simple questions to the direct-answer paths, the system maximized the
+LLm’s ability to leverage its own knowledge effectively, this was also helped with the Chain-
+of-Thought instruction that improved the base model answer without requiring any external
+information.
+This last experiment shows the high degree of control that prompt engineering provides on
+such a system and even on the LLM’s responses. V6 is not inherently better or worse than V5, it
+simply optimized and constructed with a different objective in mind. The choice between these
+two mature instructions depends entirely on the desired system behavior. Which aligns with the
+purpose of this research prioritizing efficiency whenever the trade-off proves to be worthwhile.
+V5 is the ideal choice for a system where reliability and avoiding factual errors are paramount,
+while the V6 version is superior for a system where efficiency and speed in handling common
+queries are the up most concern.
+6.9
+Analysis of Energy Consumption and Efficiency
+A holistic view of the system’s performance is best captured by plotting the total energy
+consumed versus the number of correct answers that the system outputted. The resulting scat-
+ter plot reveals a fundamental trade-off inherent in the system’s operation: achieving a higher
+number of correct answers of the provided dataset is directly correlated with increased in energy
+consumption (see Figure42).
+94
+
+
+[INSERT IMAGE HERE: Figure 42: Energy Costs vs. Correctness Scatterplot]
+
+This is clearly lustrated in the progression from the baseline models, which occupy the
+lower-left quadrant of the graph which represents both the lowest energy consumption and the
+lowest correctness. Although one part of the baseline achieved high correctness, this may be
+partly due to the way correctness was assigned to queries requiring retrieval. In this evaluation,
+if retrieval was triggered for a query that required it, the system marked the answer as correct
+regardless of whether the retrieved content actually led to a correct response. This introduces
+a significant limitation when interpreting the results. If correctness had instead been evaluated
+based on the accuracy of the retrieved content itself, the score would likely have been much
+lower and more in line with the other two baseline results. Another important factor is that, since
+the retrievable documents come from Wikipedia, many of them coincidentally align with ARC-
+Easy queries. For example, in Query 3, the retrieved document happens to contain information
+that, through reasoning, leads to the correct answer. This pattern appears in multiple ARC-style
+queries and may inflate the apparent effectiveness of the baseline. These two points boost the
+answer correctness by a lot for this specific file thus should be looked at as a skewed result far
+from the truth.
+At the upper-right , the system demonstrates its ability to improve both the model’s correct-
+ness and the overall quality of the answers. However, one outlier stands out: System Analysis
+V1. This version reveals a particularly inefficient instruction, likely due to how open it was
+to interpretation. As a result, the model engaged in excessive reflection while still failing to
+choose the appropriate approach for each query type. This led to a significantly lower number
+of correct answers compared to later, more refined instruction versions.
+95
+An important takeaway is that the optimization process was not intended to reduce energy
+consumption, but rather to maximize the productive use of that energy aiming to yield the most
+accurate results possible.
+
+
+[INSERT IMAGE HERE: Figure 43: Energy Costs vs. Correctness Scatterplot]
+
+Looking further into the energy dynamics of this project, an analysis of the average energy
+per query reveals a striking and consistent pattern, incorrect answers are consistently more
+energy-intensive than correct ones. This suggests that incorrect answers are often the result of
+inefficient processing, such as retrieving irrelevant documents, pursuing flawed reasoning paths,
+or struggling to analyze conflicting information. In contrast, correct answers appear to follow
+a more direct and energetically efficient path. With one exception, the straight model baseline,
+where the correct answers consume slightly more energy. This could be because, when the
+model is more confident in its answer, it tends to generate longer, more detailed responses,
+which in turn require more energy than the simpler, shorter incorrect ones.
+96
+
+
+[INSERT IMAGE HERE: Figure 44: Domain Average Energy per Correct Answer]
+
+
+
+[INSERT IMAGE HERE: Figure 45: Domain Average Energy per Incorrect Answer]
+
+Further analysis of the results, now split by the query’s original dataset (domain), reveals
+another clear efficiency trend: queries related to ’General Knowledge’ consistently require more
+energy than those from the ’Science’ domain. This pattern is still present for both correct and
+incorrect answers, as can be seen in both Figure 44, and 45. For the more refined instructions
+(V2 through V6), the energy cost for answering a general knowledge question is noticeably
+higher than for a science question. This disparity likely stems from the increased complexity
+of the general knowledge queries, which typically require retrieval to be answered. This adds
+97
+further computational overhead, as the number of tokens the model must process increases
+due to the inclusion of retrieved documents alongside the instruction. This occurs even after
+organizing the retrieved documents from most to least relevant, and removing any unnecessary
+expressions that do not contribute to the quality of the response. On the other hand, in the
+Science domain, the number of input tokens is always lower since no retrieval is performed
+when the system functions correctly, thereby reducing the total input tokens.
+In summary, the energy consumption analysis provides a comprehensive, multi-dimensional
+view of the system’s efficiency. It demonstrates that efficiency is not a single metric but a bal-
+ance of multiple factors. The inherent complexity of the query’s domain sets a baseline for en-
+ergy consumption, with ”General Knowledge” questions proving to be more resource-intensive
+due to the required retrieval process needed to answer them correctly. UGiven this baseline, the
+effectiveness of the instructional prompt plays a pivotal role in how efficiently the energy is uti-
+lized. Well-calibrated instructions help guide the model down more efficient pathways, leading
+to correct answers at a lower average energy cost. This demonstrates that query editing could be
+a promising area of study for improving model efficiency. While also proving that ambiguity or
+flawed logic results in wasted energy on incorrect outputs. Ultimately, this analyses reinforces
+that the iterative refinement of prompts is not merely a quest for higher accuracy, but a method
+for controlling the crucial trade-off between correctness and computational cost, while also al-
+lowing for the strategic selection of a system profile that best aligns with the desired balance of
+performance and resource conservation.
+6.10
+Detailed Energy Consumption Profiles
+6.10.1
+Overall Energy Trends Across Instruction Versions
+A foundational analyses of the the system’s energy consumption begins with the average
+energy consumed per query for each experimental version of the instructions, as showed in
+Figure 46. This shows a clear high-level comparison of the computational cost associated with
+each iteration of the instructions against the baseline models.
+98
+
+
+[INSERT IMAGE HERE: Figure 46: Average Energy Consumption per Query by File]
+
+The baseline models establish a lower bound for energy usage, using around 1.1 and 1.3
+Wh per query. The introduction of the first routing instruction, V1, immediately results in a
+significant spike in energy consumption to nearly 2.0 Wh. This aligns with its characterization
+as a inefficient, open-ended prompt that likely caused extensive and unguided model processing.
+As the instructions were refined from V2 to V5, the average energy fluctuated between
+1.45 and 1.9 Wh. This demonstrates that the added complexity of the routing system, even
+when optimized for accuracy, carries a consistent energy overhead compared to the simpler
+baseline approaches as expected since it requires the model to output two responses for just
+one query. Interestingly, Instruction V6, which was explicitly designed to enhance efficiency
+by trying to reduce the usage off unnecessary retrievals, results on the highest average energy
+consumption at around 2.2 Wh. misconception during the creation of the instruction, as it was
+initially assumed that the retrieval process would be the most energy-intensive. However, the
+results show that although retrieval does contribute to energy consumption, it represents only a
+small portion of the overall cost. Another mistake made during the creation of this instruction
+was that it ended up heavily relying on an internal chain-of-though process to answer general
+knowledge queries, which resulted in higher energy consumption. However, it also led to faster
+response times contradicting some of the assumptions made during the instruction’s design.
+99
+
+
+[INSERT IMAGE HERE: Figure 47: Total Energy Percentage Difference from Baseline]
+
+This increased energy overhead is clearly illustrated in Figure 47. The graph shows that,
+compared to the baseline, the more advanced routing systems consistently increase total energy
+consumption by over 40%. This underscores a critical finding, that this implementation of
+an intelligent routing layer, while substantially improving answer accuracy and reliability, it
+also presents a significantly and quantifiable trade-off in terms of computational and energy
+cost. While this was already considered at the start of this endeavor, the main idea is to try
+and compete with much larger models that, on average, require significantly more energy and
+computational power. A deeper analysis of this will be carried out at a later stage.
+6.10.2
+CPU vs. GPU: Deconstructing the Energy Cost
+To try and understand the nature of the energy overhead introduced by the routing system,
+it is essential to deconstruct the total energy consumption into its primary hardware compo-
+nents, the Central Processing Unit (CPU) and the Graphics Processing Unit (GPU). The CPU
+normally handles data processing, I/O operations, and logical orchestration, while the GPU is
+responsible for parallel computations required by the model inference. The Figure 48 illustrates
+this breakdown for each system version.
+100
+
+
+[INSERT IMAGE HERE: Figure 48: Total Energy Consumption by File (CPU vs GPU)]
+
+A clear pattern emerges from the data, the baseline ”straight model”, which relies almost ex-
+clusively on model inference, shows the lowest relative CPU energy consumption. On the other
+hand, all subsequent versions that incorporate either forced retrieval or CoT or the intelligent
+routing system exhibit an increase in the proportion of energy consumed by the CPU.
+Conversely, the GPU energy consumption scales more directly with the complexity and
+length of the generation required from the LLM. The V6 instruction, which was designed to
+favor internal Chain-of-Thought reasoning over retrieval, shows the highest energy consump-
+tion driven by a massive increase in GPU usage. This shows that while avoiding CPU-heavy
+retrieval processes, version V6 shifts most of the burden to the GPU, requiring it to perform
+more extensive and energy-demanding computations to generate the answers. As previously
+observed, this also resulted in poorer performance compared to earlier iterations.
+This analysis reveals that the choice of instruction foes not just how much energy is con-
+sumed, but also where it is used. A retrieval heavy strategy taxes the CPU, while a reasoning
+heavy strategy taxes the GPU. This distinction is critical for system optimization, as it shows
+how different prompts and engineering strategies can create distinct hardware usage profiles.
+6.10.3
+The Energetic Cost of Correcting Errors
+Looking beyond the general energy profiles, a more targeted analysis reveals the specific
+energy consumption required for the system to add value that is, to correct an answer that the
+baseline model would have gotten wrong. This scenario represents the core justification for this
+whole approach.
+101
+
+
+[INSERT IMAGE HERE: Figure 49: General Knowledge: Avg. Energy when Straight Model is Incorrect & System is Correct]
+
+Figure 49 provides a quantitative analysis of the ’correction cost’ associated with ’General
+Knowledge’ queries. When the baseline fails while consuming around 0.95 Wh, the various
+routing systems successfully provided a correct answer, although this came with a significantly
+higher energy cost, ranging from 1.5 Wh (V2) to a peak of over 2.1 Wh (V1 and V6). Showing
+that overcoming the baseline’s knowledge gaps via retrieval is an intensive operation. Though
+like explained previously this lacks a better understanding since the evaluation of this domain
+is just that retrieval occurred, so the straight model never got a correct answer due to that fact.
+However, we can still compare them, and the V6 instruction stands out once again due to its high
+energy cost. This is primarily attributed to its reliance on a detailed chain-of-thought process
+which, while somewhat effective, is significantly more computationally demanding.
+102

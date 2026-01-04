@@ -1,0 +1,81 @@
+{
+    "slide_number": 5,
+    "text_elements": [
+        {
+            "text": "Related Work\nFoundations & Efficiency Techniques",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1357630
+        },
+        {
+            "text": "Research Foundations",
+            "left": 1054100,
+            "top": 2206279,
+            "width": 2482850,
+            "height": 334645
+        },
+        {
+            "text": "LLM Evolution:\nFrom RNN/LSTM limitations to Transformer revolution with self-attention mechanisms",
+            "left": 1054100,
+            "top": 2736893,
+            "width": 6935470,
+            "height": 554355
+        },
+        {
+            "text": "Modern IR:\nShift from term-based to neural retrieval with integrated IR stack",
+            "left": 1054100,
+            "top": 3422694,
+            "width": 5224780,
+            "height": 554355
+        },
+        {
+            "text": "Dataset Benchmark:\nFrom static test sets to dynamic, diverse, and capability-driven evaluation of LLM performance",
+            "left": 9283700,
+            "top": 3414304,
+            "width": 7785100,
+            "height": 553357
+        },
+        {
+            "text": "Figure 1: Retrieval-Augmented Generation (RAG)\nNeural retrieval architecture integrating external knowledge bases for information-intensive queries",
+            "left": 990600,
+            "top": 7962900,
+            "width": 4772025,
+            "height": 936625
+        },
+        {
+            "text": "Figure 2: SmoothQuant\nMixed-precision quantization technique that migrates difficulty between activations and weights for efficient model compression",
+            "left": 6781800,
+            "top": 7886700,
+            "width": 4715510,
+            "height": 936625
+        },
+        {
+            "text": "Figure 3: Self-Routing Architecture\nAdaptive routing mechanisms for dynamic model selection and optimization",
+            "left": 12496800,
+            "top": 7886700,
+            "width": 4551045,
+            "height": 936625
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6477000,
+            "top": 9791700,
+            "width": 5423534,
+            "height": 349250
+        },
+        {
+            "text": "Quantization:\nFrom full-precision models to efficient low-bit inference for scalable deployment",
+            "left": 9296400,
+            "top": 2705100,
+            "width": 7785100,
+            "height": 553357
+        }
+    ],
+    "colors_found": [
+        "F1F5F9",
+        "465469",
+        "334054",
+        "0E1729"
+    ]
+}

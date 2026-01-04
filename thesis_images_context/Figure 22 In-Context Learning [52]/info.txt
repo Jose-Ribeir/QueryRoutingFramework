@@ -1,0 +1,10 @@
+--- Text Before ---
+In-Context Learning some questions where selected from D+ and D−as demonstrations to
+show the self-knowledge of the question qt:
+
+--- Full Caption ---
+Figure 22: In-Context Learning [52]
+
+--- Text After ---
+52
+In here answer templates where used, ”No, I don’t need...” or ”Yes, I need...” in demonstra-

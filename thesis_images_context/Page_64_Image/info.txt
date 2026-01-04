@@ -1,0 +1,10 @@
+--- Text Before ---
+was the state of the art with older models like GPT-3.5 only achieving 28% check Table 11 for
+more tests.
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 11: Accuracy on each set [57]
+5.7.4

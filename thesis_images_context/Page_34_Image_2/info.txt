@@ -1,0 +1,10 @@
+--- Text Before ---
+Table 6: Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma thresh-
+old [22]
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 7: Outlier fraction distribution in different layer index in BLOOM-7B under 3-sigma
+threshold [22]

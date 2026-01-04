@@ -1,0 +1,52 @@
+{
+    "slide_number": 24,
+    "text_elements": [
+        {
+            "text": "Artifacts & Reproducibility\nResearch Outputs for Community (Contribution C5)",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1357630
+        },
+        {
+            "text": "Provided Artifacts\nInstruction Templates\nFor DA, CoT, and RAG query variations\nRouting Controller\nComplete architecture and logic specification\nVoting Post-Processor\nEnsemble decision mechanism design",
+            "left": 1244600,
+            "top": 2277544,
+            "width": 4104640,
+            "height": 2778760
+        },
+        {
+            "text": "Analysis Components\nRoute Choice Ablations\nPerformance analysis of routing decisions\nInstruction Design Ablations\nImpact of prompt engineering variations\nReproducibility Guides\nStep-by-step replication documentation",
+            "left": 9817100,
+            "top": 2277544,
+            "width": 3956050,
+            "height": 2778760
+        },
+        {
+            "text": "Reproducibility Commitment\nComplete transparency in methods and results Detailed documentation for all components Publicly accessible artifacts to foster extension",
+            "left": 1320800,
+            "top": 6011343,
+            "width": 5107940,
+            "height": 1901189
+        },
+        {
+            "text": "QR Code",
+            "left": 10121900,
+            "top": 6011343,
+            "width": 2948940,
+            "height": 488950
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "FFFFFF",
+        "465469",
+        "0E1729"
+    ]
+}

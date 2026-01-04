@@ -1,0 +1,10 @@
+--- Text Before ---
+All of this is evidenced by the results shown in Figure 33.
+78
+
+--- Full Caption ---
+Figure 33: Instruction V2 Results
+
+--- Text After ---
+79
+6.8.3

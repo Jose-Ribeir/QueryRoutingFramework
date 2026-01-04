@@ -1,0 +1,10 @@
+--- Text Before ---
+Images
+111
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 55: Avg. Energy of Analysis Instructions that were also INCORRECT when Baseline Failed.
+112

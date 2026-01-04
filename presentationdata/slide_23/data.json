@@ -1,0 +1,22 @@
+{
+    "slide_number": 23,
+    "text_elements": [
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        },
+        {
+            "text": "Routing system vs Bigger model\nArc(easy)",
+            "left": 1371600,
+            "top": 342900,
+            "width": 10223500,
+            "height": 1161215
+        }
+    ],
+    "colors_found": [
+        "465469"
+    ]
+}

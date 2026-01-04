@@ -1,0 +1,10 @@
+--- Text Before ---
+Direct Prompting given a question qt, a straight-forward approach to detect wether LLMs
+are capable of solving it is to ask them directly:
+
+--- Full Caption ---
+Figure 21: Direct Prompting [52]
+
+--- Text After ---
+On this method the prompt is used in conjunction with ’Do you need additional information
+to answer this question?’ to detect self-knowledge based on the response provided by the LLM.

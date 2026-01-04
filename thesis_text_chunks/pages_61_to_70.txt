@@ -1,0 +1,368 @@
+In here answer templates where used, ”No, I don’t need...” or ”Yes, I need...” in demonstra-
+tions based on wether the answer comes from the positive set D+ or the negative one D−.
+This direct prompting and in-context learning methods can induce self-knowledge of LLMs
+to some extent. But they come with three main drawbacks. First one being that both methods
+require designing prompts and calling the LLMs for each new question, making it cumbersome.
+Second, in-context learning could be also unstable due to contextual bias and sensitivity which
+is difficult to address in closed source LLMs. Third, use of all questions cannot be guaranteed,
+due to the maximum tokens input of the LLMs. To avoid the above issues smaller models were
+used to help elicit self-knowledge.
+A classifier was trained using D+ and D−, as a two-way classification problem using the
+samples to train a BERTBase classifier [12]:
+ˆyi = softmax(Whcls(qi) + b),
+(13)
+Where qi ∈D+ ∪D−is a training question, hcls(qi) is the sentence-level representation
+from BERTBase, W and b are parameters used by the classification head. The parameters can
+be optimized to improve the cross-entropy loss between the predicted label distribution ˆyi and
+the ground-truth label of qi. Latter the training model can also be used to infer the label of new
+question qt described in equation 13.
+The other method also tested was Nearest Neighbor Search this method doesn’t require
+training since the inference can be directly done based on the label of the questions through
+k-nearest-neighbor (kNN) search using a pre-trained fixed encoder as showed by Figure 23.
+The kNN[53] is an algorithm widely used for a range of NLP tasks. This idea comes from
+the similarity between the semantically embedded space of two questions if these are closely
+related then the knowledge needed for the model to answer would also be similar.
+
+
+[INSERT IMAGE HERE: Figure 23: k-nearest-neighbor to understand model knowledge [52]]
+
+Each question was encoded into embeddings, and computed the semantic similarity through
+cosine distance sim(qt, qi) = (
+e(qt)·e(qi)
+||e(qt)||·||e(qi)||), where qi ∈{q+
+1 , . . . , q+
+m, q−
+1 , . . . , q−
+n }, e(·) being
+the representation of a sentence encoder. Then the search for the top-k nearest neighbors can
+be done based on the results that include the l positive ones and k −l negative ones. This can
+53
+be used to label the question qt as positive if
+l
+k−l ≥m
+n or negative if
+l
+k−l < m
+n m and n are the
+number of questions from D+ and D−respectively.
+5.6.3
+Using Self-Knowledge for Adaptive Retrieval Augmentation
+The self knowledge acquired previously from the LLMs responses or the predicted labels
+reflect the necessity or not of retrieving external knowledge, for each question qt accordingly.
+So that retrieval can be done or not depending on these results.
+5.7
+Model Comparison
+The model comparison will be used to help pick the correct model based on the require-
+ments, these could be based on VRAM, performance or open-sourceness. A well-known leader-
+board for LLM performance is llm.extratum.io [54]. This leader-board can be sorted based
+on many characteristics like VRAM usage, quantization level, model size, and many more.
+Llm.extratum.io also sorts based on performance that is measured on key evaluation data sets
+and metrics like GPQA, MUSR, BBH, IFEval, ARC, HellaSwag, MMLU, ThrutfulQA, Wino-
+Grande, GSM8K, MATH Lvl5 and MMLU Pro. These are some of the best methods to quantize
+a model’s performance on multiple aspects and will be discussed further in the next sections.
+5.7.1
+MMLU
+The MMLU [55] or Massive Multitask Language Understanding is an LLM benchmark
+that consists of a dataset designed to be a comprehensive test of the model’s ability to respond
+correctly on a diverse range of tasks and topics. It includes 57 different subjects that include
+knowledge across many disciplines like humanities, STEM, social sciences, and professional
+fields.
+The questions in the benchmark are multiple-choice of four options there are over
+15.000 questions ranging from simple elementary math questions all the way to professional
+medicine making it a very diverse benchmark. Some of the more important features include the
+standardized evaluation metrics, calibrated difficulty levels, comprehensive coverage of human
+knowledge, and professional-level expertise requirements. All of these points transform this
+benchmark into a very important benchmark in the field due to its variety and complexity. This
+test has however become easy for the most recent models like LLaMA 3 70B which achieved
+80.06 out of 100 [54]. To counteract the new advancements an improved version of the MMLU
+was developed, MMLU-Pro[56].
+5.7.2
+MMLU-Pro
+MMLU-Pro[56] is a more robust and challenging multi-task language understanding bench-
+mark. This was achieved by increasing the complexity of the options expanding from 4 options
+to 10 thus reducing the probability of guessing the correct answer by chance this also made the
+54
+benchmark more challenging and more discriminative. This was done using GPT4-Turbo to in-
+troduce six additional choices. These are created with the intuition of being plausible distractors
+that need discerning reasoning to pick the correct answer. The questions were also improved
+adding to the quality of the benchmark by eliminating trivial and noisy questions from the orig-
+inal MMLU. Which contained some that were found to be too easy by using a list of small
+LLMs when more than four were able to answer the question this question was then removed.
+The benchmark was also improved by increasing the portion of more challenging questions by
+adding a bigger share of college-level exam problems. All of these changes were then verified
+by two rounds of expert reviews to reduce the dataset noise. This proved to make the benchmark
+more robust making it less sensitive to prompt variation changing from 4% −5% to just 2%.
+This came with the benefit of generating a more stable performance across different prompt
+styles showing a greater consistency in model evaluation. These improvements achieved a big
+improvement in the discrimination between results of different models that previously scored
+similarly, the prior gap between GPT-4o and GPT-4-Turbo was 1% with MMLU-Pro it’s 9%.
+5.7.3
+GPQA
+GPQA [57] this benchmark differs a lot from others since this benchmark was made to
+evaluate an LLM’s ability to respond to 448 multiple-choice questions. Which were created
+by domain experts in biology, physics, and chemistry. These questions were tested on experts
+pursuing PhDs in the corresponding domain and still only reached at best 74% when discounting
+the clear mistakes the experts had identified in retrospect. One good point to mention is that
+this was also tested on what the paper describes as highly skilled non-expert validators where
+the accuracy was only 34%. This was done with an average of 30 minutes per question and
+access to the web to research the topic. This dataset questions were first written by a domain
+expert, this was then answered by another domain expert who would give constructive feedback
+to improve the clarity of the question and would also suggest revisions if needed. After said
+revision by the writer of the question, it is sent to another different domain expert and three
+non-expert validators who are experts in other domains to access the quality of the query and
+various options of answer.
+This method made sure that the questions are proven and tested by at least two different
+domain experts and three other area experts. GPQA is divided into 3 subsets Extended, Main
+set, and Diamond. The extended subset contains all of the validated questions with 546 different
+questions.
+GPQA is the name of the main not containing non-objective questions, these being those that
+both domain expert validators got wrong yet the three non-expert validators got right. This set is
+composed of 448 questions, these are also composed of questions that where one of the domain
+expert validators answered incorrectly but agreed that they made a clear mistake after being
+shown the solution. The strictest set is the Diamond where only 198 questions are present, these
+are the highest quality and thus only include questions where both experts answered correctly
+55
+and the majority of non-experts answered incorrectly. Though this also includes the questions
+where the second domain expert validator got the answer wrong yet explains his mistake once
+shown the correct one similarly to the previous set, but in this case, the first domain expert must
+answer correctly.
+This benchmark proved very efficient at achieving the proposed results since even with
+internet access GPT-4 only achieved 39.4% which was an increase of just 0.4% from the original
+score without internet access. At that point in time when this benchmark was launched GPT-4
+was the state of the art with older models like GPT-3.5 only achieving 28% check Table 11 for
+more tests.
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 11: Accuracy on each set [57]
+5.7.4
+MUSR
+This benchmark was developed to evaluate LLMs on multistep soft reasoning tasks specific
+to the natural language narrative [58]. This is done by three main domains murder mysteries,
+object placements, and team allocation. All of these are synthetic meaning, these were produced
+by an LLM. The creators choose to use synthetic stories due to two main reasons scalability and
+the ability to regenerate the story due to possible data leaks. The scalability is important since
+more capable LLMs are being created every year,the dataset could be adapted as needed to
+become more complex and add longer narratives thus introducing more difficult access for the
+LLMs. The ability to regenerate the story is also very important since a data leak could mean
+that the LLMs could be trained with the data of the benchmark which would take away the
+zero-shoot aspect of this benchmark.
+56
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Table 12: LLMs using CoT+, Humans scores on the multiple domains[58]
+This data set was constructed using an LLM that is prompted to generate the gold facts
+required to deduce the correct answer. Subsequently, these facts form the basis of a recursive
+querying process, where the LLM is used to establish the reasoning that connects them, therefor
+constructing a reasoning tree. This tree components get then used one by one to generate the
+final narrative. This method generates a narrative that is a hard for machines yet solvable by
+humans refer to Table 12. This is true even when using multiple prompting strategies and
+neurosymbolic approaches like chain of thought plus. The limiting factor discovered by the
+MUSR creators is the limitation that LLMs encounter when generating the deep reasoning trees
+this greatly limits the narrative complexity.
+5.7.5
+BBH
+BBH or Big-Bench-Hard is the improvement of the original Big-Bench which is a bench-
+mark consisting of 204 tasks from 405 authors across 132 institutions. This extensive and
+diverse authorship is a significant strength of the benchmark, as it serves to lower any potential
+for institutional or individual biases that might come from more limited set of contributors.
+The topics covered by the benchmark are exceptionally diverse, spanning a wide range of
+disciplines including linguistics, childhood development, mathematics, common-sense reason-
+ing, biology, physics, social bias, and software development, among others. The tasks selected
+from these domains were specifically chosen because they were considered to be beyond the
+capabilities of state-of-the-art models at the time of its creation.
+BBH was formed, by curating a specific subset of tasks from the original Big Bench collec-
+tion. The selection process was designed to isolate the most dificult challenges for contemporary
+models. The resulting benchmark consists of merely 23 tasks, that were chosen exclusively due
+to the performance being lower for State-of-Art models than those achieved by human raters.
+From this group of tasks that proved difficult for machines, only the most demanding were
+selected to form the final BBH set.
+The new benchmark prompting also differed in prompting since the new approach uses
+Chain-of-Thought prompting. With this prompting style all models suffered an improvement
+57
+some as much as 28.5%. The categories of this dataset are also relevant since they don’t just
+focus on algorithmic tasks, as they also have natural language understanding, world knowledge,
+and multilingual. The last one being great addition since it transforms this dataset into a mul-
+tilingual one. Though the linguistics part doesn’t affect the score by much due to its size in
+relation with the whole dataset.
+5.7.6
+IFEval
+IFEval [59] or instruction-following evaluation is used to project the ability of LLMs to
+adhere to verifiable instructions.
+This evaluation task consists of 25 verifiable instructions, these are divided into seven
+groups, keywords, language, length constraints, detectable content, combination, case change,
+start with / end with, and punctuation. The instruction also comes with a description to exem-
+plify what the model is required to do.
+This metric is designed to evaluate the model’s ability to adhere to the instructions provided
+by the proposed system, as illustrated in Figure 27. The method also accounts for errors in the
+model’s text formatting relative to the given instruction. This is accomplished using a flexible
+accuracy metric that tolerates superficial differences, such as formatting variations, provided
+the core intent of the instruction is fulfilled.
+To provide a comprehensive assessment, instruction-following is evaluated at two granular-
+ities. These being the per-prompt basis and the per-instruction basis. This dual-level analysis
+reveals whether the model can maintain adherence to a sequence of instructions or if it only
+follows the initial ones successfully.
+5.7.7
+ARC
+AI2 Reasoning Challenge [60] consists of a dataset and evaluation framework created with
+the intuition of assessing and advancing the reasoning capabilities of AI systems. This system is
+specially designed for assessing the models capabilities at answering challenging grade-school-
+level science questions.
+ARC contains two different sets, the challenge consists of 2590 queries and the easy con-
+taining 5197. The hard set is composed with queries that both retrieval-based solutions and
+word co-occurrence fail to solve, on the other hand the easy set is composed of questions that
+don’t require a lot of reasoning to be answered.
+The key difference on this data-set comes from the fact that to answer the question on the
+challenge-set the LLM require deeper reasoning, due to the fact that these can’t be answered
+using surface-level cues or simple retrieval methods.
+The paper also talks about how even models that used IR or Pointwise Mutual Information
+(PMI) failed to outperform random guessing on the Challenge set.
+58
+5.7.8
+HellaSwag
+HellaSwag [61] is a test set created to evaluate LLMs ability in commonsense natural lan-
+guage inference (NLI). The task is to choose the most reasonable continuation of a context,
+from four possibilities.
+The test set is made to be simple for human participants with an accuracy of 95.6%, yet
+simultaneously difficult for state-of-the-art models, with accuracy below 50%.
+The dataset is an extension of the original SWAG dataset but with the inclusion of Adver-
+sarial Filtering (AF). This is done to increase the difficulty of the task. AF works by contin-
+uously selecting wrong answers generated by adversarial machines, thereby keeping a chal-
+lenging dataset even for state-of-the-art models like BERT. The novelty lies in generating a
+”Goldilocks zone” of text difficulty, where the wrong answers are nonsensical to humans but
+are often misclassified by models.
+HellaSwag consists of 70,000 examples that are gathered from ActivityNet video captions
+and WikiHow text, thus contributing to the diversity of contexts in addition to the length and
+difficulty of the examples. The dataset also includes zero-shot test classes, in which models are
+tested on unseen domains to estimate their ability to generalize.
+The assessment is centered on whether models can reason on what is likely the next event
+or employ dataset-specific bias. Results indicate that even the top models, i.e., BERTLarge, fail
+to generalize but instead depend on shallow lexical patterns rather than actual commonsense
+reasoning.
+This benchmark indicates the weaknesses of existing language models in reasoning and
+understanding the world, demonstrating that natural language processing progress demands the
+development of benchmarks that evolve together with progress in model capabilities.
+5.7.9
+ThrutfulQA
+ThrutfulQA [62] is a benchmark designed to evaluate the truthfulness of LLMs when an-
+swering questions. This benchmark is constructed with 817 questions across 38 different cate-
+gories, such as health, law, finance, and conspiracies. These questions were specially designed
+to test whether models generate imitative falsehoods, these are answers that mimic common
+human misconceptions or misinformation found in the training data, including falsehoods. For
+example, some models might say that cracking knuckles causes arthritis, even though this is
+a false statement. This benchmark also shows a big gap in human to LLM performance, with
+humans achieving 94% compared to just 58% of the UnifiedQA LLM. This method can be used
+to see if techniques like fine-tuning to prioritize truthfulness over imitation are achieving the
+wanted results. ThrutfulQA is a great tool to stop the spread of misinformation and reduce the
+deception caused by the usage of LLMs by users that think these models are truthful.
+59
+5.7.10
+WinoGrande
+WinoGrande is an expanded version of the Winograd Schema Challenge, which originally
+consisted of 273 expert-crafted pronoun resolution problems. These problems are trivial for
+humans but challenging for machine learning algorithms, as these require commonsense rea-
+soning rather than reliance on statistical patterns or word association. But with the state-of-art
+models achieving near-perfect scores there was a need to improve on the original method so
+WinoGrande was created.
+This method introduces 44000 problems inspired by the previous method but this time de-
+signed to be more challenging and also scalable. These new problems were created using crowd-
+sourcing and after-validated to ensure their trivialness to humans while still being difficult for
+state-of-the-art models.
+This data set shows a big gap in performance from LLMs to SLMs.
+5.7.11
+GSM8K
+GSM8K [63] is a dataset specially crafted to evaluate the LLM’s ability to perform multi-
+step mathematical reasoning. This data set consists of 8.5K high-quality grade school math
+word problems, this data set is split with 7.5k on the data set and 1k for the testing. The
+problems are linguistically diverse and need 2 to 8 steps to solve, these are focused on basic
+arithmetic operations like addition, subtraction, multiplication, and division. The solutions to
+these are provided in natural language to encourage the model’s interpretability and reasoning.
+This benchmark is used to test a model’s performance on informal reasoning and problem-
+solving capabilities.
+5.7.12
+Math Lvl5
+This data set MATH [64] consists of various levels of math problems with five being the
+most challenging tier. This test is designed to test advanced reasoning and heuristic applications.
+The problems require a deep understanding of mathematical concepts, creative problem-solving
+strategies, and the ability to aggregate various techniques to find a solution. The performance
+of LLM models like LLaMA 3.1 8B achieves only 5.36% [54], while International Mathemat-
+ical Olympiad gold medalists achieve a near-perfect score. This highlights the significant gap
+in performance between current AI models and expert-level human reasoning. The problems
+found in this data set require logical chaining, abstraction, and error-free computation, areas
+where LLM’s performance tends to be lackluster.
+5.7.13
+RAGEval
+RAGEval [65] is more than just a dataset, it is a framework design to assess RAG sys-
+tems across various scenarios by generating high-quality documents, questions, answers, and
+60
+references. All of these are generated by a schema-based pipeline to maintain accuracy. This
+approach allows them to implement metrics that differ from the standard and are more aligned
+with factual accuracy, there are three metrics for this, Completeness, Hallucination, and Irrele-
+vance.
+The process to generate all the needed files is as follows: S −→C −→D −→(Q, A) −→R −→
+Keypoints
+This sequence shows all the steps taken by this approach starting with the schema summary
+S that leads to the configuration generation C, followed by the document generation D. With
+the document formed the question answer pairs are formed (Q, A) and the references need
+to come that answer identified R and then the keypoints are extracted, representing the most
+critical information in the answers.
+The schema summary is an abstract representation of the key elements in a scenario-specific
+text generation, these key elements encapsulate the aspects of essential factual knowledge from
+the input documents. This schema acts as a backbone to ensure that the content is diverse
+and reliable while maintaining a standard across various scenarios. The schema defines the
+structural framework of key elements for domain-specific documents without containing actual
+data. As an example in medicine, it can outline categories for symptoms and treatments, in
+finance it could establish classifications for metrics, sectors, and organizations. One concrete
+example of a schema generation starts with the initial generation by the LLM, the model gets
+feed with carefully chosen seed documents, these are real legal documents that represent the
+kind of knowledge and structure that the schema is to take. After the schema is created a series
+of iterative refinements are taken by a human using it’s intuition and contextual understanding
+to fix any nuances the model had generated. Due to the fact that this process occurs more than
+once, it ensures that a balance between comprehensiveness, accuracy, and generalization, thus
+supporting content generation across diverse sub-scenarios.
+Generating a document that is rich with factual information and isn’t contradictory, is cru-
+cial to creating high quality datasets, ensuring that the generated content can be evaluated ac-
+curately and used effectively in downstream tasks. To generate documents with that quality,
+first the configurations C are generated, these derive from the previously established schema S.
+These configurations are used as references and constrains for text generation, thus maintaining
+consistency across the document. To generate these configurations a hybrid approach is taken
+that combines rule-based methods with LLMs to assign values to the schema elements. These
+rule-based methods like selecting values randomly from predefined scenario-specific options,
+ensure that high accuracy and factual consistency is maintained for a more structured data. This
+and the more complex or diverse content, balances consistency and creativity. After the con-
+figuration is ready a GPT-4o is used to convert the factual information from the C into a more
+structured narrative format that is more aligned with a specific scenario. For example, in medi-
+cal records the generated document can include categories that add a more complex background
+to the document these can be a patient information, medical history, or a treatment plan. The
+61
+same is done with other topics but with categories that better align with them.
+
+
+[INSERT IMAGE HERE: Figure 24: RAGEval System: 1 summarizing a schema containing specific knowledge from seed documents. 2 filling in factual information based on this schema to generate diverse con- figurations. 3 generating documents according to the configurations. 4 creating evaluation data composed of questions, answers, and references derived from the configurations and doc- uments.[65]]
+
+Question-Reference-Answer (QRA) to generate these RAGEval uses the documents D and
+configurations C these are used to establish a robust evaluation framework ready to be used
+on information retrieval and reasoning capable applications. The configurations C are used to
+guide the generation of the questions as well as the initial answers, this forces the generated
+content to be aligned with the schema elements. To address different types of questions like,
+multi-hop reasoning, summarization, and multi-document questions, each one is specifically
+designed to evaluate specific facets of language understanding. To ensure diversity and control-
+lability of these questions 7 main question types were designed. The model gets provided with
+detailed instructions and examples for the question type needed to be generated, the model then
+outputs the question Q as well as the initial answer A. Using the Q and A the relevant informa-
+tion fragments get extracted R from the documents D. This is done using an extraction prompt,
+thus ensuring that the generated answer is grounded in the source material this improves the
+reliability and traceability. To reduce the misalignment between A and R, the answers get it-
+eratively refined thus also improving the coherence and accuracy. If references contain content
+missing from the answers they supplement them accordingly. To reduce the hallucinations a
+look is taken at the answers to find any unsupported content that either gets corrected with rel-
+evant references or removed. Finally the keypoints get generated from the answers A for each
+question Q to highlight the critical information in the responses. Normally each answer A gets
+broken down into 3-5 keypoints, that encompass all essential factual detail, as well as relevant
+inferences, and conclusions.
+DragonBall dataset which means Diverse RAG Omni-Benchmark for All scenarios. This
+dataset was created using all the methods described above and encompasses a range of texts
+62

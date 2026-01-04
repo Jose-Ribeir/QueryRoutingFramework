@@ -1,0 +1,9 @@
+--- Text Before ---
+Figure 52 provides valuable insight into all the versions by visually representing the distribution of energy consumption per query for each one.
+
+--- Full Caption ---
+Figure 52: Distribution of Energy Consumption per Query by File
+
+--- Text After ---
+The baseline models, particularly the ”straight model”, presents the tightest distribution.
+The small inter quartile range shows that most of the queries are processed using a very con-

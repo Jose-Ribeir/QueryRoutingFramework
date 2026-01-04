@@ -1,0 +1,385 @@
+{
+  "pageBasedImages": [
+    {
+      "filename": "page_100_img_1.png",
+      "path": "/images/methodology/page_100_img_1.png",
+      "pageNumber": 100,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_101_img_1.png",
+      "path": "/images/methodology/page_101_img_1.png",
+      "pageNumber": 101,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_103_img_1.png",
+      "path": "/images/methodology/page_103_img_1.png",
+      "pageNumber": 103,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_104_img_1.png",
+      "path": "/images/methodology/page_104_img_1.png",
+      "pageNumber": 104,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_105_img_1.png",
+      "path": "/images/methodology/page_105_img_1.png",
+      "pageNumber": 105,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_105_img_2.png",
+      "path": "/images/methodology/page_105_img_2.png",
+      "pageNumber": 105,
+      "imageIndex": 2,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_107_img_1.png",
+      "path": "/images/methodology/page_107_img_1.png",
+      "pageNumber": 107,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_108_img_1.png",
+      "path": "/images/methodology/page_108_img_1.png",
+      "pageNumber": 108,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_109_img_1.png",
+      "path": "/images/methodology/page_109_img_1.png",
+      "pageNumber": 109,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_64_img_1.png",
+      "path": "/images/methodology/page_64_img_1.png",
+      "pageNumber": 64,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_65_img_1.png",
+      "path": "/images/methodology/page_65_img_1.png",
+      "pageNumber": 65,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_70_img_1.png",
+      "path": "/images/methodology/page_70_img_1.png",
+      "pageNumber": 70,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_72_img_1.png",
+      "path": "/images/methodology/page_72_img_1.png",
+      "pageNumber": 72,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_73_img_1.png",
+      "path": "/images/methodology/page_73_img_1.png",
+      "pageNumber": 73,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_73_img_2.png",
+      "path": "/images/methodology/page_73_img_2.png",
+      "pageNumber": 73,
+      "imageIndex": 2,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_75_img_1.png",
+      "path": "/images/methodology/page_75_img_1.png",
+      "pageNumber": 75,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_79_img_1.png",
+      "path": "/images/methodology/page_79_img_1.png",
+      "pageNumber": 79,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_83_img_1.png",
+      "path": "/images/methodology/page_83_img_1.png",
+      "pageNumber": 83,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_84_img_1.png",
+      "path": "/images/methodology/page_84_img_1.png",
+      "pageNumber": 84,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_85_img_1.png",
+      "path": "/images/methodology/page_85_img_1.png",
+      "pageNumber": 85,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_87_img_1.png",
+      "path": "/images/methodology/page_87_img_1.png",
+      "pageNumber": 87,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_88_img_1.png",
+      "path": "/images/methodology/page_88_img_1.png",
+      "pageNumber": 88,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_90_img_1.png",
+      "path": "/images/methodology/page_90_img_1.png",
+      "pageNumber": 90,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_92_img_1.png",
+      "path": "/images/methodology/page_92_img_1.png",
+      "pageNumber": 92,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_94_img_1.png",
+      "path": "/images/methodology/page_94_img_1.png",
+      "pageNumber": 94,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_96_img_1.png",
+      "path": "/images/methodology/page_96_img_1.png",
+      "pageNumber": 96,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_98_img_1.png",
+      "path": "/images/methodology/page_98_img_1.png",
+      "pageNumber": 98,
+      "imageIndex": 1,
+      "section": "methodology"
+    }
+  ],
+  "figureImages": [],
+  "allImages": [
+    {
+      "filename": "page_100_img_1.png",
+      "path": "/images/methodology/page_100_img_1.png",
+      "pageNumber": 100,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_101_img_1.png",
+      "path": "/images/methodology/page_101_img_1.png",
+      "pageNumber": 101,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_103_img_1.png",
+      "path": "/images/methodology/page_103_img_1.png",
+      "pageNumber": 103,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_104_img_1.png",
+      "path": "/images/methodology/page_104_img_1.png",
+      "pageNumber": 104,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_105_img_1.png",
+      "path": "/images/methodology/page_105_img_1.png",
+      "pageNumber": 105,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_105_img_2.png",
+      "path": "/images/methodology/page_105_img_2.png",
+      "pageNumber": 105,
+      "imageIndex": 2,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_107_img_1.png",
+      "path": "/images/methodology/page_107_img_1.png",
+      "pageNumber": 107,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_108_img_1.png",
+      "path": "/images/methodology/page_108_img_1.png",
+      "pageNumber": 108,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_109_img_1.png",
+      "path": "/images/methodology/page_109_img_1.png",
+      "pageNumber": 109,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_64_img_1.png",
+      "path": "/images/methodology/page_64_img_1.png",
+      "pageNumber": 64,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_65_img_1.png",
+      "path": "/images/methodology/page_65_img_1.png",
+      "pageNumber": 65,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_70_img_1.png",
+      "path": "/images/methodology/page_70_img_1.png",
+      "pageNumber": 70,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_72_img_1.png",
+      "path": "/images/methodology/page_72_img_1.png",
+      "pageNumber": 72,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_73_img_1.png",
+      "path": "/images/methodology/page_73_img_1.png",
+      "pageNumber": 73,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_73_img_2.png",
+      "path": "/images/methodology/page_73_img_2.png",
+      "pageNumber": 73,
+      "imageIndex": 2,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_75_img_1.png",
+      "path": "/images/methodology/page_75_img_1.png",
+      "pageNumber": 75,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_79_img_1.png",
+      "path": "/images/methodology/page_79_img_1.png",
+      "pageNumber": 79,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_83_img_1.png",
+      "path": "/images/methodology/page_83_img_1.png",
+      "pageNumber": 83,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_84_img_1.png",
+      "path": "/images/methodology/page_84_img_1.png",
+      "pageNumber": 84,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_85_img_1.png",
+      "path": "/images/methodology/page_85_img_1.png",
+      "pageNumber": 85,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_87_img_1.png",
+      "path": "/images/methodology/page_87_img_1.png",
+      "pageNumber": 87,
+      "imageIndex": 1,
+      "section": "introduction"
+    },
+    {
+      "filename": "page_88_img_1.png",
+      "path": "/images/methodology/page_88_img_1.png",
+      "pageNumber": 88,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_90_img_1.png",
+      "path": "/images/methodology/page_90_img_1.png",
+      "pageNumber": 90,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_92_img_1.png",
+      "path": "/images/methodology/page_92_img_1.png",
+      "pageNumber": 92,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_94_img_1.png",
+      "path": "/images/methodology/page_94_img_1.png",
+      "pageNumber": 94,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_96_img_1.png",
+      "path": "/images/methodology/page_96_img_1.png",
+      "pageNumber": 96,
+      "imageIndex": 1,
+      "section": "methodology"
+    },
+    {
+      "filename": "page_98_img_1.png",
+      "path": "/images/methodology/page_98_img_1.png",
+      "pageNumber": 98,
+      "imageIndex": 1,
+      "section": "methodology"
+    }
+  ]
+}

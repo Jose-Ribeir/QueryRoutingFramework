@@ -1,0 +1,10 @@
+--- Text Before ---
+key-value tensors in the host memory is acceptable.
+45
+
+--- Full Caption ---
+Figure 17: Cache aware Reordering[44]
+
+--- Text After ---
+Cache hit rate is vital for RAG Cache’s cache efficiency, but when paired with the unpre-
+dictability of the arrival pattern in user requests, this results in substantial cache trashing.

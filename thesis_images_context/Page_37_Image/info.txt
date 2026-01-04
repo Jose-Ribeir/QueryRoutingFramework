@@ -1,0 +1,10 @@
+--- Text Before ---
+sive, only losing about 45% of the performance of the original model on a suit of benchmarks
+consisting of PIQA, ARC-e, ARC-c, HellaSwag and WinoGrand, as depicted on Figure 8.
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 8: Quantized LLaMA3-8B performance[27]
+29

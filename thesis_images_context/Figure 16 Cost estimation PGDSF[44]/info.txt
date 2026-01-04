@@ -1,0 +1,9 @@
+--- Text Before ---
+required for its key-value tensors. The Cost is defined as the time taken to compute a document's key-value tensors, this can vary depending on GPU performance as well as document size and the sequence of preceding documents.
+
+--- Full Caption ---
+Figure 16: Cost estimation PGDSF[44]
+
+--- Text After ---
+Prefix awareness for RAG is achieved by the PGDSF method through two primary com-
+ponents, cost estimation and node placement. Accurately determining the computational cost

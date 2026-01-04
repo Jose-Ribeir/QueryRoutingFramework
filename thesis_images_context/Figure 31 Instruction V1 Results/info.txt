@@ -1,0 +1,10 @@
+--- Text Before ---
+model to rely almost totally on its internal, pre-existing biases to interpret the query’s needs.
+75
+
+--- Full Caption ---
+Figure 31: Instruction V1 Results
+
+--- Text After ---
+76
+As the performance data from the evaluation reveals, this approach was highly inconsistent

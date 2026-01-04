@@ -1,0 +1,10 @@
+--- Text Before ---
+response times contradicting some of the assumptions made during the instruction’s design.
+99
+
+--- Full Caption ---
+Figure 47: Total Energy Percentage Difference from Baseline
+
+--- Text After ---
+This increased energy overhead is clearly illustrated in Figure 47. The graph shows that,
+compared to the baseline, the more advanced routing systems consistently increase total energy

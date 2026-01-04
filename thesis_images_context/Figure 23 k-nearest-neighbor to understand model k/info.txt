@@ -1,0 +1,10 @@
+--- Text Before ---
+the similarity between the semantically embedded space of two questions if these are closely
+related then the knowledge needed for the model to answer would also be similar.
+
+--- Full Caption ---
+Figure 23: k-nearest-neighbor to understand model knowledge [52]
+
+--- Text After ---
+Each question was encoded into embeddings, and computed the semantic similarity through
+cosine distance sim(qt, qi) = (

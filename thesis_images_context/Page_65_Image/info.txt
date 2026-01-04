@@ -1,0 +1,10 @@
+--- Text Before ---
+zero-shoot aspect of this benchmark.
+56
+
+--- Full Caption ---
+
+
+--- Text After ---
+Table 12: LLMs using CoT+, Humans scores on the multiple domains[58]
+This data set was constructed using an LLM that is prompted to generate the gold facts

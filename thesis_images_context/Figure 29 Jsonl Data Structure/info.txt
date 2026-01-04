@@ -1,0 +1,9 @@
+--- Text Before ---
+already recorded in the JSONL, and the trapezoidal rule is applied in real time during inference to account for variations in the intervals between data points.
+
+--- Full Caption ---
+Figure 29: Jsonl Data Structure
+
+--- Text After ---
+In Figure 29 is depicted the final JSONL structure. The structure is devised into four main
+parts Query Information, Ground Truth, AI Prediction, and Performance & Metrics each being

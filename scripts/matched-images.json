@@ -1,0 +1,874 @@
+[
+  {
+    "metadata": {
+      "folderName": "Figure 1 Transformer model architecture [5]",
+      "contextBefore": [
+        "Table 2: Maximum path lengths, per-layer complexity and minimum number of sequential",
+        "operations for different layer types. [5]"
+      ],
+      "caption": "Figure 1: Transformer model architecture [5]",
+      "contextAfter": [
+        "Transformer models introduced many changes to try to solve all of the problems in the",
+        "previous models. Starting with the Self-attention Mechanism which lowers the complexity"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 1 Transformer model architecture [5]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 76,
+    "confidence": "medium",
+    "matchedText": "Further analysis of the results, now split by the query's original dataset (domain), reveals another clear efficiency trend: queries related to 'General Knowledge' consistently require more energy than those from the 'Science' domain. This pattern is still present for both correct and incorrect answers, as can be seen in both Figure 44, and 45. For the more refined instructions (V2 through V6), the energy cost for answering a general knowledge question is noticeably higher than for a science question. This disparity likely stems from the increased complexity of the general knowledge queries, which typically require retrieval to be answered. This adds further computational overhead, as the number of tokens the model must process increases due to the inclusion of retrieved documents alongside the instruction. This occurs even after organizing the retrieved documents from most to least relevant, and removing any unnecessary expressions that do not contribute to the quality of the response. On the other hand, in the Science domain, the number of input tokens is always lower since no retrieval is performed when the system functions correctly, thereby reducing the total input tokens."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 10 Comparison RAG on the top and CAG on the botom[43]",
+      "contextBefore": [
+        "approach proposes a method that uses this increased context size to reduce the model latency",
+        "and potential errors that could occur on RAG systems."
+      ],
+      "caption": "Figure 10: Comparison RAG on the top and CAG on the botom[43]",
+      "contextAfter": [
+        "This approach works by enabling retrieval-free knowledge integration. This is done by",
+        "preloading external knowledge sources, such as a collection of documents D = {d1, d2, ..., dn}"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 10 Comparison RAG on the top and CAG on the\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 12 Distribution of the difference of prediction scores between RAG and LC[45]",
+      "contextBefore": [
+        "while maintaining most of the performance. However, despite the performance gap, there is a",
+        "high degree of overlap in the predictions made by both methods."
+      ],
+      "caption": "Figure 12: Distribution of the difference of prediction scores between RAG and LC[45]",
+      "contextAfter": [
+        "Figure 12 shows the differences between RAG prediction scores SRAG and LC prediction",
+        "scores SLC these are not just similar, in 63% of queries the model predictions are exactly identi-"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 12 Distribution of the difference of predic\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 13 Trade-off curves between (a) model performance and (b) token percentage as a",
+      "contextBefore": [
+        "that require deeper reasoning may benefit from a higher k. Therefore, the optimal value of k is",
+        "dependent on both the nature of the task and the level of performance required."
+      ],
+      "caption": "Figure 13: Trade-off curves between (a) model performance and (b) token percentage as a",
+      "contextAfter": [
+        "The other hybrid approach RAGCache works by caching the key-value tensors of retrieved",
+        "documents across multiple requests, this is done to try and minimize redundant computation for"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 13 Trade-off curves between (a) model perfo\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 15 Knowledge Tree[44]",
+      "contextBefore": [
+        "nated, and the longest identified document sequence is returned. This method ensures efficiency",
+        "with a time complexity of O(h), where h is the height of the tree."
+      ],
+      "caption": "Figure 15: Knowledge Tree[44]",
+      "contextAfter": [
+        "Prefix-aware Greedy-Dual-Size-Frequency (PGDSF) replacement policy is the name for the",
+        "43"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 15 Knowledge Tree[44]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 2,
+    "confidence": "medium",
+    "matchedText": "Despite advancements such as model quantization and the development of lightweight LLMs, a major gap still remains in effectively adapting these models to specialized, domain-specific tasks under limited computational resources. Methods like Retrieval-Augmented Generation (RAG) and Hypothetical Document Embedding (HyDE) have emerged as strong contenders in the sense that they can integrate external knowledge into the models with ease. However, success in such applications largely relies on the quality of query rewriting and retrieval."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 16 Cost estimation PGDSF[44]",
+      "contextBefore": [
+        "ment’s key-value tensors, this can vary depending on GPU performance as well as document",
+        "size and the sequence of preceding documents."
+      ],
+      "caption": "Figure 16: Cost estimation PGDSF[44]",
+      "contextAfter": [
+        "Prefix awareness for RAG is achieved by the PGDSF method through two primary com-",
+        "ponents, cost estimation and node placement. Accurately determining the computational cost"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 16 Cost estimation PGDSF[44]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 18 Speculative Pipelining[44]",
+      "contextBefore": [
+        "engine simply returns the latest speculative generation. Otherwise, the LLM performs a new",
+        "generation with the new top-k documents."
+      ],
+      "caption": "Figure 18: Speculative Pipelining[44]",
+      "contextAfter": [
+        "Figure 18 shows how RAGCache splits the retrieval process into four stages. The top-2",
+        "documents in candidate queue are [D1, D3], [D1, D2], [D1, D2] and [D1, D2] in the four stages."
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 18 Speculative Pipelining[44]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 2,
+    "confidence": "medium",
+    "matchedText": "Despite advancements such as model quantization and the development of lightweight LLMs, a major gap still remains in effectively adapting these models to specialized, domain-specific tasks under limited computational resources. Methods like Retrieval-Augmented Generation (RAG) and Hypothetical Document Embedding (HyDE) have emerged as strong contenders in the sense that they can integrate external knowledge into the models with ease. However, success in such applications largely relies on the quality of query rewriting and retrieval."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 19 Optimal speculative pipelining strategy [44]",
+      "contextBefore": [
+        "candidate retrieval results at the end of each stage with a fixed time interval d. Since the batch",
+        "size was set to only one, they could terminate any incorrect speculative generation requests."
+      ],
+      "caption": "Figure 19: Optimal speculative pipelining strategy [44]",
+      "contextAfter": [
+        "RAGCache assumes that the LLM engine can schedule requests in the queue in any order,",
+        "but it processes speculative generation requests for a single request sequentially. Figure 19"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 19 Optimal speculative pipelining strategy\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 2 RN18 squared error. [21]",
+      "contextBefore": [
+        "Columns within blocks are quantized recursively and at each step, unquantized weights are",
+        "updated based on the quantized weights."
+      ],
+      "caption": "Figure 2: RN18 squared error. [21]",
+      "contextAfter": [
+        "With that it also achieved efficiency gains compared to OBQ which achieved O(drow · d3",
+        "col)"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 2 RN18 squared error. [21]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 1,
+    "confidence": "high",
+    "matchedText": "The results of this study show that architectural control and sophisticated prompt engineering can substantially bridge the performance gap between small, quantized models and their larger, more resource-intensive counterparts. Through iterative refinement of the controller's instruction design, particularly with profile-based prompts, (Answer RQ3) the system achieved an accuracy exceeding 85% on reasoning-focused science questions. Critically, this performance was achieved with significantly greater energy efficiency than would be possible using larger models. The detailed energy profiling revealed a direct correlation between incorrect answers and higher energy consumption, and also showed how different instructions strategically shift the computational load between CPU-intensive retrieval and GPU-intensive generation. Thus confirming that a \\\"smarter, not bigger\\\" approach is a viable path forward."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 20 The SKR Pipeline and its component interactions.[52]",
+      "contextBefore": [
+        "Their method works by three main ways: Collecting Self-Knowledge, Eliciting Self-knowledge,",
+        "and Using Self-Knowledge. These represent the main pipeline for SKR, as shown in Figure 20."
+      ],
+      "caption": "Figure 20: The SKR Pipeline and its component interactions.[52]",
+      "contextAfter": [
+        "50"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 20 The SKR Pipeline and its component inter\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 1,
+    "confidence": "high",
+    "matchedText": "The results of this study show that architectural control and sophisticated prompt engineering can substantially bridge the performance gap between small, quantized models and their larger, more resource-intensive counterparts. Through iterative refinement of the controller's instruction design, particularly with profile-based prompts, (Answer RQ3) the system achieved an accuracy exceeding 85% on reasoning-focused science questions. Critically, this performance was achieved with significantly greater energy efficiency than would be possible using larger models. The detailed energy profiling revealed a direct correlation between incorrect answers and higher energy consumption, and also showed how different instructions strategically shift the computational load between CPU-intensive retrieval and GPU-intensive generation. Thus confirming that a \\\"smarter, not bigger\\\" approach is a viable path forward."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 21 Direct Prompting [52]",
+      "contextBefore": [
+        "Direct Prompting given a question qt, a straight-forward approach to detect wether LLMs",
+        "are capable of solving it is to ask them directly:"
+      ],
+      "caption": "Figure 21: Direct Prompting [52]",
+      "contextAfter": [
+        "On this method the prompt is used in conjunction with ’Do you need additional information",
+        "to answer this question?’ to detect self-knowledge based on the response provided by the LLM."
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 21 Direct Prompting [52]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 1,
+    "confidence": "high",
+    "matchedText": "The results of this study show that architectural control and sophisticated prompt engineering can substantially bridge the performance gap between small, quantized models and their larger, more resource-intensive counterparts. Through iterative refinement of the controller's instruction design, particularly with profile-based prompts, (Answer RQ3) the system achieved an accuracy exceeding 85% on reasoning-focused science questions. Critically, this performance was achieved with significantly greater energy efficiency than would be possible using larger models. The detailed energy profiling revealed a direct correlation between incorrect answers and higher energy consumption, and also showed how different instructions strategically shift the computational load between CPU-intensive retrieval and GPU-intensive generation. Thus confirming that a \\\"smarter, not bigger\\\" approach is a viable path forward."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 22 In-Context Learning [52]",
+      "contextBefore": [
+        "In-Context Learning some questions where selected from D+ and D−as demonstrations to",
+        "show the self-knowledge of the question qt:"
+      ],
+      "caption": "Figure 22: In-Context Learning [52]",
+      "contextAfter": [
+        "52"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 22 In-Context Learning [52]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 1,
+    "confidence": "high",
+    "matchedText": "The results of this study show that architectural control and sophisticated prompt engineering can substantially bridge the performance gap between small, quantized models and their larger, more resource-intensive counterparts. Through iterative refinement of the controller's instruction design, particularly with profile-based prompts, (Answer RQ3) the system achieved an accuracy exceeding 85% on reasoning-focused science questions. Critically, this performance was achieved with significantly greater energy efficiency than would be possible using larger models. The detailed energy profiling revealed a direct correlation between incorrect answers and higher energy consumption, and also showed how different instructions strategically shift the computational load between CPU-intensive retrieval and GPU-intensive generation. Thus confirming that a \\\"smarter, not bigger\\\" approach is a viable path forward."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 23 k-nearest-neighbor to understand model knowledge [52]",
+      "contextBefore": [
+        "the similarity between the semantically embedded space of two questions if these are closely",
+        "related then the knowledge needed for the model to answer would also be similar."
+      ],
+      "caption": "Figure 23: k-nearest-neighbor to understand model knowledge [52]",
+      "contextAfter": [
+        "Each question was encoded into embeddings, and computed the semantic similarity through",
+        "cosine distance sim(qt, qi) = ("
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 23 k-nearest-neighbor to understand model k\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 24 RAGEval System 1 summarizing a schema containing specific knowledge from",
+      "contextBefore": [
+        "same is done with other topics but with categories that better align with them."
+      ],
+      "caption": "Figure 24: RAGEval System: 1 summarizing a schema containing specific knowledge from",
+      "contextAfter": [
+        "Question-Reference-Answer (QRA) to generate these RAGEval uses the documents D and",
+        "configurations C these are used to establish a robust evaluation framework ready to be used"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 24 RAGEval System 1 summarizing a schema co\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 0,
+    "confidence": "medium",
+    "matchedText": "Artificial Intelligence (AI) has revolutionized natural language processing (NLP) through the advent of Large Language Models (LLMs), which demonstrate exceptional capabilities in understanding and generating human-like language, with widespread applications across diverse industries. However, deploying these models in real-world, regulated environments presents substantial challenges."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 25 Relationship between model size and monthly downloads[68]",
+      "contextBefore": [
+        "points of the research are the efficiency and performance using some of the enhancing methods",
+        "described above. These will be paired with a small LLM meaning less than 36B tokens."
+      ],
+      "caption": "Figure 25: Relationship between model size and monthly downloads[68]",
+      "contextAfter": [
+        "6.1",
+        "Overview of the Query Rewriting Flow"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 25 Relationship between model size and mont\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 26 Traditional information retrieval architecture[68]",
+      "contextBefore": [
+        "documents but also render lengthy and human-sounding responses, thereby overcoming the",
+        "limitations between traditional IR systems and the present user expectations."
+      ],
+      "caption": "Figure 26: Traditional information retrieval architecture[68]",
+      "contextAfter": [
+        "The proposed system will integrate a rewriter module that will be placed between the user",
+        "query q and the retriever similar to [45], this will enable the injection of the retrieved documents"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 26 Traditional information retrieval archit\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 1,
+    "confidence": "high",
+    "matchedText": "The results of this study show that architectural control and sophisticated prompt engineering can substantially bridge the performance gap between small, quantized models and their larger, more resource-intensive counterparts. Through iterative refinement of the controller's instruction design, particularly with profile-based prompts, (Answer RQ3) the system achieved an accuracy exceeding 85% on reasoning-focused science questions. Critically, this performance was achieved with significantly greater energy efficiency than would be possible using larger models. The detailed energy profiling revealed a direct correlation between incorrect answers and higher energy consumption, and also showed how different instructions strategically shift the computational load between CPU-intensive retrieval and GPU-intensive generation. Thus confirming that a \\\"smarter, not bigger\\\" approach is a viable path forward."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 27 Graphical representation of the system diagram[68]",
+      "contextBefore": [
+        "instruction will prompt the LLM to evaluate which of the three approaches is the more suitable",
+        "normal response, RAG, or Chain-of-Thought."
+      ],
+      "caption": "Figure 27: Graphical representation of the system diagram[68]",
+      "contextAfter": [
+        "If the models concludes that it can answer directly then the model proceeds to generate the",
+        "answer without the need of a new generation, meaning only one hop. As for Chain-of-Thought,"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 27 Graphical representation of the system d\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 28 Analysis Prompt",
+      "contextBefore": [
+        "mechanism is required. This selection is performed using the model (M) and the content of the",
+        "query (q), this is shown in Figure 29"
+      ],
+      "caption": "Figure 28: Analysis Prompt",
+      "contextAfter": [
+        "Figure 28 presents the analysis prompt responsible for this selection. This instruction can",
+        "be divided into two parts. The first part is responsible for the Straight Answer (S), it asks the"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 28 Analysis Prompt\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 29 Jsonl Data Structure",
+      "contextBefore": [
+        "already recorded in the JSONL, and the trapezoidal rule is applied in real time during inference",
+        "to account for variations in the intervals between data points."
+      ],
+      "caption": "Figure 29: Jsonl Data Structure",
+      "contextAfter": [
+        "In Figure 29 is depicted the final JSONL structure. The structure is devised into four main",
+        "parts Query Information, Ground Truth, AI Prediction, and Performance & Metrics each being"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 29 Jsonl Data Structure\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 4,
+    "confidence": "medium",
+    "matchedText": "Artificial Intelligence (AI) has made remarkable advancements in natural language processing (NLP) through the development of large language models (LLMs). Despite their capabilities, significant challenges remain in deploying these models in highly regulated and resource-constrained environments. Organizations such as banks and public institutions face significant barriers in adopting AI models due to strict data protection laws (eg., GDPR, CCPA) and high computational requirements. These constraint limit their ability to utilize externally hosted LLMs or fine-tune large models for domain-specific tasks. Additionally, the computational demands of LLMs make them expensive to deploy, requiring powerful hardware infrastructure that is often unaffordable for small to medium enterprises (SMEs). While advancements in quantization techniques and lightweight models have made LLMs more accessible, there is still a gap in optimizing these models for domain-specific tasks without extensive computational resources. Retrieval-Augmented Generation (RAG) and HyDE methods have emerged as promising solutions, enabling models to integrate external knowledge efficiently. However, their effectiveness depends on the quality of query rewriting and retrieval mechanisms. This thesis seeks to address these challenges by evaluating lightweight, domain-aware strategies for query rewriting within a RAG framework. By leveraging techniques such as query augmentation, voting system, Retrieval Augmented Generation and Chain-of-Thought reasoning, the goal is to improve retrieval relevance and performance in regulated and resource-constrained settings. This work will also explore the trade-offs between large quantized models and small non-quantized models, providing practical insights for deploying AI systems in real-world applications."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 3 The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs. The",
+      "contextBefore": [
+        "majority of the weights that are sensitive Hessian values are predominantly concentrated in",
+        "specific columns or rows."
+      ],
+      "caption": "Figure 3: The Hessian metrics (sensitivity) and magnitude (value) of weights in LLMs. The",
+      "contextAfter": [
+        "This pattern is due to the convergence effects inherent in multi-head self-attention mecha-",
+        "nism of the models, thus needing a structured approach to select salient weights, reducing the"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 3 The Hessian metrics (sensitivity) and mag\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 30 Instruction V1",
+      "contextBefore": [
+        "6.8.1",
+        "Instruction V1: A Simple Baseline"
+      ],
+      "caption": "Figure 30: Instruction V1",
+      "contextAfter": [
+        "The initial instruction, V1, was designed as a minimal baseline to assess the feasibility of the",
+        "proposed approach. This instruction directly asks the model for a binary classification (”Would"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 30 Instruction V1\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 6,
+    "confidence": "medium",
+    "matchedText": "This approach uses the initial model response as the final answer. It is designed for questions that are too simple to require more complex methods. From an efficiency standpoint, minimizing processing steps is desirable, and using the first response avoids redundant generation. As the simplest approach, it does not enhance the model's answer but provides a baseline for comparison."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 32 Instruction V2",
+      "contextBefore": [
+        "6.8.2",
+        "Instruction V2: An Aggressive, Safety-First Heuristic"
+      ],
+      "caption": "Figure 32: Instruction V2",
+      "contextAfter": [
+        "77"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 32 Instruction V2\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 47,
+    "confidence": "high",
+    "matchedText": "To counteract the significant bias against retrieval observed on the first approach Figure 30, the second iteration introduced a strong, explicit bias towards retrieval. Instruction V2 Figure 32, framed the model as an \\\"expert query analyzer\\\" with the primary goal of eliminating incorrect answer by trying to force document retrieval for any non-trivial query. It established retrieval ('1-Yes') as the default assumption, permitting a direct answer ('2-No') only if the query met a very strict and narrow set of criteria: it had to involve exclusively 'globally famous entities' and ask for a single, static, and universally known fact. This \\\"safety-first\\\" heuristic was designed to try and minimize the risk of factual errors originating from the model's internal knowledge."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 34 Instruction V3",
+      "contextBefore": [
+        "6.8.3",
+        "Instruction V3: Introducing Balanced Criteria"
+      ],
+      "caption": "Figure 34: Instruction V3",
+      "contextAfter": [
+        "The third iteration, Instruction V3, tried to strike a balance between the aggressive retrieval",
+        "strategy of V2 and the passive approach of V1. The goal was to try and improve efficiency by re-"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 34 Instruction V3\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 44,
+    "confidence": "high",
+    "matchedText": "The initial instruction, V1, was designed as a minimal baseline to assess the feasibility of the proposed approach. This instruction directly asks the model for a binary classification (\\\"Would this Query benefit from the retrieval of documents?\\\") Figure 30, with a heavy emphasis on the output format rather than the decision-making logic. This lack of explicit criteria forced the model to rely almost totally on its internal, pre-existing biases to interpret the query's needs."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 36 Instruction V4",
+      "contextBefore": [
+        "6.8.4",
+        "Instruction V4: A Shift to Profile-Based Classification"
+      ],
+      "caption": "Figure 36: Instruction V4",
+      "contextAfter": [
+        "The mixed results presented on the previous iteration highlighted a potential weakness in",
+        "the sequential, rules-based checklist approach. This new instruction V4 represented a major"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 36 Instruction V4\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 42,
+    "confidence": "medium",
+    "matchedText": "The performance of a LLM is fundamentally linked to the clarity and quality of the instruction provided. In this system, where the initial goal is to classify a user's query into one of three paths retrieving external documents, reasoning step by step, or simply using the model's first response as the answer (both relying on the model's internal knowledge) the construction of the instruction plays a crucial role. By carefully designing this part of the process, we can guide and control the model's decision-making behavior. To determine the most effective approach for this classification task, a series of instructions were developed and tested, evolving from a simple open-ended prompt to a highly structured one that involves a fully rule based framework."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 38 Instruction V5",
+      "contextBefore": [
+        "6.8.5",
+        "Instruction V5: Final Refinement with a Guiding Principle"
+      ],
+      "caption": "Figure 38: Instruction V5",
+      "contextAfter": [
+        "Building on the successful profile-based structure of V4, the fifth version was a final re-",
+        "finement aimed at maximizing reliability. The core structure of the two profiles remained un-"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 38 Instruction V5\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 4,
+    "confidence": "medium",
+    "matchedText": "If the models concludes that it can answer directly then the model proceeds to generate the answer without the need of a new generation, meaning only one hop. As for Chain-of-Thought, the approach works by injecting a command to try and force the model into thinking step by step to obtain the answer. The final approach is Retrieval-Augmented Generation (RAG), which is also the most complex. It begins by passing the query to a smaller model that generates an embedding representation of the query, aligned with a pre-embedded document collection. A similarity comparison is then performed to retrieve the most relevant documents based on this embedding space. Next, a rewriter is used to extract and pass only the most important parts of the retrieved documents, reducing the amount of irrelevant information passed to the model. Finally, a reranker prioritizes the most relevant documents so that they are presented first during the generation process. The last two aren't necessarily needed so they can be turned off as needed for more."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 4 Illustration of salient weight binarization. The B1 binarized from salient weight is",
+      "contextBefore": [
+        "additional bit-map. The approach described in [24] is to employ a per-channel or per row type of",
+        "binarization, they determine salience through a per-column segmentation on the whole matrix."
+      ],
+      "caption": "Figure 4: Illustration of salient weight binarization. The B1 binarized from salient weight is",
+      "contextAfter": [
+        "The main idea is to rank the columns by their salience in descending order and use an",
+        "optimized search algorithm to minimize quantization error. This process determines the optimal"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 4 Illustration of salient weight binarizati\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "As more powerful models hit the market with more expensive requirements, finding a model that suits low-budget companies or entities is becoming harder. The problem occurs due to the gap in the performance of LMMs. LMMs with more tokens will always tend to have greater performance [8]. However, this performance could be increased with methods described previously like HyDE [40], RAG [35], CoT [67], CAG [43], RAGCache [44], SKR [52], and Contriever [49]. All of these methods aim to improve model performance, but they do so at the cost of increased computational overhead. This overhead is variable, meaning that depending on the method or combination of methods used, the system's requirements and consequently its energy consumption can change significantly. Since most of the studies are also on bigger models a new approach will be taken to see if the results are similar to the bigger models. The key points of the research are the efficiency and performance using some of the enhancing methods described above. These will be paired with a small LLM meaning less than 36B tokens."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 40 Instruction V6",
+      "contextBefore": [
+        "6.8.6",
+        "Instruction V6: A Strategic Pivot to Efficiency"
+      ],
+      "caption": "Figure 40: Instruction V6",
+      "contextAfter": [
+        "The final iteration, V6, represented a deliberate reversal from the ”accuracy-first” principle",
+        "that guided the previous version. The main goal was explicitly re-focused to ”AVOIDING un-"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 40 Instruction V6\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 43,
+    "confidence": "medium",
+    "matchedText": "This section will analyze the iterative refinement process of the instructions in detail, evaluating the performance of each version. The evaluation on this section focuses on key metrics, such as: Routing Accuracy (the model's ability to correctly chose 'retrieval' or 'no-retrieval'), Answer Accuracy (the correctness of the final response), and Efficiency (measured in energy consumption) though this metric will be more thoroughly looked at at a later stage. By examining the trade-offs between these factors at each stage, we can identify the best practices for guiding an LLM in a complex classification task."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 43 Energy Costs vs. Correctness Scatterplot",
+      "contextBefore": [
+        "consumption, but rather to maximize the productive use of that energy aiming to yield the most",
+        "accurate results possible."
+      ],
+      "caption": "Figure 43: Energy Costs vs. Correctness Scatterplot",
+      "contextAfter": [
+        "Looking further into the energy dynamics of this project, an analysis of the average energy",
+        "per query reveals a striking and consistent pattern, incorrect answers are consistently more"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 43 Energy Costs vs. Correctness Scatterplot\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 45 Domain Average Energy per Incorrect Answer",
+      "contextBefore": [
+        "Figure 44: Domain Average Energy per Correct Answer"
+      ],
+      "caption": "Figure 45: Domain Average Energy per Incorrect Answer",
+      "contextAfter": [
+        "Further analysis of the results, now split by the query’s original dataset (domain), reveals",
+        "another clear efficiency trend: queries related to ’General Knowledge’ consistently require more"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 45 Domain Average Energy per Incorrect Answ\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 3,
+    "confidence": "medium",
+    "matchedText": "This thesis focuses on retrieval-based question answering in such contrained domains, leveraging query rewriting to improve relevance and reduce computational overhead. This is achieved by at first optimizing Small Language Models (SLMs) through advanced quantization techniques, which significantly reduce their computational and memory footprint. However, this approach introduces a critical challenge, that is the degradation in model performance and knowledge retention. To counter this effect, the system integrates a powerful Retrieval-Augmented-Generation (RAG) framework. This framework is not merely just add-on for external knowledge but it serves as a targeted mechanism to recover most of the performance lost during the quantization stage. By leveraging instructions optimization, and Chain-of-Thought reasoning, the RAG component ensures that the quantized SLM can access and effectively utilize precise, relevant information from external document."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models",
+      "contextBefore": [
+        "outliers if clipped during quantization can cause significant degradation in performance and",
+        "require special attention if model accuracy is to be preserved [16]."
+      ],
+      "caption": "Figure 5: Comparison of activations and weights in LLAMA2-7B and OPT-13B models.",
+      "contextAfter": [
+        "Another problem that makes it hard to quantize is the significant variations in value range",
+        "across different channels, which can be troublesome for the quatization algorithm. However, a"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 5 Comparison of activations and weights in\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1",
+      "contextBefore": [
+        "outliers if clipped during quantization can cause significant degradation in performance and",
+        "require special attention if model accuracy is to be preserved [16]."
+      ],
+      "caption": "Figure 5: Comparison of activations and weights in LLAMA2-7B and OPT-13B models.",
+      "contextAfter": [
+        "Another problem that makes it hard to quantize is the significant variations in value range",
+        "across different channels, which can be troublesome for the quatization algorithm. However, a"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1\\Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1.png",
+      "imageFilename": "Figure 5 Comparison of activations and weights in LLAMA2-7B and OPT-13B models._1.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 51 Science Avg. Energy when Straight Model is Incorrect & System is also Incorrect",
+      "contextBefore": [
+        "showing the highest consumption at nearly 2.5 Wh. Thus reinforcing that the act of correcting",
+        "the responses regardless of the domain is inherently more energy demanding."
+      ],
+      "caption": "Figure 51: Science: Avg. Energy when Straight Model is Incorrect & System is also Incorrect",
+      "contextAfter": [
+        "On the other hand Figure 51 analyzes the scenario where both the baseline and the system",
+        "failed to produce a correct answer. This represents the least efficient use of energy, showing that"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 51 Science Avg. Energy when Straight Model\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 1,
+    "confidence": "high",
+    "matchedText": "The results of this study show that architectural control and sophisticated prompt engineering can substantially bridge the performance gap between small, quantized models and their larger, more resource-intensive counterparts. Through iterative refinement of the controller's instruction design, particularly with profile-based prompts, (Answer RQ3) the system achieved an accuracy exceeding 85% on reasoning-focused science questions. Critically, this performance was achieved with significantly greater energy efficiency than would be possible using larger models. The detailed energy profiling revealed a direct correlation between incorrect answers and higher energy consumption, and also showed how different instructions strategically shift the computational load between CPU-intensive retrieval and GPU-intensive generation. Thus confirming that a \\\"smarter, not bigger\\\" approach is a viable path forward."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 52 Distribution of Energy Consumption per Query by File",
+      "contextBefore": [
+        "Figure 52 provides valuable insight into all the versions by visually representing the distribution",
+        "of energy consumption per query for each one."
+      ],
+      "caption": "Figure 52: Distribution of Energy Consumption per Query by File",
+      "contextAfter": [
+        "The baseline models, particularly the ”straight model”, presents the tightest distribution.",
+        "The small inter quartile range shows that most of the queries are processed using a very con-"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 52 Distribution of Energy Consumption per Q\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 2,
+    "confidence": "medium",
+    "matchedText": "Despite advancements such as model quantization and the development of lightweight LLMs, a major gap still remains in effectively adapting these models to specialized, domain-specific tasks under limited computational resources. Methods like Retrieval-Augmented Generation (RAG) and Hypothetical Document Embedding (HyDE) have emerged as strong contenders in the sense that they can integrate external knowledge into the models with ease. However, success in such applications largely relies on the quality of query rewriting and retrieval."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 6 Finding the sweet spot for the migration strength[29]",
+      "contextBefore": [
+        "result, the quantization errors tend to be larger in the weights, leading to significant accuracy",
+        "degradation shown in Figure 6."
+      ],
+      "caption": "Figure 6: Finding the sweet spot for the migration strength[29]",
+      "contextAfter": [
+        "However there is a possibility off also pushing all of the quantization difficulty from the",
+        "31"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 6 Finding the sweet spot for the migration\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 2,
+    "confidence": "high",
+    "matchedText": "Despite advancements such as model quantization and the development of lightweight LLMs, a major gap still remains in effectively adapting these models to specialized, domain-specific tasks under limited computational resources. Methods like Retrieval-Augmented Generation (RAG) and Hypothetical Document Embedding (HyDE) have emerged as strong contenders in the sense that they can integrate external knowledge into the models with ease. However, success in such applications largely relies on the quality of query rewriting and retrieval."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 8 RAG implementation overview[35]",
+      "contextBefore": [
+        "main components: a query encoder (q), a retriever (pn), a document indexer, and a generator",
+        "(p0)."
+      ],
+      "caption": "Figure 8: RAG implementation overview[35]",
+      "contextAfter": [
+        "The first required model is a retriver DPR based on [36]. This retriver works by indexing all",
+        "the passages in a low-dimensional and continuous space, so that later the top K passages can"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 8 RAG implementation overview[35]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 3,
+    "confidence": "high",
+    "matchedText": "The proposed system will integrate a rewriter module that will be placed between the user query q and the retriever similar to [45], this will enable the injection of the retrieved documents as-well as the injection of instruction like CoT. This system works by first receiving the user query, which will be processed by the rewriter module. This module inserts an instruction inst that is used to determine the most suitable rewriting strategy to optimize the query. The instruction will prompt the LLM to evaluate which of the three approaches is the more suitable normal response, RAG, or Chain-of-Thought."
+  },
+  {
+    "metadata": {
+      "folderName": "Figure 9 An illustration of the HyDE model.[40]",
+      "contextBefore": [
+        "document is fed into the model which also receives the input query, it then generates the output",
+        "for the query based on the retrieved document."
+      ],
+      "caption": "Figure 9: An illustration of the HyDE model.[40]",
+      "contextAfter": [
+        "The main issue addressed by [40] is the dependence on a separate query encoder required",
+        "36"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Figure 9 An illustration of the HyDE model.[40]\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 0,
+    "confidence": "medium",
+    "matchedText": "Artificial Intelligence (AI) has revolutionized natural language processing (NLP) through the advent of Large Language Models (LLMs), which demonstrate exceptional capabilities in understanding and generating human-like language, with widespread applications across diverse industries. However, deploying these models in real-world, regulated environments presents substantial challenges."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_1_Image_2",
+      "contextBefore": [
+        "Optimizing Small Language Models in Resource-",
+        "Constrained Environments"
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_1_Image_2\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 0,
+    "confidence": "medium",
+    "matchedText": "Artificial Intelligence (AI) has revolutionized natural language processing (NLP) through the advent of Large Language Models (LLMs), which demonstrate exceptional capabilities in understanding and generating human-like language, with widespread applications across diverse industries. However, deploying these models in real-world, regulated environments presents substantial challenges."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_33_Image_1",
+      "contextBefore": [
+        "overhead introduced by the dequantization kernel increases, which can lead to a reduction in",
+        "overall throughput."
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [
+        "Table 4: PPL results on Wikitext2 of BLOOM-7B with and without outlier isolation. [22]",
+        "EasyQuant also experimented with an ablation study focusing on three aspects, the outlier"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_33_Image\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 3,
+    "confidence": "high",
+    "matchedText": "This thesis focuses on retrieval-based question answering in such contrained domains, leveraging query rewriting to improve relevance and reduce computational overhead. This is achieved by at first optimizing Small Language Models (SLMs) through advanced quantization techniques, which significantly reduce their computational and memory footprint. However, this approach introduces a critical challenge, that is the degradation in model performance and knowledge retention. To counter this effect, the system integrates a powerful Retrieval-Augmented-Generation (RAG) framework. This framework is not merely just add-on for external knowledge but it serves as a targeted mechanism to recover most of the performance lost during the quantization stage. By leveraging instructions optimization, and Chain-of-Thought reasoning, the RAG component ensures that the quantized SLM can access and effectively utilize precise, relevant information from external document."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_33_Image_2",
+      "contextBefore": [
+        "magnitude have on the model performance, this was done by pruning 1% of the values (accord-",
+        "ing to their magnitude) in the weights into 0 and see the perplexity results."
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [
+        "Table 5: PPL results after pruning 1% weight with different magnitude [22]",
+        "Based on Table 5 [22] shows that the largest magnitude outliers imposed the same influence"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_33_Image_2\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "conclusions",
+    "position": 0,
+    "confidence": "high",
+    "matchedText": "This thesis confronted the significant challenge of deploying powerful language models within environments constrained by limited computational resources, strict data privacy regulations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art Large Language Models pose a significant barrier for small to medium enterprises and regulated institutions. In response, this research proposed and evaluated a novel framework (Answer RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innovation of this work is a dynamic, adaptive query routing system that intelligently triages incoming queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive chain of thought, or knowledge augmentation using retrieval-augmented generation."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_34_Image_1",
+      "contextBefore": [
+        "influence on model accuracy as regular weights, thereby indicating that isolating outliers has an",
+        "important indirect impact on the overall performance of the model."
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [
+        "Table 6: Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma thresh-",
+        "old [22]"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_34_Image\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_34_Image_2",
+      "contextBefore": [
+        "Table 6: Outlier fraction distribution in different modules in BLOOM-7B under 3-sigma thresh-",
+        "old [22]"
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [
+        "Table 7: Outlier fraction distribution in different layer index in BLOOM-7B under 3-sigma",
+        "threshold [22]"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_34_Image_2\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "methodology",
+    "position": 28,
+    "confidence": "medium",
+    "matchedText": "The evaluation framework may vary depending on the specific domain being tested. This is because some domains might require different metrics to understand the real capabilities of the model in a given task [74]. Another key point is the need to access each part individually as well as combined. This is key in accessing the quality of the system and understand which points could be improved for a better combined performance. One of the most important metrics across all components of the system is efficiency, as it helps to assess how each part contributes to the overall energy consumption. What will be compared and obtained is the following: System answers to full dataset. Straight model answers to full dataset. Forced CoT answers to full dataset. Forced Retrieval answers to just full dataset."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_37_Image_1",
+      "contextBefore": [
+        "sive, only losing about 45% of the performance of the original model on a suit of benchmarks",
+        "consisting of PIQA, ARC-e, ARC-c, HellaSwag and WinoGrand, as depicted on Figure 8."
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [
+        "Table 8: Quantized LLaMA3-8B performance[27]",
+        "29"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_37_Image\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_46_Image_1",
+      "contextBefore": [
+        "of HyDE is particularly impressive even when compared to methods that rely on relevance",
+        "judgments. Notably, HyDE achieves these results without requiring such judgments."
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [
+        "Table 10: Results for web search on DL19/20. Best performing w/o relevance and overall",
+        "system(s) are marked bold. DPR, ANCE and ContrieverFT are in-domain supervised models"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_46_Image\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 1,
+    "confidence": "medium",
+    "matchedText": "Organizations like banks, hospitals, and government offices are likely to handle sensitive information that should not exit their premise under strict data privacy laws like GDPR and CCPA. Legal restrictions like these inhibit the use of AI models that are often hosted on external servers, where there is limited transparency in data processing operations. Furthermore, the computational demands of LLMs make them prohibitively expensive for small and medium-sized enterprises (SMEs), which often lack access to high-performance hardware infrastructure."
+  },
+  {
+    "metadata": {
+      "folderName": "Page_64_Image_1",
+      "contextBefore": [
+        "was the state of the art with older models like GPT-3.5 only achieving 28% check Table 11 for",
+        "more tests."
+      ],
+      "caption": "No Caption Detected",
+      "contextAfter": [
+        "Table 11: Accuracy on each set [57]",
+        "5.7.4"
+      ],
+      "imagePath": "J:\\codigo\\thesis web page\\thesis_images_context\\Page_64_Image\\image.png",
+      "imageFilename": "image.png"
+    },
+    "section": "introduction",
+    "position": 0,
+    "confidence": "medium",
+    "matchedText": "Artificial Intelligence (AI) has revolutionized natural language processing (NLP) through the advent of Large Language Models (LLMs), which demonstrate exceptional capabilities in understanding and generating human-like language, with widespread applications across diverse industries. However, deploying these models in real-world, regulated environments presents substantial challenges."
+  }
+]

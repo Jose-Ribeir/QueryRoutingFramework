@@ -1,0 +1,10 @@
+--- Text Before ---
+Their method works by three main ways: Collecting Self-Knowledge, Eliciting Self-knowledge,
+and Using Self-Knowledge. These represent the main pipeline for SKR, as shown in Figure 20.
+
+--- Full Caption ---
+Figure 20: The SKR Pipeline and its component interactions.[52]
+
+--- Text After ---
+50
+5.6.1

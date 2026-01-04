@@ -1,0 +1,12 @@
+--- Text Before ---
+max(|Wj|)1−α
+[29]
+
+--- Full Caption ---
+Figure 7: Main idea of SmoothQuant when α is 0.5. The smoothing factor s is obtained on cal-
+ibration samples and the entire transformation is performed offline. At runtime, the activations
+are smooth without scaling.[29]
+
+--- Text After ---
+This formula ensures that the weights and activations at the corresponding channel share a
+similar maximum value, thus sharing the same difficulty[29]. Figure 7 illustrates the smoothing

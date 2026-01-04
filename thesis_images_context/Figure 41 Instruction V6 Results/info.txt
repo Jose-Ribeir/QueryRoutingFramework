@@ -1,0 +1,10 @@
+--- Text Before ---
+reason to engage the retrieval system.
+92
+
+--- Full Caption ---
+Figure 41: Instruction V6 Results
+
+--- Text After ---
+This strategic change had a profound and predictable impact on the system’s performance
+effectively trading accuracy for efficiency.

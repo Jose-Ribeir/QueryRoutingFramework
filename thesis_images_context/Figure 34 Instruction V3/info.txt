@@ -1,0 +1,10 @@
+--- Text Before ---
+6.8.3
+Instruction V3: Introducing Balanced Criteria
+
+--- Full Caption ---
+Figure 34: Instruction V3
+
+--- Text After ---
+The third iteration, Instruction V3, tried to strike a balance between the aggressive retrieval
+strategy of V2 and the passive approach of V1. The goal was to try and improve efficiency by re-

@@ -1,0 +1,10 @@
+--- Text Before ---
+which, while somewhat effective, is significantly more computationally demanding.
+102
+
+--- Full Caption ---
+Figure 50: Science: Avg. Energy when Straight Model is Incorrect & System is Correct
+
+--- Text After ---
+A similar trend is observed in the Science domain, as shown in Figure 60. Correcting
+the baseline in this approach also required a substantial energy investment, with the V6 again

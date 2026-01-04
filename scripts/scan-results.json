@@ -1,0 +1,776 @@
+[
+  {
+    "folderName": "Figure 1 Transformer model architecture [5]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 1 Transformer model architecture [5]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 1,
+    "type": "figure",
+    "normalizedName": "figure_1_transformer_model_architecture__5_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 1 Transformer model architecture [5]\\context.txt"
+  },
+  {
+    "folderName": "Figure 10 Comparison RAG on the top and CAG on the",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 10 Comparison RAG on the top and CAG on the\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 10,
+    "type": "figure",
+    "normalizedName": "figure_10_comparison_rag_on_the_top_and_cag_on_the.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 10 Comparison RAG on the top and CAG on the\\context.txt"
+  },
+  {
+    "folderName": "Figure 11 Comparison between performance and costs",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 11 Comparison between performance and costs\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 11,
+    "type": "figure",
+    "normalizedName": "figure_11_comparison_between_performance_and_costs.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 11 Comparison between performance and costs\\context.txt"
+  },
+  {
+    "folderName": "Figure 12 Distribution of the difference of predic",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 12 Distribution of the difference of predic\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 12,
+    "type": "figure",
+    "normalizedName": "figure_12_distribution_of_the_difference_of_predic.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 12 Distribution of the difference of predic\\context.txt"
+  },
+  {
+    "folderName": "Figure 13 Trade-off curves between (a) model perfo",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 13 Trade-off curves between (a) model perfo\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 13,
+    "type": "figure",
+    "normalizedName": "figure_13_trade_off_curves_between__a__model_perfo.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 13 Trade-off curves between (a) model perfo\\context.txt"
+  },
+  {
+    "folderName": "Figure 14 RAGCache Overview[44]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 14 RAGCache Overview[44]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 14,
+    "type": "figure",
+    "normalizedName": "figure_14_ragcache_overview_44_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 14 RAGCache Overview[44]\\context.txt"
+  },
+  {
+    "folderName": "Figure 15 Knowledge Tree[44]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 15 Knowledge Tree[44]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 15,
+    "type": "figure",
+    "normalizedName": "figure_15_knowledge_tree_44_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 15 Knowledge Tree[44]\\context.txt"
+  },
+  {
+    "folderName": "Figure 16 Cost estimation PGDSF[44]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 16 Cost estimation PGDSF[44]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 16,
+    "type": "figure",
+    "normalizedName": "figure_16_cost_estimation_pgdsf_44_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 16 Cost estimation PGDSF[44]\\context.txt"
+  },
+  {
+    "folderName": "Figure 17 Cache aware Reordering[44]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 17 Cache aware Reordering[44]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 17,
+    "type": "figure",
+    "normalizedName": "figure_17_cache_aware_reordering_44_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 17 Cache aware Reordering[44]\\context.txt"
+  },
+  {
+    "folderName": "Figure 18 Speculative Pipelining[44]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 18 Speculative Pipelining[44]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 18,
+    "type": "figure",
+    "normalizedName": "figure_18_speculative_pipelining_44_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 18 Speculative Pipelining[44]\\context.txt"
+  },
+  {
+    "folderName": "Figure 19 Optimal speculative pipelining strategy",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 19 Optimal speculative pipelining strategy\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 19,
+    "type": "figure",
+    "normalizedName": "figure_19_optimal_speculative_pipelining_strategy.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 19 Optimal speculative pipelining strategy\\context.txt"
+  },
+  {
+    "folderName": "Figure 2 RN18 squared error. [21]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 2 RN18 squared error. [21]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 2,
+    "type": "figure",
+    "normalizedName": "figure_2_rn18_squared_error___21_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 2 RN18 squared error. [21]\\context.txt"
+  },
+  {
+    "folderName": "Figure 20 The SKR Pipeline and its component inter",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 20 The SKR Pipeline and its component inter\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 20,
+    "type": "figure",
+    "normalizedName": "figure_20_the_skr_pipeline_and_its_component_inter.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 20 The SKR Pipeline and its component inter\\context.txt"
+  },
+  {
+    "folderName": "Figure 21 Direct Prompting [52]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 21 Direct Prompting [52]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 21,
+    "type": "figure",
+    "normalizedName": "figure_21_direct_prompting__52_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 21 Direct Prompting [52]\\context.txt"
+  },
+  {
+    "folderName": "Figure 22 In-Context Learning [52]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 22 In-Context Learning [52]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 22,
+    "type": "figure",
+    "normalizedName": "figure_22_in_context_learning__52_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 22 In-Context Learning [52]\\context.txt"
+  },
+  {
+    "folderName": "Figure 23 k-nearest-neighbor to understand model k",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 23 k-nearest-neighbor to understand model k\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 23,
+    "type": "figure",
+    "normalizedName": "figure_23_k_nearest_neighbor_to_understand_model_k.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 23 k-nearest-neighbor to understand model k\\context.txt"
+  },
+  {
+    "folderName": "Figure 24 RAGEval System 1 summarizing a schema co",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 24 RAGEval System 1 summarizing a schema co\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 24,
+    "type": "figure",
+    "normalizedName": "figure_24_rageval_system_1_summarizing_a_schema_co.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 24 RAGEval System 1 summarizing a schema co\\context.txt"
+  },
+  {
+    "folderName": "Figure 25 Relationship between model size and mont",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 25 Relationship between model size and mont\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 25,
+    "type": "figure",
+    "normalizedName": "figure_25_relationship_between_model_size_and_mont.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 25 Relationship between model size and mont\\context.txt"
+  },
+  {
+    "folderName": "Figure 26 Traditional information retrieval archit",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 26 Traditional information retrieval archit\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 26,
+    "type": "figure",
+    "normalizedName": "figure_26_traditional_information_retrieval_archit.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 26 Traditional information retrieval archit\\context.txt"
+  },
+  {
+    "folderName": "Figure 27 Graphical representation of the system d",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 27 Graphical representation of the system d\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 27,
+    "type": "figure",
+    "normalizedName": "figure_27_graphical_representation_of_the_system_d.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 27 Graphical representation of the system d\\context.txt"
+  },
+  {
+    "folderName": "Figure 28 Analysis Prompt",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 28 Analysis Prompt\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 28,
+    "type": "figure",
+    "normalizedName": "figure_28_analysis_prompt.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 28 Analysis Prompt\\context.txt"
+  },
+  {
+    "folderName": "Figure 29 Jsonl Data Structure",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 29 Jsonl Data Structure\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 29,
+    "type": "figure",
+    "normalizedName": "figure_29_jsonl_data_structure.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 29 Jsonl Data Structure\\context.txt"
+  },
+  {
+    "folderName": "Figure 3 The Hessian metrics (sensitivity) and mag",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 3 The Hessian metrics (sensitivity) and mag\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 3,
+    "type": "figure",
+    "normalizedName": "figure_3_the_hessian_metrics__sensitivity__and_mag.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 3 The Hessian metrics (sensitivity) and mag\\context.txt"
+  },
+  {
+    "folderName": "Figure 30 Instruction V1",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 30 Instruction V1\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 30,
+    "type": "figure",
+    "normalizedName": "figure_30_instruction_v1.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 30 Instruction V1\\context.txt"
+  },
+  {
+    "folderName": "Figure 31 Instruction V1 Results",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 31 Instruction V1 Results\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 31,
+    "type": "figure",
+    "normalizedName": "figure_31_instruction_v1_results.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 31 Instruction V1 Results\\context.txt"
+  },
+  {
+    "folderName": "Figure 32 Instruction V2",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 32 Instruction V2\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 32,
+    "type": "figure",
+    "normalizedName": "figure_32_instruction_v2.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 32 Instruction V2\\context.txt"
+  },
+  {
+    "folderName": "Figure 33 Instruction V2 Results",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 33 Instruction V2 Results\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 33,
+    "type": "figure",
+    "normalizedName": "figure_33_instruction_v2_results.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 33 Instruction V2 Results\\context.txt"
+  },
+  {
+    "folderName": "Figure 34 Instruction V3",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 34 Instruction V3\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 34,
+    "type": "figure",
+    "normalizedName": "figure_34_instruction_v3.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 34 Instruction V3\\context.txt"
+  },
+  {
+    "folderName": "Figure 35 Instruction V3 Results",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 35 Instruction V3 Results\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 35,
+    "type": "figure",
+    "normalizedName": "figure_35_instruction_v3_results.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 35 Instruction V3 Results\\context.txt"
+  },
+  {
+    "folderName": "Figure 36 Instruction V4",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 36 Instruction V4\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 36,
+    "type": "figure",
+    "normalizedName": "figure_36_instruction_v4.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 36 Instruction V4\\context.txt"
+  },
+  {
+    "folderName": "Figure 37 Instruction V4 Results",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 37 Instruction V4 Results\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 37,
+    "type": "figure",
+    "normalizedName": "figure_37_instruction_v4_results.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 37 Instruction V4 Results\\context.txt"
+  },
+  {
+    "folderName": "Figure 38 Instruction V5",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 38 Instruction V5\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 38,
+    "type": "figure",
+    "normalizedName": "figure_38_instruction_v5.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 38 Instruction V5\\context.txt"
+  },
+  {
+    "folderName": "Figure 39 Instruction V5 Results",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 39 Instruction V5 Results\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 39,
+    "type": "figure",
+    "normalizedName": "figure_39_instruction_v5_results.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 39 Instruction V5 Results\\context.txt"
+  },
+  {
+    "folderName": "Figure 4 Illustration of salient weight binarizati",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 4 Illustration of salient weight binarizati\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 4,
+    "type": "figure",
+    "normalizedName": "figure_4_illustration_of_salient_weight_binarizati.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 4 Illustration of salient weight binarizati\\context.txt"
+  },
+  {
+    "folderName": "Figure 40 Instruction V6",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 40 Instruction V6\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 40,
+    "type": "figure",
+    "normalizedName": "figure_40_instruction_v6.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 40 Instruction V6\\context.txt"
+  },
+  {
+    "folderName": "Figure 41 Instruction V6 Results",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 41 Instruction V6 Results\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 41,
+    "type": "figure",
+    "normalizedName": "figure_41_instruction_v6_results.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 41 Instruction V6 Results\\context.txt"
+  },
+  {
+    "folderName": "Figure 42 Energy Costs vs. Correctness Scatterplot",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 42 Energy Costs vs. Correctness Scatterplot\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 42,
+    "type": "figure",
+    "normalizedName": "figure_42_energy_costs_vs__correctness_scatterplot.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 42 Energy Costs vs. Correctness Scatterplot\\context.txt"
+  },
+  {
+    "folderName": "Figure 43 Energy Costs vs. Correctness Scatterplot",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 43 Energy Costs vs. Correctness Scatterplot\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 43,
+    "type": "figure",
+    "normalizedName": "figure_43_energy_costs_vs__correctness_scatterplot.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 43 Energy Costs vs. Correctness Scatterplot\\context.txt"
+  },
+  {
+    "folderName": "Figure 44 Domain Average Energy per Correct Answer",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 44 Domain Average Energy per Correct Answer\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 44,
+    "type": "figure",
+    "normalizedName": "figure_44_domain_average_energy_per_correct_answer.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 44 Domain Average Energy per Correct Answer\\context.txt"
+  },
+  {
+    "folderName": "Figure 45 Domain Average Energy per Incorrect Answ",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 45 Domain Average Energy per Incorrect Answ\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 45,
+    "type": "figure",
+    "normalizedName": "figure_45_domain_average_energy_per_incorrect_answ.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 45 Domain Average Energy per Incorrect Answ\\context.txt"
+  },
+  {
+    "folderName": "Figure 46 Average Energy Consumption per Query by",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 46 Average Energy Consumption per Query by\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 46,
+    "type": "figure",
+    "normalizedName": "figure_46_average_energy_consumption_per_query_by.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 46 Average Energy Consumption per Query by\\context.txt"
+  },
+  {
+    "folderName": "Figure 47 Total Energy Percentage Difference from",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 47 Total Energy Percentage Difference from\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 47,
+    "type": "figure",
+    "normalizedName": "figure_47_total_energy_percentage_difference_from.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 47 Total Energy Percentage Difference from\\context.txt"
+  },
+  {
+    "folderName": "Figure 48 Total Energy Consumption by File (CPU vs",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 48 Total Energy Consumption by File (CPU vs\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 48,
+    "type": "figure",
+    "normalizedName": "figure_48_total_energy_consumption_by_file__cpu_vs.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 48 Total Energy Consumption by File (CPU vs\\context.txt"
+  },
+  {
+    "folderName": "Figure 49 General Knowledge Avg. Energy when Strai",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 49 General Knowledge Avg. Energy when Strai\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 49,
+    "type": "figure",
+    "normalizedName": "figure_49_general_knowledge_avg__energy_when_strai.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 49 General Knowledge Avg. Energy when Strai\\context.txt"
+  },
+  {
+    "folderName": "Figure 5 Comparison of activations and weights in",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 5 Comparison of activations and weights in\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 5,
+    "type": "figure",
+    "normalizedName": "figure_5_comparison_of_activations_and_weights_in.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 5 Comparison of activations and weights in\\context.txt"
+  },
+  {
+    "folderName": "Figure 5 Comparison of activations and weights in_2",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 5 Comparison of activations and weights in_2\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 5,
+    "type": "figure",
+    "normalizedName": "figure_5_comparison_of_activations_and_weights_in_2.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 5 Comparison of activations and weights in_2\\context.txt"
+  },
+  {
+    "folderName": "Figure 50 Science Avg. Energy when Straight Model",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 50 Science Avg. Energy when Straight Model\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 50,
+    "type": "figure",
+    "normalizedName": "figure_50_science_avg__energy_when_straight_model.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 50 Science Avg. Energy when Straight Model\\context.txt"
+  },
+  {
+    "folderName": "Figure 51 Science Avg. Energy when Straight Model",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 51 Science Avg. Energy when Straight Model\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 51,
+    "type": "figure",
+    "normalizedName": "figure_51_science_avg__energy_when_straight_model.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 51 Science Avg. Energy when Straight Model\\context.txt"
+  },
+  {
+    "folderName": "Figure 52 Distribution of Energy Consumption per Q",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 52 Distribution of Energy Consumption per Q\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 52,
+    "type": "figure",
+    "normalizedName": "figure_52_distribution_of_energy_consumption_per_q.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 52 Distribution of Energy Consumption per Q\\context.txt"
+  },
+  {
+    "folderName": "Figure 53 Overall Performance Overview Correctness",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 53 Overall Performance Overview Correctness\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 53,
+    "type": "figure",
+    "normalizedName": "figure_53_overall_performance_overview_correctness.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 53 Overall Performance Overview Correctness\\context.txt"
+  },
+  {
+    "folderName": "Figure 6 Finding the sweet spot for the migration",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 6 Finding the sweet spot for the migration\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 6,
+    "type": "figure",
+    "normalizedName": "figure_6_finding_the_sweet_spot_for_the_migration.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 6 Finding the sweet spot for the migration\\context.txt"
+  },
+  {
+    "folderName": "Figure 7 Main idea of SmoothQuant when α is 0.5. T",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 7 Main idea of SmoothQuant when α is 0.5. T\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 7,
+    "type": "figure",
+    "normalizedName": "figure_7_main_idea_of_smoothquant_when___is_0_5__t.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 7 Main idea of SmoothQuant when α is 0.5. T\\context.txt"
+  },
+  {
+    "folderName": "Figure 8 RAG implementation overview[35]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 8 RAG implementation overview[35]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 8,
+    "type": "figure",
+    "normalizedName": "figure_8_rag_implementation_overview_35_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 8 RAG implementation overview[35]\\context.txt"
+  },
+  {
+    "folderName": "Figure 9 An illustration of the HyDE model.[40]",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Figure 9 An illustration of the HyDE model.[40]\\image.png",
+    "pageNumber": 0,
+    "imageNumber": 9,
+    "type": "figure",
+    "normalizedName": "figure_9_an_illustration_of_the_hyde_model__40_.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Figure 9 An illustration of the HyDE model.[40]\\context.txt"
+  },
+  {
+    "folderName": "Page_119_Image_72",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_119_Image_72\\image.png",
+    "pageNumber": 119,
+    "imageNumber": 72,
+    "type": "page",
+    "normalizedName": "page_119_image_72.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_119_Image_72\\context.txt"
+  },
+  {
+    "folderName": "Page_120_Image_73",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_120_Image_73\\image.png",
+    "pageNumber": 120,
+    "imageNumber": 73,
+    "type": "page",
+    "normalizedName": "page_120_image_73.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_120_Image_73\\context.txt"
+  },
+  {
+    "folderName": "Page_121_Image_74",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_121_Image_74\\image.png",
+    "pageNumber": 121,
+    "imageNumber": 74,
+    "type": "page",
+    "normalizedName": "page_121_image_74.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_121_Image_74\\context.txt"
+  },
+  {
+    "folderName": "Page_122_Image_75",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_122_Image_75\\image.png",
+    "pageNumber": 122,
+    "imageNumber": 75,
+    "type": "page",
+    "normalizedName": "page_122_image_75.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_122_Image_75\\context.txt"
+  },
+  {
+    "folderName": "Page_123_Image_76",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_123_Image_76\\image.png",
+    "pageNumber": 123,
+    "imageNumber": 76,
+    "type": "page",
+    "normalizedName": "page_123_image_76.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_123_Image_76\\context.txt"
+  },
+  {
+    "folderName": "Page_124_Image_77",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_124_Image_77\\image.png",
+    "pageNumber": 124,
+    "imageNumber": 77,
+    "type": "page",
+    "normalizedName": "page_124_image_77.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_124_Image_77\\context.txt"
+  },
+  {
+    "folderName": "Page_125_Image_78",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_125_Image_78\\image.png",
+    "pageNumber": 125,
+    "imageNumber": 78,
+    "type": "page",
+    "normalizedName": "page_125_image_78.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_125_Image_78\\context.txt"
+  },
+  {
+    "folderName": "Page_126_Image_79",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_126_Image_79\\image.png",
+    "pageNumber": 126,
+    "imageNumber": 79,
+    "type": "page",
+    "normalizedName": "page_126_image_79.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_126_Image_79\\context.txt"
+  },
+  {
+    "folderName": "Page_127_Image_80",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_127_Image_80\\image.png",
+    "pageNumber": 127,
+    "imageNumber": 80,
+    "type": "page",
+    "normalizedName": "page_127_image_80.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_127_Image_80\\context.txt"
+  },
+  {
+    "folderName": "Page_128_Image_81",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_128_Image_81\\image.png",
+    "pageNumber": 128,
+    "imageNumber": 81,
+    "type": "page",
+    "normalizedName": "page_128_image_81.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_128_Image_81\\context.txt"
+  },
+  {
+    "folderName": "Page_129_Image_82",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_129_Image_82\\image.png",
+    "pageNumber": 129,
+    "imageNumber": 82,
+    "type": "page",
+    "normalizedName": "page_129_image_82.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_129_Image_82\\context.txt"
+  },
+  {
+    "folderName": "Page_130_Image_83",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_130_Image_83\\image.png",
+    "pageNumber": 130,
+    "imageNumber": 83,
+    "type": "page",
+    "normalizedName": "page_130_image_83.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_130_Image_83\\context.txt"
+  },
+  {
+    "folderName": "Page_131_Image_84",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_131_Image_84\\image.png",
+    "pageNumber": 131,
+    "imageNumber": 84,
+    "type": "page",
+    "normalizedName": "page_131_image_84.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_131_Image_84\\context.txt"
+  },
+  {
+    "folderName": "Page_132_Image_85",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_132_Image_85\\image.png",
+    "pageNumber": 132,
+    "imageNumber": 85,
+    "type": "page",
+    "normalizedName": "page_132_image_85.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_132_Image_85\\context.txt"
+  },
+  {
+    "folderName": "Page_133_Image_86",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_133_Image_86\\image.png",
+    "pageNumber": 133,
+    "imageNumber": 86,
+    "type": "page",
+    "normalizedName": "page_133_image_86.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_133_Image_86\\context.txt"
+  },
+  {
+    "folderName": "Page_134_Image_87",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_134_Image_87\\image.png",
+    "pageNumber": 134,
+    "imageNumber": 87,
+    "type": "page",
+    "normalizedName": "page_134_image_87.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_134_Image_87\\context.txt"
+  },
+  {
+    "folderName": "Page_135_Image_88",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_135_Image_88\\image.png",
+    "pageNumber": 135,
+    "imageNumber": 88,
+    "type": "page",
+    "normalizedName": "page_135_image_88.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_135_Image_88\\context.txt"
+  },
+  {
+    "folderName": "Page_1_Image_2",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_1_Image_2\\image.png",
+    "pageNumber": 1,
+    "imageNumber": 2,
+    "type": "page",
+    "normalizedName": "page_1_image_2.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_1_Image_2\\context.txt"
+  },
+  {
+    "folderName": "Page_26_Image_9",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_26_Image_9\\image.png",
+    "pageNumber": 26,
+    "imageNumber": 9,
+    "type": "page",
+    "normalizedName": "page_26_image_9.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_26_Image_9\\context.txt"
+  },
+  {
+    "folderName": "Page_2_Image_3",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_2_Image_3\\image.png",
+    "pageNumber": 2,
+    "imageNumber": 3,
+    "type": "page",
+    "normalizedName": "page_2_image_3.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_2_Image_3\\context.txt"
+  },
+  {
+    "folderName": "Page_33_Image_12",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_33_Image_12\\image.png",
+    "pageNumber": 33,
+    "imageNumber": 12,
+    "type": "page",
+    "normalizedName": "page_33_image_12.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_33_Image_12\\context.txt"
+  },
+  {
+    "folderName": "Page_33_Image_13",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_33_Image_13\\image.png",
+    "pageNumber": 33,
+    "imageNumber": 13,
+    "type": "page",
+    "normalizedName": "page_33_image_13.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_33_Image_13\\context.txt"
+  },
+  {
+    "folderName": "Page_34_Image_14",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_34_Image_14\\image.png",
+    "pageNumber": 34,
+    "imageNumber": 14,
+    "type": "page",
+    "normalizedName": "page_34_image_14.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_34_Image_14\\context.txt"
+  },
+  {
+    "folderName": "Page_34_Image_15",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_34_Image_15\\image.png",
+    "pageNumber": 34,
+    "imageNumber": 15,
+    "type": "page",
+    "normalizedName": "page_34_image_15.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_34_Image_15\\context.txt"
+  },
+  {
+    "folderName": "Page_37_Image_18",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_37_Image_18\\image.png",
+    "pageNumber": 37,
+    "imageNumber": 18,
+    "type": "page",
+    "normalizedName": "page_37_image_18.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_37_Image_18\\context.txt"
+  },
+  {
+    "folderName": "Page_3_Image_5",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_3_Image_5\\image.png",
+    "pageNumber": 3,
+    "imageNumber": 5,
+    "type": "page",
+    "normalizedName": "page_3_image_5.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_3_Image_5\\context.txt"
+  },
+  {
+    "folderName": "Page_46_Image_25",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_46_Image_25\\image.png",
+    "pageNumber": 46,
+    "imageNumber": 25,
+    "type": "page",
+    "normalizedName": "page_46_image_25.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_46_Image_25\\context.txt"
+  },
+  {
+    "folderName": "Page_4_Image_6",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_4_Image_6\\image.png",
+    "pageNumber": 4,
+    "imageNumber": 6,
+    "type": "page",
+    "normalizedName": "page_4_image_6.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_4_Image_6\\context.txt"
+  },
+  {
+    "folderName": "Page_5_Image_7",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_5_Image_7\\image.png",
+    "pageNumber": 5,
+    "imageNumber": 7,
+    "type": "page",
+    "normalizedName": "page_5_image_7.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_5_Image_7\\context.txt"
+  },
+  {
+    "folderName": "Page_64_Image_40",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_64_Image_40\\image.png",
+    "pageNumber": 64,
+    "imageNumber": 40,
+    "type": "page",
+    "normalizedName": "page_64_image_40.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_64_Image_40\\context.txt"
+  },
+  {
+    "folderName": "Page_65_Image_41",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_65_Image_41\\image.png",
+    "pageNumber": 65,
+    "imageNumber": 41,
+    "type": "page",
+    "normalizedName": "page_65_image_41.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_65_Image_41\\context.txt"
+  },
+  {
+    "folderName": "Page_6_Image_8",
+    "imagePath": "J:\\codigo\\thesis web page\\images with location\\Page_6_Image_8\\image.png",
+    "pageNumber": 6,
+    "imageNumber": 8,
+    "type": "page",
+    "normalizedName": "page_6_image_8.png",
+    "contextPath": "J:\\codigo\\thesis web page\\images with location\\Page_6_Image_8\\context.txt"
+  }
+]

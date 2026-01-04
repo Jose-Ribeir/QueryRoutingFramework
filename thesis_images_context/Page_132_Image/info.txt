@@ -1,0 +1,10 @@
+--- Text Before ---
+Figure 66: Total Energy Consumption by Answer.
+123
+
+--- Full Caption ---
+
+
+--- Text After ---
+Figure 67: Average Energy Consumption in Science Domain by Correctness.
+124

@@ -1,0 +1,241 @@
+
+
+[INSERT IMAGE HERE: Figure 50: Science: Avg. Energy when Straight Model is Incorrect & System is Correct]
+
+A similar trend is observed in the Science domain, as shown in Figure 60. Correcting
+the baseline in this approach also required a substantial energy investment, with the V6 again
+showing the highest consumption at nearly 2.5 Wh. Thus reinforcing that the act of correcting
+the responses regardless of the domain is inherently more energy demanding.
+
+
+[INSERT IMAGE HERE: Figure 51: Science: Avg. Energy when Straight Model is Incorrect & System is also Incorrect]
+
+On the other hand Figure 51 analyzes the scenario where both the baseline and the system
+failed to produce a correct answer. This represents the least efficient use of energy, showing that
+103
+the system uses additional resources only to arrive at the same incorrect outcome. It is notewor-
+thy that the energy consumed in these failure cases is often comparable to and sometimes even
+higher than the energy required to produce correct answers. As proof, the V6 system consumes
+over 2.6 Wh when it fails, more than it does for a successful answer which is around 2.5 Wh.
+This might suggest that these incorrect answeres may result from the system pursuing particu-
+larly complex, yet flawed, reasoning paths or even retrieving irrelevant information, leading to
+wasted resources.
+6.10.4
+Energy Distribution and Consumption Predictability
+While the average energy consumption provides a useful high-level metric, a deeper un-
+derstanding of the system efficiency is required to access its consistency and predictability. A
+system with a low average cost is less desirable if it is prone to higher spikes. The boxplot in
+Figure 52 provides valuable insight into all the versions by visually representing the distribution
+of energy consumption per query for each one.
+
+
+[INSERT IMAGE HERE: Figure 52: Distribution of Energy Consumption per Query by File]
+
+The baseline models, particularly the ”straight model”, presents the tightest distribution.
+The small inter quartile range shows that most of the queries are processed using a very con-
+sistently and predictably amount of energy. This helps them in terms of reliability since from a
+resource planing perspective they are very predictable, though they show lower accuracy.
+On the opposite side of the spectrum we have the initial routing Instruction V1, that demon-
+strates extreme unpredictability. It has by far the largest inter-quartile range and a long upper
+104
+whisker, indicating a massive variance in energy consumption. This proves that its ambiguity
+led to highly inefficient and erratic processing.
+The following versions from V2 to V5 show a clear trend into an increasing predictabil-
+ity. While they show a higher median energy cost than the baseline, their distributions become
+tighter and tighter as versions increase. This shows the core benefit of the iterative refinement
+process, reflecting precisely what was discussed previously as the instructions became more
+specific and rule-based the model’s behavior became more constrained to the rules, therefore
+more predictable. The number of high energy outliers that caused an increase in system’s re-
+source expenditure also decreased indicating a more robust and stable approach.
+Lastly the V6 instruction, designed for efficiency presents a rather unique profile. While
+its median energy is high, its distribution is relatively contained in comparison with V1, this
+suggests that its Chain-of-Thought process, though energy intensive, is being applied more
+consistently.
+Ultimately, this analysis underscores that effective prompt engineering does more than just
+improve accuracy, as this proves that it enhances operational predictability. A well designed
+instruction set not only guides the model to the correct answer but also ensures that the model
+does so consistently while using a manageable level of resource consumption, which is a crit-
+ical factor when picking and deploying such systems in the real world, especially in resource
+constrained environments
+6.10.5
+Overall Performance Quadrant: Synthesizing Accuracy and Efficiency for ARC
+queries
+The culmination of this analysis is best visualized in the performance quadrant plot, which
+visually presents each system’s final correctness rate against its average energy cost for the ARC
+queries. The graph present in Figure 53, offers a clear overview of the trade-offs and situates
+the performance of the 8B parameter model (DeepSeek-R1-Distill-Llama-8B) used as the base
+and all the routing systems routing systems against a crucial benchmark, a much larger 14B
+parameter model (DeepSeek-R1-Distill-Qwen-14B).
+105
+
+
+[INSERT IMAGE HERE: Figure 53: Overall Performance Overview: Correctness vs. Energy Cost for ARC queries]
+
+The optimal position on this graph is at the top-left quadrant, which represents the highest
+accuracy with the lowest energy consumption. The bottom-right represents the inverse so the
+worst possible outcome . The baseline models establish two reference points. The first is the
+”straight model” (8B), sits in the lower left quadrant, confirming it is a low accuracy but highly
+efficient option. On the other hand , at the upper-right corner sits the ”straight model 14B
+8-bit” demonstrating the brute force approach as it achieves a very high correctness of nearly
+90%, however this comes with the cost of an enormous amount of energy at around 3.7 Wh per
+query,making it by far the least efficient model
+The iterative refinement of the routing instructions charts a clear journey toward the ideal
+quadrant. The initial, poorly tuned instructions (V1,V2,V3) show modest accuracy gains over
+the 8B baseline but at a notable energy cost, placing them in the lower-middle of the graph.
+The major breakthrough occurs with instruction V4 and later V5. These versions represent
+an optimal sweet spot, achieving a substantial leap in terms of correctness to over 83% while
+still maintaining an average cost below 1.8 Wh. Most importantly, they deliver a significant
+portion of the accuracy gains of the 14B model while consuming less than half the energy.
+The efficiency-focused V6 instruction pushes the accuracy to over 85%, however it also
+increased the energy cost, moving the results slightly to the right. While it is the most accurate
+of the routing instructions, it begins to approach a point of diminishing returns in the accuracy-
+106
+efficiency trade off.
+To conclude, this analysis of the quadrant provides the most complete validation of the re-
+search. It shows that an intelligent routing layer with a combination of a carefully engineered
+prompts are not just incremental improvements. They are part of a transformative strategy
+of optimization. By using carefully designed instructions to guide a smaller, more efficient
+8B model, the system achieves a performance profile that rivals a modelnearlyt twice its size,
+but at a fraction of the computational and energy costs. This goes to show that architectural
+and instructional refinement can be a more sustainable and effective approach to high perfor-
+mance,rather than simply scaling up the model size.
+7
+Experimental Consistency and Reproducibility
+To guarantee that the performance and energy consumption results represented in this thesis
+are both valid and reliable, a strict protocol was established to try to minimize the number
+of variables and create a consistent testing environment for all experiments. The following
+measures were systematically implemented to ensure that the results shown can be directly
+attributed to the changes in the system’s instruction design and model performance.
+First, the test system was maintained in a controlled and isolated state. To prevent interfer-
+ence from many background tasks associated with other programs, and also with the operating
+system tasks, such as automatic updates or network-related tasks, the machine’s internet con-
+nection was physically disabled for the duration of all test runs. To further improve repeatability,
+prior to initiating any experiment, all non-essential background applications and services were
+fully terminated. The system was then left without any intervention after the scripts started up
+until they were finished and all the required data was collected. This ensured that the system’s
+computational resources were devoted exclusively to the experimental workload.
+Another point taken to maintain the system repeatability was that a static software envi-
+ronment was kept during the entire research process. The main components of the system,
+including the Python interpreter, the PyCharm IDE, and the HWiNFO monitoring utility, were
+not updated after the initial setup. This strategy is crucial to eliminate the risk of major software
+updates introducing performance variations that could skew the results.
+Finally, and most critically, the underlying code base for the query-routing system and
+model inference remained identical across all comparative experiments. When testing the ef-
+ficacy of different instructions, the sole modification between each run was the content of the
+system instruction itself. This strict isolation of the independent variable ensures that all mea-
+sured differences in answer accuracy, latency and energy consumption are direct consequences
+of the prompt engineering strategy, rather than unintended changes in the software that supports
+it.
+107
+8
+Challenges and Abandoned Approaches
+In the course of this research, some promising strategies were explored but ultimately aban-
+doned due to practical constraints, resource limitations, or conflicts with the project’s core ob-
+jectives. This section represents these methodological dead ends, as understanding what these
+were and their causes could aid further research.
+One of the initial strategies considered for enhancing the RAG component was the usage of
+a hypothetical document similar to HyDE[40]. The technique, which involves generating a hy-
+pothetical answer to a query to improve the semantic search for relevant documents, has shown
+promise in other projects. However, the original HyDE (Answer RQ2) paper recommended the
+generation of up to eight hypothetical documents per retrieval to achieve optimal performance.
+In practice, this approach proved to be prohibitively expensive for the presented framework.
+The computational overhead of generating eight separate documents before the retrieval was
+done and the formation of the final answer would have dramatically increased both energy con-
+sumption and latency, with the latter representing a change that would make the framework
+basically unusable with the current hardware. This would directly undermine the primary goal
+of creating a fast and efficient system for resource-constrained environments.
+Another considered approach was the use of keyword injection to improve the model’s per-
+formance on specialized, domain-specific tasks. The hypothesis was that by programmatically
+inserting key technical terms (e.g., medical terminology for healthcare implementations) into
+the prompt, the model could be guided toward a more accurate and contextually aware re-
+sponse. This idea was ultimately abandoned due to the immense data curation effort this would
+need. To be effective, this strategy would necessitate the creation of a large, validated dataset
+mapping queries to the required keywords for each domain if various were to be involved in
+testing. Getting hold and verifying the accuracy of this much data would be a substantial re-
+search project in itself, and it felt outside of the scope of this project which was focused more
+towards the general public.
+Finally, the scope of model comparison was limited by the hardware available for this re-
+search. While the study successfully demonstrates the capabilities of an 8B parameter model
+on a single GPU workstation, a more comprehensive analysis would have included benchmarks
+with higher models as well, which would normally require enterprise-grade GPUs. Such tests
+were not conducted due to a lack of access to these powerful computational resources. As a
+result, the performance comparison remains focused on demonstrating the significant leap from
+smaller models to the proposed SLM framework, rather than a broader spectrum of available
+open-source models.
+108
+9
+Conclusion
+This thesis confronted the significant challenge of deploying powerful language models
+within environments constrained by limited computational resources, strict data privacy regu-
+lations, and tight budgets. The prohibitive cost and operational complexities of state-of-the-art
+Large Language Models pose a significant barrier for small to medium enterprises and regulated
+institutions. In response, this research proposed and evaluated a novel framework (Answer
+RQ1) centered on a compact, 8 billion parameter Small Language Model. The core innova-
+tion of this work is a dynamic, adaptive query routing system that intelligently triages incoming
+queries, selecting the most efficient and effective path be it a direct answer, a reasoning-intensive
+chain of thought, or knowledge augmentation using retrieval-augmented generation.
+The results of this study show that architectural control and sophisticated prompt engineer-
+ing can substantially bridge the performance gap between small, quantized models and their
+larger, more resource-intensive counterparts. Through iterative refinement of the controller’s
+instruction design, particularly with profile-based prompts, (Answer RQ3) the system achieved
+an accuracy exceeding 85% on reasoning-focused science questions. Critically, this perfor-
+mance was achieved with significantly greater energy efficiency than would be possible using
+larger models. The detailed energy profiling revealed a direct correlation between incorrect an-
+swers and higher energy consumption, and also showed how different instructions strategically
+shift the computational load between CPU-intensive retrieval and GPU-intensive generation.
+Thus confirming that a ”smarter, not bigger” approach is a viable path forward.
+The implications of this research are both practical and strategic. It provides a tangible
+blueprint for developing high-quality, cost-effective, and secure question-answering system that
+can operate on-premise on a single GPU workstation. This work (Answer RQ4) democratizes
+access to advanced AI capabilities, enabling organizations without massive computational in-
+frastructure to leverage the power of language models. Furthermore, it also contributes to the
+growing field of sustainable AI by demonstrating that performance and efficiency are not mu-
+tually exclusive.
+10
+Future work
+The framework developed in this thesis successfully demonstrates that an intelligently con-
+trolled Small Language Model can achieve high performance in resource-constrained environ-
+ments. This research also opens up several compelling points for future investigation that could
+further enhance the robustness, efficiency, and applicability of this approach.
+First a critical area for future research is the system’s resilience to irrelevant or misleading
+information within its knowledge base. The current experiments utilized a corpus that was
+sometimes relevant to the ARC dataset. A future study could involve another dataset that has
+no relevant information to the real world, this would split the realities of this dataset versus
+109
+the ARC one, this way when retrieval occurred for ARC it wouldn’t improve the answer of the
+system. Though this is part of the advantage of a system like this, as it will always aim for the
+best possible result.
+Second, a novel and promising research direction based on the extracted results. A promis-
+ing direction would be to explore the relationship between energy consumption and model hal-
+lucination. During this work, a correlation was observed between incorrect answers and higher
+energy usage. This suggests the possibility of identifying a computational signature for hal-
+lucination. This could involve analyzing power draw and processing patterns to determine if
+non-factual or fabricated responses can be detected in real-time based on their energy profile.
+If a reliable correlation is established, this could lead to the development of a mechanism that
+flags potential hallucinations as they are being generated, allowing the system to intervene and
+reroute the query for correction, thereby improving the model’s trustworthiness.
+Finally, the adaptive routing principles pioneered here for SMLs could be extended to ad-
+dress known inefficiencies in much larger models. State-of-the-art LLMs, despite their power,
+can sometimes enter unproductive reasoning loops, repeatedly processing the same logic with-
+out reaching a conclusion, which wastes significant computational resources. A future imple-
+mentation could adapt the controller to monitor the reasoning paths of an LLM. By detecting
+major semantic repetition or a lack of progress, the system could intervene to break the loop,
+perhaps by injecting new information via RAG or rewriting the prompt. This would not only
+prevent wasted computation and energy while also improving the reliability of LLMs in com-
+plex, multi-step reasoning tasks positioning this framework as a valuable tool for optimizing
+both small and large language models.
+110
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 54: Average GPU Energy Consumption by Domain.
+11
+Images
+111
+
+
+[INSERT IMAGE HERE: No Caption]
+
+Figure 55: Avg. Energy of Analysis Instructions that were also INCORRECT when Baseline Failed.
+112

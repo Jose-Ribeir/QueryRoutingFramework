@@ -1,0 +1,75 @@
+{
+    "slide_number": 11,
+    "text_elements": [
+        {
+            "text": "Model Architecture\nModel Used",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1357630
+        },
+        {
+            "text": "Student Model \n8B Parameter LLM \nLLAMA foundation\nOpen-source",
+            "left": 990600,
+            "top": 2247900,
+            "width": 3168650,
+            "height": 1547731
+        },
+        {
+            "text": "Model Specifications\nBase Model:\n\tLlama-3.1-8B\nInference:\n\tSingle-GPU compatible",
+            "left": 977900,
+            "top": 4058949,
+            "width": 3822700,
+            "height": 1305486
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6400800,
+            "top": 9791700,
+            "width": 5423534,
+            "height": 349250
+        },
+        {
+            "text": "Resulting Model \n8B Parameter LLM \nDistilled from R1\nOpen-source",
+            "left": 9601200,
+            "top": 6210299,
+            "width": 5257800,
+            "height": 1554785
+        },
+        {
+            "text": "Teacher Model ",
+            "left": 9659859,
+            "top": 2276668,
+            "width": 3168650,
+            "height": 323807
+        },
+        {
+            "text": "Model Specifications\nBase Model:\n\tDeepSeek-R1\nInference:\n\tDatacenter worth of computing power required",
+            "left": 9677400,
+            "top": 4000500,
+            "width": 4800600,
+            "height": 1305486
+        },
+        {
+            "text": "\n671B Parameter LLM Deepseek-ai\nOpen-source",
+            "left": 9753600,
+            "top": 2400300,
+            "width": 3168650,
+            "height": 1330364
+        },
+        {
+            "text": "Model Specifications\nBase Model:\n\tDeepSeek-R1-Distill-Llama-8B\nInference:\n\tSingle-GPU compatible",
+            "left": 9677400,
+            "top": 8039100,
+            "width": 3822700,
+            "height": 1305486
+        }
+    ],
+    "colors_found": [
+        "1D293B",
+        "334054",
+        "606C7E",
+        "465469",
+        "0E1729"
+    ]
+}

@@ -1,0 +1,10 @@
+--- Text Before ---
+points of the research are the efficiency and performance using some of the enhancing methods
+described above. These will be paired with a small LLM meaning less than 36B tokens.
+
+--- Full Caption ---
+Figure 25: Relationship between model size and monthly downloads[68]
+
+--- Text After ---
+6.1
+Overview of the Query Rewriting Flow

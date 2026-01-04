@@ -1,0 +1,69 @@
+{
+    "slide_number": 22,
+    "text_elements": [
+        {
+            "text": "Key Findings & Results\nPerformance Achievements (Contribution C4)",
+            "left": 749300,
+            "top": 329018,
+            "width": 9394825,
+            "height": 1357630
+        },
+        {
+            "text": "56%+\nAnswer Accuracy on ARC\nAgainst the original model.",
+            "left": 2254696,
+            "top": 2614194,
+            "width": 5244465,
+            "height": 1651000
+        },
+        {
+            "text": "<50%\nEnergy Consumption\nCompared to 14B baseline, without sacrificing accuracy.",
+            "left": 10873928,
+            "top": 2614194,
+            "width": 5074920,
+            "height": 1651000
+        },
+        {
+            "text": "Routing Efficiency\nProfile-based prompts optimize query distribution across DA, CoT, and RAG paths, improving balance.",
+            "left": 977900,
+            "top": 5082829,
+            "width": 4641850,
+            "height": 1007110
+        },
+        {
+            "text": "Energy Insights\nAccuracy directly correlates with efficiency, as incorrect answers consume more energy.",
+            "left": 6667450,
+            "top": 5082829,
+            "width": 4583430,
+            "height": 1007110
+        },
+        {
+            "text": "Performance Gap\nArchitectural control and prompt engineering narrows the performance gap to larger models.",
+            "left": 12357001,
+            "top": 5082829,
+            "width": 4672965,
+            "height": 1007110
+        },
+        {
+            "text": "Bottom Line\nThe adaptive routing framework enables SLMs to deliver enterprise-grade accuracy using <50% of the energy of larger models, making AI viable for resource-constrained organizations.",
+            "left": 977900,
+            "top": 8177681,
+            "width": 15386685,
+            "height": 1031240
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "D97705",
+        "334054",
+        "16A24A",
+        "FFFFFF",
+        "465469",
+        "0E1729"
+    ]
+}

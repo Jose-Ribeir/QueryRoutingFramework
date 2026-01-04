@@ -1,0 +1,88 @@
+{
+    "slide_number": 25,
+    "text_elements": [
+        {
+            "text": "Summary & Future Work\nEnabling Practical AI Deployment",
+            "left": 5748734,
+            "top": 267304,
+            "width": 6790690,
+            "height": 1228725
+        },
+        {
+            "text": "Key Contributions\nAdaptive Query-Routing\nIntelligent per-query selection between DA, CoT, and RAG paths.",
+            "left": 1282700,
+            "top": 1820627,
+            "width": 5834380,
+            "height": 1558925
+        },
+        {
+            "text": "Learning-to-Route Strategy\nIterative prompt refinement from heuristics to profile-based classification.",
+            "left": 1282700,
+            "top": 3471700,
+            "width": 6663055,
+            "height": 708025
+        },
+        {
+            "text": "Performance Achievements\nAchieved 85%+ accuracy with under 50% energy consumption of baseline.",
+            "left": 1282700,
+            "top": 4278525,
+            "width": 6826884,
+            "height": 701675
+        },
+        {
+            "text": "Community Artifacts\nFull reproducibility package with templates and analysis.",
+            "left": 1282700,
+            "top": 5078625,
+            "width": 5099685,
+            "height": 701675
+        },
+        {
+            "text": "Future Work",
+            "left": 10121900,
+            "top": 2124709,
+            "width": 1714500,
+            "height": 398145
+        },
+        {
+            "text": "Multi-Model Ensemble Routing\nExtend framework to route between multiple specialized models.",
+            "left": 9740900,
+            "top": 2793076,
+            "width": 4683760,
+            "height": 549275
+        },
+        {
+            "text": "Real-Time Adaptation\nImplement online learning for continuous routing optimization.",
+            "left": 9740900,
+            "top": 3631276,
+            "width": 4484370,
+            "height": 549275
+        },
+        {
+            "text": "Ultra-Low Resource Deployment\nInvestigate using a compact model for routing, reserving the primary, larger model for generating the response.",
+            "left": 9753600,
+            "top": 4457700,
+            "width": 6946900,
+            "height": 736099
+        },
+        {
+            "text": "Broader Impact\nDemocratizes AI deployment for SMEs\nEnables privacy-compliant on-premises solutions Reduces environmental footprint of AI systems\n\n\n\nIntelligent system design can make advanced AI accessible, efficient, and practical for resource-constrained environments.\nA pathway toward democratized, sustainable AI deployment",
+            "left": 2236241,
+            "top": 6018228,
+            "width": 13815694,
+            "height": 3192145
+        },
+        {
+            "text": "Adaptive Query-Routing Framework for Optimizing Small Language Models",
+            "left": 6432301,
+            "top": 9469437,
+            "width": 5423534,
+            "height": 349250
+        }
+    ],
+    "colors_found": [
+        "FFFFFF",
+        "99F5E3",
+        "465469",
+        "0E1729"
+    ]
+}

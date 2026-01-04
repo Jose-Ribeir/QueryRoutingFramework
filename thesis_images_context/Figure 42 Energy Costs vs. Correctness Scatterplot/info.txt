@@ -1,0 +1,10 @@
+--- Text Before ---
+consumption (see Figure42).
+94
+
+--- Full Caption ---
+Figure 42: Energy Costs vs. Correctness Scatterplot
+
+--- Text After ---
+This is clearly lustrated in the progression from the baseline models, which occupy the
+lower-left quadrant of the graph which represents both the lowest energy consumption and the
