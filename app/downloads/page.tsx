@@ -5,15 +5,6 @@ import DownloadButton from '../components/DownloadButton';
 import { thesisContent } from '../../content/thesis-content';
 
 export default function DownloadsPage() {
-  const bibtexCitation = `@mastersthesis{ribeiro2025adaptive,
-  title={An Adaptive Query-Routing Framework for Optimizing Small Language Models in Resource-Constrained Environments},
-  author={Ribeiro, José Pedro Farinha},
-  school={IADE - Faculdade de Design, Tecnologia e Comunicação da Universidade Europeia},
-  year={2025},
-  type={Master's Thesis},
-  note={Mestre em Creative Computing and Artificial Intelligence}
-}`;
-
   return (
     <main className="pt-16 bg-ppt-dark3 min-h-screen">
       <Section id="downloads" className="bg-ppt-dark3 text-ppt-light1">
@@ -99,35 +90,6 @@ export default function DownloadsPage() {
                 </div>
               </div>
             )}
-
-            {/* BibTeX Citation */}
-            <div className="bg-ppt-dark2/50 border border-ppt-light1/20 rounded-lg p-6">
-              <h2 className="text-2xl font-semibold text-ppt-light1 mb-4">
-                BibTeX Citation
-              </h2>
-              <p className="text-ppt-light1/80 mb-4">
-                Use this citation when referencing this work in academic papers.
-              </p>
-              <div className="bg-ppt-dark3 rounded-lg p-4 border border-ppt-light1/10">
-                <pre className="text-sm text-ppt-light1/90 font-mono whitespace-pre-wrap overflow-x-auto">
-                  {bibtexCitation}
-                </pre>
-              </div>
-              <button
-                onClick={async () => {
-                  try {
-                    await navigator.clipboard.writeText(bibtexCitation);
-                    alert('BibTeX citation copied to clipboard!');
-                  } catch (err) {
-                    console.error('Failed to copy:', err);
-                    alert('Failed to copy citation. Please select and copy manually.');
-                  }
-                }}
-                className="mt-4 px-4 py-2 bg-ppt-accent4 text-white font-medium rounded-lg hover:bg-ppt-accent4/80 transition-colors"
-              >
-                Copy Citation
-              </button>
-            </div>
           </div>
 
           {/* Additional Info */}

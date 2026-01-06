@@ -22,6 +22,38 @@ const navLinks: NavLink[] = [
   { id: 'downloads', label: 'Downloads', isRoute: true },
 ];
 
+// Styling constants for better organization
+const navStyles = {
+  // Navigation bar
+  navBar: {
+    base: 'fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out',
+    background: 'bg-ppt-dark2/95 backdrop-blur-md',
+    scrolled: {
+      shadow: 'shadow-2xl shadow-black/50',
+      border: 'border-b-2 border-ppt-accent4/40',
+    },
+    default: {
+      shadow: 'shadow-xl shadow-black/30',
+      border: 'border-b-2 border-ppt-light1/20',
+    },
+  },
+  // Button states
+  button: {
+    base: 'relative px-4 lg:px-5 py-2.5 text-sm font-semibold transition-all duration-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-ppt-accent4/50 focus:ring-offset-2 focus:ring-offset-ppt-dark2',
+    default: 'text-ppt-light1/80',
+    active: 'text-ppt-light1 bg-ppt-accent4 shadow-lg shadow-ppt-accent4/30 neon-glow-blue',
+    hover: 'hover:bg-ppt-accent4/20 hover:text-ppt-light1',
+    route: 'text-ppt-light1/90 hover:text-ppt-light1 hover:bg-ppt-accent4/20',
+  },
+  // Mobile menu
+  mobile: {
+    base: 'block px-4 py-3 mx-2 rounded-lg text-sm font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-ppt-accent4/50 focus:ring-inset',
+    default: 'text-ppt-light1/90 hover:text-ppt-light1 hover:bg-ppt-accent4/20',
+    active: 'text-ppt-light1 bg-ppt-accent4/30 shadow-md shadow-ppt-accent4/20',
+    hover: 'hover:translate-x-1',
+  },
+};
+
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -88,6 +120,12 @@ export default function Navigation() {
   }, []);
 
   useEffect(() => {
+    // Only track active sections when on the home page
+    if (pathname !== '/') {
+      setActiveSection('');
+      return;
+    }
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
 
@@ -111,7 +149,7 @@ export default function Navigation() {
     handleScroll(); // Initial check
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [pathname]);
 
   // Handle hash navigation when page loads or pathname changes
   useEffect(() => {
@@ -123,6 +161,9 @@ export default function Navigation() {
           scrollToSection(hash);
         }, 300);
       }
+    } else {
+      // Clear active section when navigating away from home page
+      setActiveSection('');
     }
   }, [pathname, scrollToSection]);
 
@@ -147,14 +188,14 @@ export default function Navigation() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out bg-ppt-accent7 ${
+      className={`${navStyles.navBar.base} ${navStyles.navBar.background} ${
         isScrolled
-          ? 'shadow-2xl shadow-black/40 border-b-2 border-ppt-light1/30'
-          : 'shadow-xl shadow-black/30 border-b-2 border-ppt-light1/20'
+          ? `${navStyles.navBar.scrolled.shadow} ${navStyles.navBar.scrolled.border}`
+          : `${navStyles.navBar.default.shadow} ${navStyles.navBar.default.border}`
       }`}
     >
       {/* Subtle gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-to-r from-ppt-dark3/20 via-transparent to-ppt-dark3/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-ppt-accent4/5 via-transparent to-ppt-accent6/5 pointer-events-none" />
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex items-center justify-between h-18 md:h-20">
@@ -162,52 +203,50 @@ export default function Navigation() {
           <a
             href="#hero"
             onClick={(e) => handleClick(e, 'hero')}
-            className="group relative text-sm md:text-base lg:text-lg xl:text-xl font-bold transition-all duration-300 max-w-xs md:max-w-md lg:max-w-lg xl:max-w-2xl truncate text-ppt-light1 hover:text-ppt-slate3"
+            className="group relative text-sm md:text-base lg:text-lg xl:text-xl font-bold transition-all duration-300 max-w-xs md:max-w-md lg:max-w-lg xl:max-w-2xl truncate text-ppt-light1 hover:text-ppt-accent4"
             title="Query Routing Framework"
           >
             <span className="relative z-10 transition-transform duration-300 group-hover:scale-105 inline-block">
               Query Routing Framework
             </span>
-            <span className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 bg-ppt-light1 group-hover:w-full" />
+            <span className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-300 bg-ppt-accent4 group-hover:w-full" />
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
             {navLinks.map((link, index) => {
               if (link.isRoute) {
+                const isRouteActive = pathname === `/${link.id}`;
                 return (
                   <Link
                     key={link.id}
                     href={`/${link.id}`}
-                    className="group relative px-3 lg:px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-lg text-ppt-light1/90 hover:text-ppt-light1 hover:bg-ppt-slate2/20"
+                    className={`${navStyles.button.base} ${
+                      isRouteActive
+                        ? `${navStyles.button.active}`
+                        : `${navStyles.button.route}`
+                    }`}
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <span className="relative z-10">{link.label}</span>
-                    <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-ppt-accent4/10" />
                   </Link>
                 );
               }
               
-              const isActive = activeSection === link.id;
+              const isActive = pathname === '/' && activeSection === link.id;
               return (
                 <a
                   key={link.id}
                   href={`#${link.id}`}
                   onClick={(e) => handleClick(e, link.id)}
-                  className={`group relative px-3 lg:px-4 py-2 text-sm font-semibold transition-all duration-300 rounded-lg ${
+                  className={`${navStyles.button.base} ${
                     isActive
-                      ? 'text-ppt-accent7 bg-ppt-light1 shadow-lg shadow-ppt-light1/30'
-                      : 'text-ppt-light1/90 hover:text-ppt-light1 hover:bg-ppt-light1/20'
+                      ? `${navStyles.button.active}`
+                      : `${navStyles.button.default} ${navStyles.button.hover}`
                   }`}
                   style={{ animationDelay: `${index * 50}ms` }}
                 >
                   <span className="relative z-10">{link.label}</span>
-                  {isActive && (
-                    <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-1 h-1 rounded-full bg-ppt-accent7 animate-pulse" />
-                  )}
-                  {!isActive && (
-                    <span className="absolute inset-0 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-ppt-light1/10" />
-                  )}
                 </a>
               );
             })}
@@ -215,7 +254,7 @@ export default function Navigation() {
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden relative p-2 rounded-lg transition-all duration-300 text-ppt-light1 hover:bg-ppt-slate2/20 active:bg-ppt-slate2/30"
+            className="md:hidden relative p-2.5 rounded-lg transition-all duration-300 text-ppt-light1 hover:bg-ppt-accent4/20 active:bg-ppt-accent4/30 focus:outline-none focus:ring-2 focus:ring-ppt-accent4/50"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
             aria-expanded={isMobileMenuOpen}
@@ -243,26 +282,32 @@ export default function Navigation() {
         {/* Mobile menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isMobileMenuOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+            isMobileMenuOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
           <div className="py-4 mt-2 pt-4 border-t border-ppt-light1/20">
             {navLinks.map((link, index) => {
               if (link.isRoute) {
+                const isRouteActive = pathname === `/${link.id}`;
                 return (
                   <Link
                     key={link.id}
                     href={`/${link.id}`}
                     onClick={() => setIsMobileMenuOpen(false)}
-                    className="block px-4 py-3 mx-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:translate-x-1 text-ppt-light1/90 hover:text-ppt-light1 hover:bg-ppt-slate2/20"
+                    className={`${navStyles.mobile.base} ${navStyles.mobile.hover} ${
+                      isRouteActive ? navStyles.mobile.active : navStyles.mobile.default
+                    }`}
                     style={{ animationDelay: `${index * 30}ms` }}
                   >
                     {link.label}
+                    {isRouteActive && (
+                      <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-r-full bg-ppt-accent4 shadow-sm shadow-ppt-accent4/50" />
+                    )}
                   </Link>
                 );
               }
               
-              const isActive = activeSection === link.id;
+              const isActive = pathname === '/' && activeSection === link.id;
               return (
                 <a
                   key={link.id}
@@ -271,16 +316,16 @@ export default function Navigation() {
                     handleClick(e, link.id);
                     setIsMobileMenuOpen(false);
                   }}
-                  className={`block px-4 py-3 mx-2 rounded-lg text-sm font-semibold transition-all duration-300 transform hover:translate-x-1 relative ${
+                  className={`${navStyles.mobile.base} ${navStyles.mobile.hover} relative ${
                     isActive
-                      ? 'text-ppt-accent7 bg-ppt-light1 shadow-lg shadow-ppt-light1/30'
-                      : 'text-ppt-light1/90 hover:text-ppt-light1 hover:bg-ppt-light1/20'
+                      ? navStyles.mobile.active
+                      : navStyles.mobile.default
                   }`}
                   style={{ animationDelay: `${index * 30}ms` }}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-r-full bg-ppt-accent7" />
+                    <span className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 rounded-r-full bg-ppt-accent4 shadow-sm shadow-ppt-accent4/50" />
                   )}
                 </a>
               );
