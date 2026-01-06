@@ -36,7 +36,7 @@ export default function SlideDisplayPPTX({ slideData, className = '' }: SlideDis
       else if (ext === 'gif') mimeType = 'image/gif';
       else if (ext === 'png') mimeType = 'image/png';
       
-      const blob = new Blob([image.data], { type: mimeType });
+      const blob = new Blob([image.data as BlobPart], { type: mimeType });
       return URL.createObjectURL(blob);
     });
   }, [slideData.images]);

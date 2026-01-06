@@ -31,7 +31,7 @@ export async function parsePPTX(fileBuffer: ArrayBuffer): Promise<PPTXSlide[]> {
     throw new Error('Could not find presentation.xml');
   }
 
-  const presentation = await parseXML(presentationXML);
+  const presentation = await parseXML(presentationXML) as any;
   const slideIdLst = presentation['p:presentation']?.['p:sldIdLst']?.[0];
   const slideIds = slideIdLst?.['p:sldId'] || [];
 
@@ -40,7 +40,7 @@ export async function parsePPTX(fileBuffer: ArrayBuffer): Promise<PPTXSlide[]> {
   let relationshipsMap: Map<string, string> = new Map();
   
   if (slideRelXML) {
-    const slideRels = await parseXML(slideRelXML);
+    const slideRels = await parseXML(slideRelXML) as any;
     const relationships = slideRels?.Relationships?.Relationship || [];
     const relArray = Array.isArray(relationships) ? relationships : [relationships].filter(Boolean);
     
@@ -97,7 +97,7 @@ async function processSlide(
   slides: PPTXSlide[]
 ) {
   try {
-    const slide = await parseXML(slideXML);
+    const slide = await parseXML(slideXML) as any;
     const textElements: PPTXTextElement[] = [];
     const images: Array<{ name: string; data: Uint8Array }> = [];
 
@@ -115,7 +115,7 @@ async function processSlide(
     const slideRelXMLContent = await zip.file(slideRelPath)?.async('string');
     if (slideRelXMLContent) {
       try {
-        const slideRelsData = await parseXML(slideRelXMLContent);
+        const slideRelsData = await parseXML(slideRelXMLContent) as any;
         const imageRels = slideRelsData?.Relationships?.Relationship || [];
         const relArray = Array.isArray(imageRels) ? imageRels : [imageRels].filter(Boolean);
         
