@@ -35,7 +35,7 @@ export default function Home() {
           {/* Quick Summary */}
           <div className="max-w-3xl mx-auto mb-8">
             <p className="text-lg text-ppt-light1/90 leading-relaxed mb-6">
-              Achieving <span className="text-ppt-accent6 font-semibold">>85% accuracy</span> on ARC-style queries with 
+              Achieving <span className="text-ppt-accent6 font-semibold">{'>'}85% accuracy</span> on ARC-style queries with 
               <span className="text-ppt-accent4 font-semibold"> significantly lower energy consumption</span> than larger models that perform similarly.
             </p>
           </div>
